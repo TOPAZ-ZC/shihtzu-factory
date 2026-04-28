@@ -34,14 +34,14 @@
     "name": "Parsley",
     "sex": "male",
     "coat": "Solid chocolate",
-    "weight": "4â5 lb projected",
-    "registration": "CKC Â· AKC option",
+    "weight": "5 lb projected",
+    "registration": "CKC or AKC option",
+    "status": "available",
     "price": 3500,
     "deposit": 500,
-    "status": "available",
+    "description": "The smallest of his litter â 2 pounds at 12 weeks. Solid dark chocolate, thick gorgeous hair, flat smooshie face, big expressive green eyes. Quiet, loving, sweet little guy.",
     "photo": "photos/parsley_close_up_440.JPG",
-    "payment_link": null,
-    "description": "The smallest of his litter â 2 pounds at 12 weeks. Solid dark chocolate, thick gorgeous hair, flat smooshie face, big expressive green eyes. Quiet, loving, sweet little guy."
+    "payment_link": null
   },
   {
     "id": "tyra",
