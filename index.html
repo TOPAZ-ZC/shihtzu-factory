@@ -189,9 +189,9 @@ section.contact{padding:clamp(60px,8vw,120px) clamp(20px,5vw,64px)}
 .cgrid form input, .cgrid form textarea{width:100%; padding:14px 18px; border:1px solid var(--rule); background:var(--cream-2); font:inherit; font-size:15px; color:var(--cocoa); border-radius:14px; margin-bottom:12px}
 .cgrid form textarea{min-height:110px; resize:vertical}
 .cgrid form input:focus, .cgrid form textarea:focus{outline:none; border-color:var(--peach-2); background:var(--cream)}
-/* Push form down so its first input lines up with the contact rows column */
-.cgrid form{padding-top:clamp(0px, 12vw, 200px)}
-@media (max-width:800px){.cgrid form{padding-top:0}}
+/* Bottom-align the form with the contact rows column so Send sits below the last row */
+.cgrid form{align-self:end}
+@media (max-width:800px){.cgrid form{align-self:start}}
 
 /* FOOTER */
 footer{padding:48px clamp(20px,5vw,64px) 28px; background:var(--cocoa); color:var(--cream)}
