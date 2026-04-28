@@ -48,7 +48,7 @@
     "name": "Tyra",
     "sex": "female",
     "coat": "Dark chocolate",
-    "weight": "7â8 lb projected",
+    "weight": "8 lb projected",
     "registration": "CKC base +$500 AKC",
     "status": "available",
     "price": 3500,
@@ -68,7 +68,7 @@
     "price": 3500,
     "deposit": 500,
     "description": "",
-    "photo": "photos/img_7716_4mmji.jpeg",
+    "photo": null,
     "payment_link": null
   }
 ]
