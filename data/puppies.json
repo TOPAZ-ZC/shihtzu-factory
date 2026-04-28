@@ -29,9 +29,14 @@
     "deposit": 500,
     "description": "Dark chocolate from very tiny parents (mom and dad never got over 4 lb). Gorgeous hair, tiny flat face, brown button nose. Outgoing, friendly personality, she could go to a breeder home or a family home.",
     "photos": [
-      "photos/gucci_star_188.JPG"
+      "photos/gucci_star_188.JPG",
+      "photos/img_7687_5r10ovlk.jpeg",
+      "photos/img_7684_5r18jt17.jpeg",
+      "photos/img_7686_5r1f7vxh.jpeg",
+      "photos/img_7683_5r1ku7hv.jpeg",
+      "photos/img_7676_5r1ol2cp.jpeg"
     ],
-    "payment_link": "https://paypal.me/NancyMcCullough?locale.x=en_US&country.x=US",
+    "payment_link": null,
     "badge": "new",
     "photo": "photos/gucci_star_188.JPG"
   },
