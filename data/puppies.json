@@ -1,0 +1,60 @@
+[
+  {
+    "id": "chevy",
+    "name": "Chevy",
+    "sex": "male",
+    "coat": "Dark chocolate",
+    "weight": "7–8 lb projected",
+    "registration": "AKC or CKC",
+    "price": 2500,
+    "ckc_price": 2000,
+    "deposit": 500,
+    "status": "on_hold",
+    "photo": "photos/chevy_star_022.JPG",
+    "payment_link": null,
+    "description": "Small dark-chocolate male with lots of sass. Charting to be 7–8 pounds full grown."
+  },
+  {
+    "id": "gucci",
+    "name": "Gucci",
+    "sex": "female",
+    "coat": "Dark chocolate",
+    "weight": "~7 lb projected",
+    "registration": "AKC available",
+    "price": 3500,
+    "deposit": 500,
+    "status": "available",
+    "badge": "new",
+    "photo": "photos/gucci_star_188.JPG",
+    "payment_link": null,
+    "description": "Dark chocolate from very tiny parents (mom and dad never got over 4 lb). Gorgeous hair, tiny flat face, brown button nose. Outgoing — could go to a breeder home or a family home."
+  },
+  {
+    "id": "parsley",
+    "name": "Parsley",
+    "sex": "male",
+    "coat": "Solid chocolate",
+    "weight": "4–5 lb projected",
+    "registration": "CKC · AKC option",
+    "price": 3500,
+    "deposit": 500,
+    "status": "available",
+    "photo": "photos/parsley_close_up_440.JPG",
+    "payment_link": null,
+    "description": "The smallest of his litter — 2 pounds at 12 weeks. Solid dark chocolate, thick gorgeous hair, flat smooshie face, big expressive green eyes. Quiet, loving, sweet little guy."
+  },
+  {
+    "id": "tyra",
+    "name": "Tyra",
+    "sex": "female",
+    "coat": "Dark chocolate",
+    "weight": "7–8 lb projected",
+    "registration": "CKC base · +$500 AKC",
+    "price": 3500,
+    "deposit": 500,
+    "status": "available",
+    "photo": null,
+    "payment_link": null,
+    "description": "Dark chocolate, gorgeous thick fluff hair, big green expressive eyes, tiny button brown nose. Short, cobby, adorable. We were holding her for showing but her nose is slightly pinched and we aren't sure she'll grow out of it."
+  }
+]

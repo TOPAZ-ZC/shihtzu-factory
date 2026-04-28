@@ -280,58 +280,8 @@ footer ul a:hover{opacity:1; color:var(--peach-2)}
     <p>Each puppy is reserved with a $500 non-refundable deposit. Remaining balance is settled at pickup or shipping. If you don't see what you want, text us — we may have it, just not photographed yet.</p>
   </div>
 
-  <div class="litter-grid">
-    <article class="card">
-      <div class="ph"><span class="badge held">On Hold</span><img src="photos/chevy_star_022.JPG" alt="Chevy, a small dark chocolate male"></div>
-      <div class="body">
-        <div class="top">
-          <h3>Chevy <em>· male</em></h3>
-          <span class="price">$2,500 <small>AKC · $2,000 CKC</small></span>
-        </div>
-        <p class="desc">Small dark-chocolate male with lots of sass. Charting to be 7–8 pounds full grown.</p>
-        <div class="specs"><span>Dark chocolate</span><span>7–8 lb projected</span><span>AKC or CKC</span></div>
-        <button class="add" disabled>Reserved</button>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="ph"><span class="badge new">New</span><img src="photos/gucci_star_188.JPG" alt="Gucci, a tiny dark chocolate female"></div>
-      <div class="body">
-        <div class="top">
-          <h3>Gucci <em>· female</em></h3>
-          <span class="price">$3,500 <small>$500 hold</small></span>
-        </div>
-        <p class="desc">Dark chocolate from very tiny parents (mom and dad never got over 4 lb). Gorgeous hair, tiny flat face, brown button nose. Outgoing — could go to a breeder home or a family home.</p>
-        <div class="specs"><span>Dark chocolate</span><span>~7 lb projected</span><span>AKC available</span></div>
-        <button class="add" data-name="Gucci — female" data-deposit="500" data-full="3500" data-link="https://buy.stripe.com/PLACEHOLDER_GUCCI">Reserve · $500 deposit</button>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="ph"><img src="photos/parsley_close_up_440.JPG" alt="Parsley, the smallest of his litter"></div>
-      <div class="body">
-        <div class="top">
-          <h3>Parsley <em>· male</em></h3>
-          <span class="price">$3,500 <small>$500 hold</small></span>
-        </div>
-        <p class="desc">The smallest of his litter — 2 pounds at 12 weeks. Solid dark chocolate, thick gorgeous hair, flat smooshie face, big expressive green eyes. Quiet, loving, sweet little guy.</p>
-        <div class="specs"><span>Solid chocolate</span><span>4–5 lb projected</span><span>CKC · AKC option</span></div>
-        <button class="add" data-name="Parsley — male" data-deposit="500" data-full="3500" data-link="https://buy.stripe.com/PLACEHOLDER_PARSLEY">Reserve · $500 deposit</button>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="ph placeholder">Tyra<small>Photo on request — text us</small></div>
-      <div class="body">
-        <div class="top">
-          <h3>Tyra <em>· female</em></h3>
-          <span class="price">$3,500 <small>+$500 AKC</small></span>
-        </div>
-        <p class="desc">Dark chocolate, gorgeous thick fluff hair, big green expressive eyes, tiny button brown nose. Short, cobby, adorable. We were holding her for showing but her nose is slightly pinched and we aren't sure she'll grow out of it.</p>
-        <div class="specs"><span>Dark chocolate</span><span>7–8 lb projected</span><span>CKC base</span></div>
-        <button class="add" data-name="Tyra — female" data-deposit="500" data-full="3500" data-link="https://buy.stripe.com/PLACEHOLDER_TYRA">Reserve · $500 deposit</button>
-      </div>
-    </article>
+  <div class="litter-grid" id="litter-grid" data-loading="true">
+    <div style="grid-column:1/-1; padding:48px 0; text-align:center; opacity:.55; font-style:italic">Loading available puppies…</div>
   </div>
 </section>
 
@@ -419,31 +369,8 @@ footer ul a:hover{opacity:1; color:var(--peach-2)}
     <h2>For the <em>first day home</em>.</h2>
     <p>Pieces sized for the tiny end of the breed. Add to your reservation — ships with the puppy.</p>
   </div>
-  <div class="shelf-grid">
-    <article class="acc">
-      <div class="ico">⌒</div>
-      <h4>Hand-loomed mini collar</h4>
-      <span class="px">$48</span>
-      <button class="add" data-name="Mini collar" data-deposit="48" data-full="48" data-link="https://buy.stripe.com/PLACEHOLDER_COLLAR">Add — $48</button>
-    </article>
-    <article class="acc">
-      <div class="ico">⊛</div>
-      <h4>Top-knot bow set, 3-pack</h4>
-      <span class="px">$24</span>
-      <button class="add" data-name="Top-knot bow set (3)" data-deposit="24" data-full="24" data-link="https://buy.stripe.com/PLACEHOLDER_BOWS">Add — $24</button>
-    </article>
-    <article class="acc">
-      <div class="ico">∽</div>
-      <h4>Brush &amp; comb starter</h4>
-      <span class="px">$62</span>
-      <button class="add" data-name="Brush &amp; comb starter" data-deposit="62" data-full="62" data-link="https://buy.stripe.com/PLACEHOLDER_BRUSH">Add — $62</button>
-    </article>
-    <article class="acc">
-      <div class="ico">◍</div>
-      <h4>Welcome-home bundle</h4>
-      <span class="px">$145</span>
-      <button class="add" data-name="Welcome-home bundle" data-deposit="145" data-full="145" data-link="https://buy.stripe.com/PLACEHOLDER_BUNDLE">Add — $145</button>
-    </article>
+  <div class="shelf-grid" id="shelf-grid">
+    <div style="grid-column:1/-1; padding:32px 0; text-align:center; opacity:.55; font-style:italic">Loading shelf…</div>
   </div>
 </section>
 
@@ -527,33 +454,92 @@ footer ul a:hover{opacity:1; color:var(--peach-2)}
   };
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  // reserve / add modal
-  document.querySelectorAll('button.add[data-link]').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const name = btn.dataset.name;
-      const deposit = parseInt(btn.dataset.deposit, 10);
-      const full = parseInt(btn.dataset.full, 10);
-      const link = btn.dataset.link;
-      const isReservation = deposit < full;
-      document.getElementById('modalTitle').innerHTML = isReservation ? `Reserve <em>${name}</em>` : `Add <em>${name}</em>`;
-      document.getElementById('modalCopy').textContent = isReservation
-        ? 'A $500 non-refundable deposit holds the puppy and removes them from the listing. The remaining balance is due at pickup or shipping.'
-        : 'Add this item to your order. It will be packed with your puppy at pickup or shipped separately.';
-      document.getElementById('modalPrice').textContent = '$' + deposit.toLocaleString();
-      document.getElementById('modalBalance').textContent = isReservation
-        ? 'Balance $' + (full - deposit).toLocaleString() + ' due at pickup'
-        : 'Total $' + full.toLocaleString();
-      const go = document.getElementById('modalGo');
-      const isPlaceholder = link.includes('PLACEHOLDER_');
-      go.href = link;
-      go.textContent = isPlaceholder ? 'Stripe link not yet configured' : 'Continue to Stripe Checkout →';
-      go.style.opacity = isPlaceholder ? '.55' : '1';
-      go.style.pointerEvents = isPlaceholder ? 'none' : 'auto';
-      document.getElementById('unverifiedFlag').style.display = isPlaceholder ? 'block' : 'none';
-      document.getElementById('modalBg').classList.add('open');
-      document.body.style.overflow = 'hidden';
+  // ----- DATA-DRIVEN: render puppies + accessories from data/*.json -----
+  const fmt$ = n => '$' + Number(n).toLocaleString();
+  const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const cacheBust = '?v=' + Date.now();
+
+  function puppyCard(p) {
+    const reserved = p.status === 'on_hold' || p.status === 'sold';
+    const sold = p.status === 'sold';
+    const badge = sold ? '<span class="badge held">Sold</span>'
+                : p.status === 'on_hold' ? '<span class="badge held">On Hold</span>'
+                : p.badge === 'new' ? '<span class="badge new">New</span>'
+                : '';
+    const phHtml = p.photo
+      ? `<div class="ph">${badge}<img src="${esc(p.photo)}" alt="${esc(p.name)}"></div>`
+      : `<div class="ph placeholder">${esc(p.name)}<small>Photo on request — text us</small></div>`;
+    const sexEm = p.sex ? ` <em>· ${esc(p.sex)}</em>` : '';
+    const priceLine = p.ckc_price
+      ? `${fmt$(p.price)} <small>AKC · ${fmt$(p.ckc_price)} CKC</small>`
+      : `${fmt$(p.price)} <small>${fmt$(p.deposit ?? 500)} hold</small>`;
+    const specs = [p.coat, p.weight, p.registration].filter(Boolean).map(s => `<span>${esc(s)}</span>`).join('');
+    const btn = sold ? `<button class="add" disabled>Sold</button>`
+              : reserved ? `<button class="add" disabled>Reserved</button>`
+              : `<button class="add" data-name="${esc(p.name)}${p.sex?' — '+esc(p.sex):''}" data-deposit="${p.deposit||500}" data-full="${p.price}" data-link="${esc(p.payment_link || ('https://buy.stripe.com/PLACEHOLDER_'+p.id.toUpperCase()))}">Reserve · ${fmt$(p.deposit||500)} deposit</button>`;
+    return `<article class="card">${phHtml}<div class="body"><div class="top"><h3>${esc(p.name)}${sexEm}</h3><span class="price">${priceLine}</span></div><p class="desc">${esc(p.description||'')}</p><div class="specs">${specs}</div>${btn}</div></article>`;
+  }
+
+  function accessoryCard(a) {
+    if (a.active === false) return '';
+    return `<article class="acc"><div class="ico">${esc(a.icon||'◍')}</div><h4>${esc(a.name)}</h4><span class="px">${fmt$(a.price)}</span><button class="add" data-name="${esc(a.name)}" data-deposit="${a.price}" data-full="${a.price}" data-link="${esc(a.payment_link || ('https://buy.stripe.com/PLACEHOLDER_'+a.id.toUpperCase()))}">Add — ${fmt$(a.price)}</button></article>`;
+  }
+
+  function bindReserveButtons(){
+    document.querySelectorAll('button.add[data-link]').forEach(btn => {
+      if (btn.dataset.bound) return;
+      btn.dataset.bound = '1';
+      btn.addEventListener('click', () => {
+        const name = btn.dataset.name;
+        const deposit = parseInt(btn.dataset.deposit, 10);
+        const full = parseInt(btn.dataset.full, 10);
+        const link = btn.dataset.link;
+        const isReservation = deposit < full;
+        document.getElementById('modalTitle').innerHTML = isReservation ? `Reserve <em>${name}</em>` : `Add <em>${name}</em>`;
+        document.getElementById('modalCopy').textContent = isReservation
+          ? 'A $500 non-refundable deposit holds the puppy and removes them from the listing. The remaining balance is due at pickup or shipping.'
+          : 'Add this item to your order. It will be packed with your puppy at pickup or shipped separately.';
+        document.getElementById('modalPrice').textContent = fmt$(deposit);
+        document.getElementById('modalBalance').textContent = isReservation
+          ? 'Balance ' + fmt$(full - deposit) + ' due at pickup'
+          : 'Total ' + fmt$(full);
+        const go = document.getElementById('modalGo');
+        const isPlaceholder = link.includes('PLACEHOLDER_');
+        go.href = link;
+        go.textContent = isPlaceholder ? 'Stripe link not yet configured' : 'Continue to Stripe Checkout →';
+        go.style.opacity = isPlaceholder ? '.55' : '1';
+        go.style.pointerEvents = isPlaceholder ? 'none' : 'auto';
+        document.getElementById('unverifiedFlag').style.display = isPlaceholder ? 'block' : 'none';
+        document.getElementById('modalBg').classList.add('open');
+        document.body.style.overflow = 'hidden';
+      });
     });
-  });
+  }
+
+  async function loadCatalog() {
+    try {
+      const [puppies, accessories] = await Promise.all([
+        fetch('data/puppies.json' + cacheBust).then(r => r.ok ? r.json() : []),
+        fetch('data/accessories.json' + cacheBust).then(r => r.ok ? r.json() : []),
+      ]);
+      const litter = document.getElementById('litter-grid');
+      if (litter) {
+        litter.innerHTML = puppies.length
+          ? puppies.map(puppyCard).join('')
+          : '<div style="grid-column:1/-1; padding:48px 0; text-align:center; opacity:.55; font-style:italic">No puppies available right now — text us, we may have a litter coming.</div>';
+        litter.removeAttribute('data-loading');
+      }
+      const shelf = document.getElementById('shelf-grid');
+      if (shelf) {
+        shelf.innerHTML = accessories.map(accessoryCard).filter(Boolean).join('');
+      }
+      bindReserveButtons();
+    } catch (e) {
+      console.error('Catalog load failed:', e);
+    }
+  }
+  loadCatalog();
+
   function closeModal(){
     document.getElementById('modalBg').classList.remove('open');
     document.body.style.overflow = '';

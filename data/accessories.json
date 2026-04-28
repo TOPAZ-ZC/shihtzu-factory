@@ -1,0 +1,34 @@
+[
+  {
+    "id": "collar",
+    "name": "Hand-loomed mini collar",
+    "price": 48,
+    "icon": "⌒",
+    "payment_link": null,
+    "active": true
+  },
+  {
+    "id": "bows",
+    "name": "Top-knot bow set, 3-pack",
+    "price": 24,
+    "icon": "⊛",
+    "payment_link": null,
+    "active": true
+  },
+  {
+    "id": "brush",
+    "name": "Brush & comb starter",
+    "price": 62,
+    "icon": "∽",
+    "payment_link": null,
+    "active": true
+  },
+  {
+    "id": "bundle",
+    "name": "Welcome-home bundle",
+    "price": 145,
+    "icon": "◍",
+    "payment_link": null,
+    "active": true
+  }
+]

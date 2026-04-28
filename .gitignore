@@ -1,0 +1,10 @@
+.DS_Store
+node_modules/
+.env
+.env.*
+*.local
+worker/.dev.vars
+worker/.wrangler/
+_monitor-go-live.sh
+_monitor.log
+_monitor*.sh
