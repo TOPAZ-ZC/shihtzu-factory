@@ -87,25 +87,6 @@
     "photo": "photos/img_7646_4b5fn.jpeg"
   },
   {
-    "id": "zorro-l0zd",
-    "name": "Zorro",
-    "sex": "female",
-    "coat": "Dark chocolate",
-    "weight": "6-7 pounds",
-    "registration": "Ckc/AKC",
-    "status": "available",
-    "price": 3500,
-    "deposit": 500,
-    "description": "",
-    "photos": [
-      "photos/img_7702_5r7hbah7.jpeg",
-      "photos/img_7700_5r7jzdse.jpeg",
-      "photos/img_7701_5r7ne1qf.jpeg"
-    ],
-    "payment_link": "https://paypal.me/NancyMcCullough?locale.x=en_US&country.x=US",
-    "photo": "photos/img_7702_5r7hbah7.jpeg"
-  },
-  {
     "id": "lexus-og0n",
     "name": "Lexus",
     "sex": "female",
