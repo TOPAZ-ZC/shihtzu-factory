@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Shihtzu Factory — Tiny Shih Tzu raised inside, in West Texas</title>
+<meta name="description" content="A small, family-run Shih Tzu house in Abilene, Texas. Cobby, flat-faced, tiny — five to nine pounds full grown. Raised inside, paper-trained, AKC.">
+<meta property="og:title" content="Shihtzu Factory — Tiny Shih Tzu of Abilene, Texas">
+<meta property="og:description" content="Hobby breeders since 1998. Tiny, cobby, dark-chocolate Shih Tzu raised inside the home and placed by waitlist.">
+<meta property="og:image" content="photos/a_perfect_mercedes_096.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='78' font-size='80'%3E🐾%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#FFF6EE; --cream-2:#FBE9D6; --peach:#FFCBA8; --peach-2:#FFB280;
+  --cocoa:#4B2A1A; --cocoa-soft:rgba(75,42,26,.72); --sky:#C9E4FF; --sky-2:#9DCBFF;
+  --rule:rgba(75,42,26,.16); --warn:#C84A1F;
+}
+[data-theme="dark"]{
+  --cream:#1B100B; --cream-2:#261612; --peach:#F5A77A; --peach-2:#FFCBA8;
+  --cocoa:#FBE9D6; --cocoa-soft:rgba(251,233,214,.72); --sky:#3B5878; --sky-2:#5A7BA0;
+  --rule:rgba(251,233,214,.16); --warn:#FFAA66;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+html,body{margin:0;padding:0}
+body{
+  font-family:"DM Sans",-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  background:var(--cream); color:var(--cocoa); line-height:1.55;
+  -webkit-font-smoothing:antialiased; transition:background .3s ease, color .3s ease;
+}
+.serif{font-family:"DM Serif Display",Georgia,serif}
+img{display:block; max-width:100%}
+.pill{display:inline-flex; align-items:center; gap:6px; padding:6px 14px; border-radius:999px; background:var(--sky); color:var(--cocoa); font-size:12px; font-weight:500}
+
+/* NAV */
+nav.top{display:grid; grid-template-columns:1fr auto 1fr; align-items:center; padding:18px clamp(20px,4vw,40px); position:sticky; top:0; z-index:50; background:color-mix(in oklab, var(--cream) 90%, transparent); backdrop-filter:blur(12px)}
+.brand{font-family:"DM Serif Display",serif; font-weight:400; font-size:26px; letter-spacing:-.01em; color:var(--cocoa); text-decoration:none; display:inline-flex; align-items:center; gap:8px}
+.brand .dot{width:10px; height:10px; background:var(--peach-2); border-radius:999px; display:inline-block}
+.brand small{font-family:"DM Sans"; font-size:11px; font-weight:500; letter-spacing:.16em; text-transform:uppercase; opacity:.6}
+.menu{display:flex; gap:28px; justify-self:center; font-size:14px; font-weight:500}
+.menu a{color:var(--cocoa); text-decoration:none; opacity:.78; padding:6px 0}
+.menu a:hover{opacity:1; color:var(--peach-2)}
+.right{display:flex; gap:8px; justify-self:end; align-items:center}
+.right .toggle{background:none; border:none; color:var(--cocoa); padding:8px 14px; font:inherit; font-size:18px; cursor:pointer; border-radius:999px}
+.right .toggle:hover{background:var(--cream-2)}
+.right .navtext{font-size:14px; font-weight:500; padding:8px 14px}
+.right .navtext a{color:var(--cocoa); text-decoration:none; opacity:.78}
+.right .navtext a:hover{opacity:1; color:var(--peach-2)}
+@media (max-width:800px){.menu{display:none} nav.top{grid-template-columns:1fr auto} .right .navtext{display:none}}
+
+/* HERO */
+.hero{position:relative; padding:clamp(40px,7vw,96px) clamp(20px,5vw,64px) clamp(60px,8vw,120px); background:radial-gradient(ellipse at top right, var(--peach) 0%, var(--cream) 60%); overflow:hidden}
+.hero-grid{display:grid; grid-template-columns:1.05fr 1fr; gap:64px; max-width:1280px; margin:0 auto; align-items:center}
+@media (max-width:900px){.hero-grid{grid-template-columns:1fr; gap:32px}}
+.hero h1{font-family:"DM Serif Display",serif; font-weight:400; font-size:clamp(48px,7.5vw,108px); line-height:.96; letter-spacing:-.025em; margin:18px 0 24px}
+.hero h1 em{font-style:italic; color:var(--peach-2)}
+.hero p.lead{font-size:19px; line-height:1.55; max-width:48ch; margin:0 0 36px; color:var(--cocoa-soft)}
+.hero .ctas{display:flex; gap:12px; flex-wrap:wrap; align-items:center}
+.btn{display:inline-flex; align-items:center; gap:8px; padding:16px 28px; border-radius:999px; font:inherit; font-size:15px; font-weight:600; cursor:pointer; border:none; background:var(--cocoa); color:var(--cream); text-decoration:none; transition:transform .2s ease, background .2s ease}
+.btn:hover{background:var(--peach-2); color:var(--cocoa); transform:translateY(-2px)}
+.btn.ghost{background:transparent; color:var(--cocoa); border:2px solid var(--cocoa)}
+.btn.ghost:hover{background:var(--cocoa); color:var(--cream); border-color:var(--cocoa)}
+.hero-photo{position:relative}
+.hero-photo .main-img{aspect-ratio:1; width:100%; object-fit:cover; border-radius:24px; box-shadow:0 30px 80px -30px rgba(75,42,26,.3); background:var(--cream-2)}
+.hero-photo .float{position:absolute; right:-12px; bottom:-24px; background:var(--cream); padding:14px 18px; border-radius:18px; font-size:13px; font-weight:600; box-shadow:0 12px 40px -10px rgba(0,0,0,.18); display:flex; align-items:center; gap:10px; max-width:260px}
+.hero-photo .float .av{width:36px; height:36px; border-radius:999px; object-fit:cover}
+.hero-photo .float small{display:block; font-weight:400; opacity:.6; font-size:11px}
+.hero-trust{display:flex; gap:24px; margin-top:48px; flex-wrap:wrap; opacity:.7; font-size:13px; align-items:center}
+.hero-trust span b{font-weight:600; color:var(--cocoa)}
+
+/* TRUST MARQUEE */
+.trust{padding:18px 0; border-top:1px solid var(--rule); border-bottom:1px solid var(--rule); background:var(--cream-2); overflow:hidden}
+.trust-row{display:flex; gap:48px; justify-content:center; align-items:center; font-family:"DM Serif Display",serif; font-style:italic; font-size:18px; opacity:.8; flex-wrap:wrap; padding:0 20px}
+.trust-row span{display:inline-flex; align-items:center; gap:8px}
+.trust-row span::before{content:"✦"; color:var(--peach-2); font-size:14px}
+
+/* SECTION COMMON */
+.shead{max-width:1280px; margin:0 auto 48px; text-align:center}
+.shead .pill{margin-bottom:14px}
+.shead h2{font-family:"DM Serif Display",serif; font-weight:400; font-size:clamp(36px,5vw,68px); margin:0 0 14px; line-height:1.02; letter-spacing:-.02em}
+.shead h2 em{font-style:italic; color:var(--peach-2)}
+.shead p{font-size:17px; max-width:600px; margin:0 auto; opacity:.72; line-height:1.55}
+.shead-row{display:flex; justify-content:space-between; align-items:end; flex-wrap:wrap; gap:24px; text-align:left}
+.shead-row .left{display:flex; flex-direction:column; gap:14px}
+.shead-row p{font-size:14px; opacity:.7; max-width:340px; margin:0; line-height:1.55}
+
+/* CURRENT LITTER */
+section.litter{padding:clamp(60px,8vw,120px) clamp(20px,5vw,64px)}
+.litter-grid{max-width:1280px; margin:0 auto; display:grid; grid-template-columns:repeat(2,1fr); gap:32px}
+@media (max-width:700px){.litter-grid{grid-template-columns:1fr}}
+.card{background:var(--cream-2); border-radius:24px; overflow:hidden; display:flex; flex-direction:column; transition:transform .25s ease, box-shadow .25s ease}
+.card:hover{transform:translateY(-6px); box-shadow:0 30px 60px -25px rgba(75,42,26,.22)}
+.card .ph{aspect-ratio:4/3; overflow:hidden; position:relative; background:var(--cream); display:flex; align-items:center; justify-content:center}
+.card .ph img{width:100%; height:100%; object-fit:cover; transition:transform .5s ease}
+.card:hover .ph img{transform:scale(1.04)}
+.card .ph.placeholder{font-family:"DM Serif Display",serif; font-style:italic; color:var(--peach-2); font-size:64px; padding:24px; text-align:center}
+.card .ph.placeholder small{display:block; font-family:"DM Sans"; font-style:normal; font-size:13px; color:var(--cocoa-soft); font-weight:400; margin-top:14px}
+.card .badge{position:absolute; top:14px; left:14px; padding:6px 12px; background:var(--cream); border-radius:999px; font-size:11px; font-weight:700; letter-spacing:.04em; z-index:2}
+.card .badge.held{background:var(--cocoa); color:var(--cream); opacity:.8}
+.card .badge.new{background:var(--peach-2); color:var(--cocoa)}
+.card .body{padding:28px 26px 28px; display:flex; flex-direction:column; gap:14px; flex:1}
+.card .top{display:flex; justify-content:space-between; align-items:start; gap:12px}
+.card h3{font-family:"DM Serif Display",serif; font-weight:400; font-size:32px; margin:0; line-height:1; letter-spacing:-.01em}
+.card h3 em{font-style:italic; color:var(--peach-2); font-size:20px}
+.card .price{font-weight:700; font-size:20px; white-space:nowrap; text-align:right}
+.card .price small{font-weight:400; opacity:.55; font-size:12px; display:block; margin-top:2px}
+.card .desc{font-size:15px; line-height:1.6; opacity:.85; margin:0}
+.card .specs{display:flex; flex-wrap:wrap; gap:8px; margin-top:4px}
+.card .specs span{font-size:12px; padding:5px 11px; background:var(--cream); border-radius:999px; opacity:.85}
+.card .add{margin-top:auto; padding:14px; background:var(--cocoa); color:var(--cream); border:none; border-radius:999px; font:inherit; font-weight:600; font-size:14px; cursor:pointer; transition:background .2s ease}
+.card .add:hover{background:var(--peach-2); color:var(--cocoa)}
+.card .add:disabled{opacity:.4; cursor:not-allowed}
+
+/* ABOUT */
+section.story{padding:clamp(60px,8vw,120px) clamp(20px,5vw,64px); background:var(--cream-2)}
+.story-grid{max-width:1280px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center}
+@media (max-width:900px){.story-grid{grid-template-columns:1fr; gap:32px}}
+.story img{aspect-ratio:4/5; object-fit:cover; border-radius:24px}
+.story .copy h3{font-family:"DM Serif Display",serif; font-weight:400; font-size:clamp(34px,4.5vw,56px); margin:14px 0 22px; line-height:1.02; letter-spacing:-.018em}
+.story .copy h3 em{font-style:italic; color:var(--peach-2)}
+.story .copy p{font-size:17px; line-height:1.65; opacity:.85; margin:0 0 14px}
+.story-stats{display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:32px; padding-top:28px; border-top:1px solid var(--rule)}
+.story-stats div b{font-family:"DM Serif Display",serif; font-size:36px; line-height:1; display:block; margin-bottom:6px; color:var(--peach-2)}
+.story-stats div span{font-size:13px; opacity:.65}
+
+/* GRADUATES GALLERY */
+section.graduates{padding:clamp(60px,8vw,120px) clamp(20px,5vw,64px)}
+.grad-grid{max-width:1280px; margin:0 auto; display:grid; grid-template-columns:repeat(4,1fr); gap:14px}
+@media (max-width:900px){.grad-grid{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:600px){.grad-grid{grid-template-columns:repeat(2,1fr)}}
+.grad{aspect-ratio:1; overflow:hidden; border-radius:14px; background:var(--cream-2); position:relative}
+.grad img{width:100%; height:100%; object-fit:cover; transition:transform .6s ease}
+.grad:hover img{transform:scale(1.06)}
+.grad .cap{position:absolute; bottom:0; left:0; right:0; padding:14px 12px 10px; font-family:"DM Serif Display",serif; font-style:italic; color:var(--cream); font-size:14px; background:linear-gradient(180deg, transparent 0%, rgba(75,42,26,.65) 100%); opacity:0; transition:opacity .25s ease}
+.grad:hover .cap{opacity:1}
+
+/* SHOW WINS */
+section.shows{padding:clamp(60px,8vw,120px) clamp(20px,5vw,64px); background:var(--cream-2)}
+.show-grid{max-width:1280px; margin:0 auto; display:grid; grid-template-columns:repeat(3,1fr); gap:24px}
+@media (max-width:800px){.show-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:500px){.show-grid{grid-template-columns:1fr}}
+.show{background:var(--cream); border-radius:18px; overflow:hidden; display:flex; flex-direction:column}
+.show .ph{aspect-ratio:4/3; background:var(--cream-2)}
+.show .ph img{width:100%; height:100%; object-fit:cover}
+.show .body{padding:18px 20px 20px}
+.show .body .where{font-size:11px; font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:var(--peach-2); margin-bottom:6px}
+.show .body h4{font-family:"DM Serif Display",serif; font-weight:400; font-size:22px; margin:0 0 6px; line-height:1.2; letter-spacing:-.005em}
+.show .body p{font-size:13px; opacity:.7; margin:0; line-height:1.5}
+
+/* SHELF */
+section.shelf{padding:clamp(60px,8vw,120px) clamp(20px,5vw,64px)}
+.shelf-grid{max-width:1280px; margin:0 auto; display:grid; grid-template-columns:repeat(4,1fr); gap:20px}
+@media (max-width:900px){.shelf-grid{grid-template-columns:repeat(2,1fr)}}
+.acc{background:var(--cream-2); border-radius:20px; padding:22px; display:flex; flex-direction:column; gap:10px; transition:transform .25s ease}
+.acc:hover{transform:translateY(-4px)}
+.acc .ico{aspect-ratio:1; background:var(--cream); border-radius:14px; display:flex; align-items:center; justify-content:center; font-family:"DM Serif Display",serif; font-style:italic; font-size:64px; color:var(--peach-2); margin-bottom:6px}
+.acc h4{font-family:"DM Sans"; font-weight:600; font-size:16px; margin:0; line-height:1.3}
+.acc .px{font-weight:700; font-size:15px}
+.acc .add{margin-top:auto; padding:11px; background:var(--cocoa); color:var(--cream); border:none; border-radius:999px; font:inherit; font-weight:600; font-size:13px; cursor:pointer}
+.acc .add:hover{background:var(--peach-2); color:var(--cocoa)}
+
+/* PROMISE */
+section.promise{padding:clamp(60px,8vw,120px) clamp(20px,5vw,64px); background:var(--cream-2)}
+.promise-grid{max-width:1280px; margin:0 auto; display:grid; grid-template-columns:repeat(4,1fr); gap:20px}
+@media (max-width:900px){.promise-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:480px){.promise-grid{grid-template-columns:1fr}}
+.promise-card{background:var(--cream); border-radius:20px; padding:28px}
+.promise-card .ico{font-family:"DM Serif Display",serif; font-style:italic; color:var(--peach-2); font-size:36px; line-height:1; margin-bottom:14px}
+.promise-card h4{font-family:"DM Serif Display",serif; font-weight:400; font-size:20px; margin:0 0 8px; letter-spacing:-.005em}
+.promise-card p{font-size:14px; line-height:1.6; opacity:.78; margin:0}
+
+/* SABBATH */
+.sabbath{padding:64px clamp(20px,5vw,64px); text-align:center; background:var(--cream); border-top:1px solid var(--rule); border-bottom:1px solid var(--rule)}
+.sabbath p{font-family:"DM Serif Display",serif; font-style:italic; font-size:clamp(18px,2.4vw,26px); max-width:680px; margin:0 auto; line-height:1.45; color:var(--cocoa-soft)}
+
+/* CONTACT */
+section.contact{padding:clamp(60px,8vw,120px) clamp(20px,5vw,64px)}
+.cgrid{max-width:1080px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:64px}
+@media (max-width:800px){.cgrid{grid-template-columns:1fr; gap:32px}}
+.cgrid h2{font-family:"DM Serif Display",serif; font-weight:400; font-size:clamp(34px,4.5vw,52px); margin:14px 0 24px; letter-spacing:-.018em; line-height:1.02}
+.cgrid h2 em{font-style:italic; color:var(--peach-2)}
+.cgrid .row{padding:14px 0; border-bottom:1px dashed var(--rule); font-size:15px}
+.cgrid .row .label{font-size:11px; letter-spacing:.16em; text-transform:uppercase; opacity:.5; display:block; margin-bottom:4px}
+.cgrid .row a{color:var(--cocoa); text-decoration:none; font-weight:600}
+.cgrid .row a:hover{color:var(--peach-2)}
+.cgrid form input, .cgrid form textarea{width:100%; padding:14px 18px; border:1px solid var(--rule); background:var(--cream-2); font:inherit; font-size:15px; color:var(--cocoa); border-radius:14px; margin-bottom:12px}
+.cgrid form textarea{min-height:110px; resize:vertical}
+.cgrid form input:focus, .cgrid form textarea:focus{outline:none; border-color:var(--peach-2); background:var(--cream)}
+
+/* FOOTER */
+footer{padding:48px clamp(20px,5vw,64px) 28px; background:var(--cocoa); color:var(--cream)}
+.fgrid{max-width:1280px; margin:0 auto; display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:32px}
+@media (max-width:800px){.fgrid{grid-template-columns:1fr 1fr}}
+footer h4{font-size:11px; letter-spacing:.16em; text-transform:uppercase; opacity:.55; margin:0 0 14px; font-weight:500}
+footer ul{list-style:none; padding:0; margin:0; font-size:14px; line-height:2}
+footer ul a{color:var(--cream); text-decoration:none; opacity:.78}
+footer ul a:hover{opacity:1; color:var(--peach-2)}
+.fmeta{max-width:1280px; margin:36px auto 0; padding-top:18px; border-top:1px solid rgba(255,255,255,.14); display:flex; justify-content:space-between; font-size:12px; opacity:.55; flex-wrap:wrap; gap:8px}
+
+/* RESERVE MODAL */
+.modal-bg{position:fixed; inset:0; background:rgba(75,42,26,.55); display:none; z-index:200; backdrop-filter:blur(6px); align-items:center; justify-content:center; padding:20px}
+.modal-bg.open{display:flex}
+.modal{background:var(--cream); border-radius:24px; padding:36px; max-width:480px; width:100%; max-height:90vh; overflow-y:auto}
+.modal h3{font-family:"DM Serif Display",serif; font-weight:400; font-size:30px; margin:0 0 8px; letter-spacing:-.01em}
+.modal h3 em{font-style:italic; color:var(--peach-2)}
+.modal .pill{margin-bottom:14px; background:var(--peach)}
+.modal p{font-size:15px; line-height:1.6; opacity:.78; margin:0 0 18px}
+.modal .price-row{display:flex; justify-content:space-between; padding:18px 0; border-top:1px solid var(--rule); border-bottom:1px solid var(--rule); margin:18px 0; align-items:center}
+.modal .price-row b{font-family:"DM Serif Display",serif; font-size:32px; font-weight:400; line-height:1}
+.modal .price-row span{font-size:13px; opacity:.6}
+.modal .actions{display:flex; gap:10px; flex-direction:column; margin-top:18px}
+.modal .actions .btn{padding:16px; justify-content:center}
+.modal .close{background:none; border:none; font:inherit; font-size:13px; color:var(--cocoa); opacity:.5; cursor:pointer; padding:6px; text-align:center}
+.modal .close:hover{opacity:1}
+.unverified-flag{font-size:12px; padding:12px 14px; background:color-mix(in oklab, var(--warn) 14%, var(--cream)); border:1px solid color-mix(in oklab, var(--warn) 30%, transparent); border-radius:12px; color:var(--warn); margin-top:14px; line-height:1.5}
+.unverified-flag b{font-weight:700}
+</style>
+</head>
+<body>
+
+<nav class="top">
+  <a href="/" class="brand"><span class="dot"></span> Shihtzu Factory <small>· Texas</small></a>
+  <div class="menu">
+    <a href="#litter">Available Now</a>
+    <a href="#story">About Us</a>
+    <a href="#graduates">Graduates</a>
+    <a href="#shows">Show Wins</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div class="right">
+    <span class="navtext"><a href="sms:13252607882">Text · (325) 260-7882</a></span>
+    <button class="toggle" id="themeToggle" title="Theme">◐</button>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-grid">
+    <div>
+      <span class="pill">✦ Tiny Shih Tzu · Abilene, Texas</span>
+      <h1>Tiny dogs. <em>Big</em> personalities.</h1>
+      <p class="lead">A small, family-run Shih Tzu house in West Texas. We breed for the cobby, flat-faced, smaller side of the standard — five to nine pounds full grown — with a special love for the rare chocolate and liver coats.</p>
+      <div class="ctas">
+        <a class="btn" href="#litter">See available puppies →</a>
+        <a class="btn ghost" href="#story">About us</a>
+      </div>
+      <div class="hero-trust">
+        <span><b>AKC</b> hobby breeders</span>
+        <span><b>Raised</b> inside the home</span>
+        <span><b>Health</b> guaranteed</span>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <img class="main-img" src="photos/gucci_star_188.JPG" alt="Gucci, a tiny dark-chocolate Shih Tzu">
+      <div class="float">
+        <img class="av" src="photos/parsley_close_up_440.JPG" alt="">
+        <div><b>Parsley</b><small>· 2 lb at 12 weeks · solid chocolate</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="trust">
+  <div class="trust-row">
+    <span>Raised inside</span>
+    <span>Paper-trained</span>
+    <span>AKC papers</span>
+    <span>Health guarantee</span>
+    <span>Hand-placed</span>
+    <span>Texas family-run</span>
+  </div>
+</div>
+
+<section class="litter" id="litter">
+  <div class="shead">
+    <span class="pill">This week's litter</span>
+    <h2>Puppies <em>available now</em>.</h2>
+    <p>Each puppy is reserved with a $500 non-refundable deposit. Remaining balance is settled at pickup or shipping. If you don't see what you want, text us — we may have it, just not photographed yet.</p>
+  </div>
+
+  <div class="litter-grid">
+    <article class="card">
+      <div class="ph"><span class="badge held">On Hold</span><img src="photos/chevy_star_022.JPG" alt="Chevy, a small dark chocolate male"></div>
+      <div class="body">
+        <div class="top">
+          <h3>Chevy <em>· male</em></h3>
+          <span class="price">$2,500 <small>AKC · $2,000 CKC</small></span>
+        </div>
+        <p class="desc">Small dark-chocolate male with lots of sass. Charting to be 7–8 pounds full grown.</p>
+        <div class="specs"><span>Dark chocolate</span><span>7–8 lb projected</span><span>AKC or CKC</span></div>
+        <button class="add" disabled>Reserved</button>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="ph"><span class="badge new">New</span><img src="photos/gucci_star_188.JPG" alt="Gucci, a tiny dark chocolate female"></div>
+      <div class="body">
+        <div class="top">
+          <h3>Gucci <em>· female</em></h3>
+          <span class="price">$3,500 <small>$500 hold</small></span>
+        </div>
+        <p class="desc">Dark chocolate from very tiny parents (mom and dad never got over 4 lb). Gorgeous hair, tiny flat face, brown button nose. Outgoing — could go to a breeder home or a family home.</p>
+        <div class="specs"><span>Dark chocolate</span><span>~7 lb projected</span><span>AKC available</span></div>
+        <button class="add" data-name="Gucci — female" data-deposit="500" data-full="3500" data-link="https://buy.stripe.com/PLACEHOLDER_GUCCI">Reserve · $500 deposit</button>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="ph"><img src="photos/parsley_close_up_440.JPG" alt="Parsley, the smallest of his litter"></div>
+      <div class="body">
+        <div class="top">
+          <h3>Parsley <em>· male</em></h3>
+          <span class="price">$3,500 <small>$500 hold</small></span>
+        </div>
+        <p class="desc">The smallest of his litter — 2 pounds at 12 weeks. Solid dark chocolate, thick gorgeous hair, flat smooshie face, big expressive green eyes. Quiet, loving, sweet little guy.</p>
+        <div class="specs"><span>Solid chocolate</span><span>4–5 lb projected</span><span>CKC · AKC option</span></div>
+        <button class="add" data-name="Parsley — male" data-deposit="500" data-full="3500" data-link="https://buy.stripe.com/PLACEHOLDER_PARSLEY">Reserve · $500 deposit</button>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="ph placeholder">Tyra<small>Photo on request — text us</small></div>
+      <div class="body">
+        <div class="top">
+          <h3>Tyra <em>· female</em></h3>
+          <span class="price">$3,500 <small>+$500 AKC</small></span>
+        </div>
+        <p class="desc">Dark chocolate, gorgeous thick fluff hair, big green expressive eyes, tiny button brown nose. Short, cobby, adorable. We were holding her for showing but her nose is slightly pinched and we aren't sure she'll grow out of it.</p>
+        <div class="specs"><span>Dark chocolate</span><span>7–8 lb projected</span><span>CKC base</span></div>
+        <button class="add" data-name="Tyra — female" data-deposit="500" data-full="3500" data-link="https://buy.stripe.com/PLACEHOLDER_TYRA">Reserve · $500 deposit</button>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="story" id="story">
+  <div class="story-grid">
+    <img src="photos/a_perfect_mercedes_096.jpg" alt="Mercedes, a Shih Tzu portrait">
+    <div class="copy">
+      <span class="pill">About us</span>
+      <h3>A small, family-run house in <em>Abilene, Texas</em>.</h3>
+      <p>We've been raising tiny Shih Tzu for over twenty years. Every puppy is born inside the home, raised inside the home, paper-trained on schedule, and current on every vaccine and worming round before they leave us.</p>
+      <p>We breed for the cobby, flat-faced, smaller side of the Shih Tzu standard — most of our adults are below the 9-pound show minimum, which is exactly the pocket-sized type we're after. We have a particular love for the rarer chocolate and liver coats: dark chocolate, light chocolate, white chocolate, the whole range.</p>
+      <p>We are hobby breeders. We show with the AKC for the love of the breed, not for championships. The dogs that don't quite make show conformation are placed as pets — honestly, with full disclosure of why they wouldn't have showed.</p>
+      <div class="story-stats">
+        <div><b>20+</b><span>years breeding</span></div>
+        <div><b>5–9</b><span>lb full grown</span></div>
+        <div><b>100%</b><span>raised inside</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="graduates" id="graduates">
+  <div class="shead">
+    <span class="pill">Graduates</span>
+    <h2>Some of our <em>past placements</em>.</h2>
+    <p>Hundreds of tiny Shih Tzu have left this house for homes across Texas and the country. Here are a few of them.</p>
+  </div>
+  <div class="grad-grid">
+    <div class="grad"><img src="photos/a_perfect_mercedes_096.jpg" alt=""><div class="cap">Mercedes</div></div>
+    <div class="grad"><img src="photos/a_jordan_108.jpg" alt=""><div class="cap">Jordan</div></div>
+    <div class="grad"><img src="photos/a_snow_white_045.jpg" alt=""><div class="cap">Snow</div></div>
+    <div class="grad"><img src="photos/a_ahava_100.jpg" alt=""><div class="cap">Ahava</div></div>
+    <div class="grad"><img src="photos/baby_marko_8291.jpg" alt=""><div class="cap">Marko</div></div>
+    <div class="grad"><img src="photos/a_little_hootie_058.jpg" alt=""><div class="cap">Hootie</div></div>
+    <div class="grad"><img src="photos/adorable_slippers_073.jpg" alt=""><div class="cap">Slippers</div></div>
+    <div class="grad"><img src="photos/a_little_fudge_121.jpg" alt=""><div class="cap">Fudge</div></div>
+    <div class="grad"><img src="photos/a_prada_purple_028.jpg" alt=""><div class="cap">Prada</div></div>
+    <div class="grad"><img src="photos/a_flipper_005.jpg" alt=""><div class="cap">Flipper</div></div>
+    <div class="grad"><img src="photos/a_4145.jpg" alt=""><div class="cap">Boots</div></div>
+    <div class="grad"><img src="photos/a_star_rojo_008.jpg" alt=""><div class="cap">Rojo</div></div>
+    <div class="grad"><img src="photos/expresso_3120.JPG" alt=""><div class="cap">Expresso</div></div>
+    <div class="grad"><img src="photos/baby_marko_8264.jpg" alt=""><div class="cap">Baby Marko</div></div>
+    <div class="grad"><img src="photos/mercedes_8212.jpg" alt=""><div class="cap">Mercedes</div></div>
+    <div class="grad"><img src="photos/a_mercedes_063.jpg" alt=""><div class="cap">Mercedes</div></div>
+  </div>
+</section>
+
+<section class="shows" id="shows">
+  <div class="shead">
+    <span class="pill">Show Day</span>
+    <h2>From the <em>show ring</em>.</h2>
+    <p>We show with the AKC for the love of it. Most of our dogs are below the 9-pound minimum — we go to prove the tiny ones have just as good conformation as the bigger ones.</p>
+  </div>
+  <div class="show-grid">
+    <article class="show">
+      <div class="ph"><img src="photos/AA_Midland_Boots.jpg" alt=""></div>
+      <div class="body"><div class="where">Midland</div><h4>Boots in the ring</h4><p>Showing the smaller end of the breed standard.</p></div>
+    </article>
+    <article class="show">
+      <div class="ph"><img src="photos/AA_midland_Mercedes_Group_2nd.jpg" alt=""></div>
+      <div class="body"><div class="where">Midland · Group</div><h4>Mercedes — Group 2nd</h4><p>Group placement at Midland.</p></div>
+    </article>
+    <article class="show">
+      <div class="ph"><img src="photos/crispy_critters_win_in_new_mexico_1.jpg" alt=""></div>
+      <div class="body"><div class="where">New Mexico</div><h4>Crispy Critters win</h4><p>One of our smaller dogs taking a New Mexico ribbon.</p></div>
+    </article>
+    <article class="show">
+      <div class="ph"><img src="photos/a_best_one_ruffles__JJ_4557-AblnMay2016-HR3.jpg" alt=""></div>
+      <div class="body"><div class="where">Abilene · May</div><h4>Ruffles, best one</h4><p>From the Abilene show, May.</p></div>
+    </article>
+    <article class="show">
+      <div class="ph"><img src="photos/a_star_is_born____JJ_4559-AblnMay2016-HR3.jpg" alt=""></div>
+      <div class="body"><div class="where">Abilene · May</div><h4>A star is born</h4><p>One of our show prospects on the day.</p></div>
+    </article>
+    <article class="show">
+      <div class="ph"><img src="photos/a_san_angelo_show_614.jpg" alt=""></div>
+      <div class="body"><div class="where">San Angelo</div><h4>San Angelo show</h4><p>Showing the cobby, smaller side of the standard.</p></div>
+    </article>
+  </div>
+</section>
+
+<section class="shelf" id="shelf">
+  <div class="shead">
+    <span class="pill">Welcome shelf</span>
+    <h2>For the <em>first day home</em>.</h2>
+    <p>Pieces sized for the tiny end of the breed. Add to your reservation — ships with the puppy.</p>
+  </div>
+  <div class="shelf-grid">
+    <article class="acc">
+      <div class="ico">⌒</div>
+      <h4>Hand-loomed mini collar</h4>
+      <span class="px">$48</span>
+      <button class="add" data-name="Mini collar" data-deposit="48" data-full="48" data-link="https://buy.stripe.com/PLACEHOLDER_COLLAR">Add — $48</button>
+    </article>
+    <article class="acc">
+      <div class="ico">⊛</div>
+      <h4>Top-knot bow set, 3-pack</h4>
+      <span class="px">$24</span>
+      <button class="add" data-name="Top-knot bow set (3)" data-deposit="24" data-full="24" data-link="https://buy.stripe.com/PLACEHOLDER_BOWS">Add — $24</button>
+    </article>
+    <article class="acc">
+      <div class="ico">∽</div>
+      <h4>Brush &amp; comb starter</h4>
+      <span class="px">$62</span>
+      <button class="add" data-name="Brush &amp; comb starter" data-deposit="62" data-full="62" data-link="https://buy.stripe.com/PLACEHOLDER_BRUSH">Add — $62</button>
+    </article>
+    <article class="acc">
+      <div class="ico">◍</div>
+      <h4>Welcome-home bundle</h4>
+      <span class="px">$145</span>
+      <button class="add" data-name="Welcome-home bundle" data-deposit="145" data-full="145" data-link="https://buy.stripe.com/PLACEHOLDER_BUNDLE">Add — $145</button>
+    </article>
+  </div>
+</section>
+
+<section class="promise">
+  <div class="shead"><span class="pill">Our Promise</span><h2>What every puppy <em>comes with</em>.</h2></div>
+  <div class="promise-grid">
+    <div class="promise-card"><div class="ico">i</div><h4>Health guaranteed</h4><p>Free of known genetic defect that would cause death, certified by us at placement and validated by your vet within the contract window.</p></div>
+    <div class="promise-card"><div class="ico">ii</div><h4>Vaccines current</h4><p>Up to date on every round, wormed on schedule. Records travel home with the puppy.</p></div>
+    <div class="promise-card"><div class="ico">iii</div><h4>AKC papers</h4><p>Full AKC or CKC, your choice. Full AKC removes breeding restrictions — we disclose what we observed.</p></div>
+    <div class="promise-card"><div class="ico">iv</div><h4>Honest match</h4><p>If a puppy isn't right for show, we tell you why and place them as pets. We match by fit, not by deposit speed.</p></div>
+  </div>
+</section>
+
+<div class="sabbath">
+  <p>"We rest with our family from sundown Friday to sundown Saturday — we'll write you back after."</p>
+</div>
+
+<section class="contact" id="contact">
+  <div class="cgrid">
+    <div>
+      <span class="pill">Get in touch</span>
+      <h2>Tell us about <em>your home</em>.</h2>
+      <div class="row"><span class="label">Email</span><a href="mailto:shihtzufactory@hotmail.com">shihtzufactory@hotmail.com</a></div>
+      <div class="row"><span class="label">Home phone</span><a href="tel:13256760200">(325) 676-0200</a></div>
+      <div class="row"><span class="label">Text</span><a href="sms:13252607882">(325) 260-7882</a></div>
+      <div class="row"><span class="label">Where</span><span>Abilene, Texas</span></div>
+      <div class="row"><span class="label">Hours</span><span>Closed Sabbath: sundown Fri — sundown Sat</span></div>
+    </div>
+    <form action="https://formspree.io/f/PLACEHOLDER" method="POST" onsubmit="event.preventDefault(); alert('Form submission needs Formspree (or similar) endpoint configured. See README.');">
+      <input name="name" placeholder="Your name" required>
+      <input name="email" type="email" placeholder="Your email" required>
+      <input name="phone" placeholder="Phone (optional)">
+      <textarea name="message" placeholder="Tell us about your home, who's in it, and the kind of dog you're imagining." required></textarea>
+      <button class="btn" type="submit">Send →</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="fgrid">
+    <div>
+      <div class="brand" style="font-size:24px; color:var(--cream); margin-bottom:14px"><span class="dot"></span> Shihtzu Factory</div>
+      <p style="font-size:13px; opacity:.7; max-width:320px; line-height:1.55; margin:0">A small, family-run Shih Tzu house in Abilene, Texas. Tiny, cobby, hand-placed since the 1990s.</p>
+    </div>
+    <div><h4>Puppies</h4><ul><li><a href="#litter">Available now</a></li><li><a href="#graduates">Past graduates</a></li><li><a href="#shows">Show wins</a></li></ul></div>
+    <div><h4>House</h4><ul><li><a href="#story">About us</a></li><li><a href="#promise">Our promise</a></li><li><a href="#shelf">Welcome shelf</a></li></ul></div>
+    <div><h4>Contact</h4><ul><li><a href="mailto:shihtzufactory@hotmail.com">Email</a></li><li><a href="tel:13256760200">Call</a></li><li><a href="sms:13252607882">Text</a></li></ul></div>
+  </div>
+  <div class="fmeta">
+    <span>© <span id="year"></span> Shihtzu Factory · Abilene, Texas</span>
+    <span>Site by Topaz · Set in DM Serif Display &amp; DM Sans</span>
+  </div>
+</footer>
+
+<div class="modal-bg" id="modalBg" onclick="if(event.target===this)closeModal()">
+  <div class="modal">
+    <span class="pill">Reserve</span>
+    <h3 id="modalTitle">Reserve <em>this puppy</em></h3>
+    <p id="modalCopy">A $500 non-refundable deposit holds the puppy and removes them from the listing. We will email you the bill of sale within one business day. The remaining balance is due at pickup or shipping.</p>
+    <div class="price-row">
+      <div><div style="font-size:11px; letter-spacing:.16em; text-transform:uppercase; opacity:.6; margin-bottom:4px">Due now</div><b id="modalPrice">$500</b></div>
+      <div style="text-align:right"><span id="modalBalance">Balance due at pickup</span></div>
+    </div>
+    <div class="actions">
+      <a class="btn" id="modalGo" href="#" target="_blank">Continue to Stripe Checkout →</a>
+      <button class="close" onclick="closeModal()">Cancel</button>
+    </div>
+    <div class="unverified-flag" id="unverifiedFlag">
+      <b>Stripe Payment Link not yet wired.</b> Create a Stripe Payment Link in the dashboard for this puppy/product, then replace the placeholder URL in <code>index.html</code> (search for <code>PLACEHOLDER_</code>).
+    </div>
+  </div>
+</div>
+
+<script>
+  // theme
+  document.documentElement.setAttribute('data-theme', localStorage.getItem('stf-theme') || 'light');
+  document.getElementById('themeToggle').onclick = () => {
+    const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('stf-theme', next);
+  };
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // reserve / add modal
+  document.querySelectorAll('button.add[data-link]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const name = btn.dataset.name;
+      const deposit = parseInt(btn.dataset.deposit, 10);
+      const full = parseInt(btn.dataset.full, 10);
+      const link = btn.dataset.link;
+      const isReservation = deposit < full;
+      document.getElementById('modalTitle').innerHTML = isReservation ? `Reserve <em>${name}</em>` : `Add <em>${name}</em>`;
+      document.getElementById('modalCopy').textContent = isReservation
+        ? 'A $500 non-refundable deposit holds the puppy and removes them from the listing. The remaining balance is due at pickup or shipping.'
+        : 'Add this item to your order. It will be packed with your puppy at pickup or shipped separately.';
+      document.getElementById('modalPrice').textContent = '$' + deposit.toLocaleString();
+      document.getElementById('modalBalance').textContent = isReservation
+        ? 'Balance $' + (full - deposit).toLocaleString() + ' due at pickup'
+        : 'Total $' + full.toLocaleString();
+      const go = document.getElementById('modalGo');
+      const isPlaceholder = link.includes('PLACEHOLDER_');
+      go.href = link;
+      go.textContent = isPlaceholder ? 'Stripe link not yet configured' : 'Continue to Stripe Checkout →';
+      go.style.opacity = isPlaceholder ? '.55' : '1';
+      go.style.pointerEvents = isPlaceholder ? 'none' : 'auto';
+      document.getElementById('unverifiedFlag').style.display = isPlaceholder ? 'block' : 'none';
+      document.getElementById('modalBg').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+  function closeModal(){
+    document.getElementById('modalBg').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', e => { if(e.key === 'Escape') closeModal(); });
+</script>
+</body>
+</html>
