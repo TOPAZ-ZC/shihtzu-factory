@@ -84,5 +84,26 @@
     "description": "",
     "photo": null,
     "payment_link": "https://paypal.me/NancyMcCullough?locale.x=en_US&country.x=US"
+  },
+  {
+    "id": "lexus-og0n",
+    "name": "Lexus",
+    "sex": "female",
+    "coat": "Dark chocolate",
+    "weight": "6-7",
+    "registration": "CKC",
+    "status": "available",
+    "price": 3500,
+    "deposit": 500,
+    "description": "Lexus is a tiny dark chocolate girl from our smallest show dog and our smallest sire (4lbs.)  She will be small around 6 pounds. With a thick double coat and a tiny button nose, she’s a cutie.",
+    "photos": [
+      "photos/img_7690_5o38e0jk.jpeg",
+      "photos/img_7691_5o3gtaq8.jpeg",
+      "photos/img_7697_5o3nl87j.jpeg",
+      "photos/img_7696_5o3t2gw2.jpeg",
+      "photos/img_7702_5o3ybqy8.jpeg"
+    ],
+    "payment_link": null,
+    "photo": "photos/img_7690_5o38e0jk.jpeg"
   }
 ]
