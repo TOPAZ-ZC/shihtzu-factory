@@ -72,9 +72,12 @@
     "status": "available",
     "price": 3500,
     "deposit": 500,
-    "description": "Dark chocolate, gorgeous thick fluff hair, big green expressive eyes, tiny button brown nose. Short, cobby, adorable. We were holding her for showing but her nose is slightly pinched and we aren't sure she'll grow out of it.",
-    "photo": "photos/img_7646_4b5fn.jpeg",
-    "payment_link": "https://paypal.me/NancyMcCullough?locale.x=en_US&country.x=US"
+    "description": "Dark chocolate, gorgeous thick fluff hair, big green expressive eyes, tiny button brown nose. Short, cobby, adorable. We were holding her for showing but her nose is slightly pinched nose",
+    "photos": [
+      "photos/img_7646_4b5fn.jpeg"
+    ],
+    "payment_link": "https://paypal.me/NancyMcCullough?locale.x=en_US&country.x=US",
+    "photo": "photos/img_7646_4b5fn.jpeg"
   },
   {
     "id": "zorro-l0zd",
