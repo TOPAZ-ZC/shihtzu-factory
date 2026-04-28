@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Shihtzu Factory · Admin</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#FFF6EE; --cream-2:#FBE9D6; --peach:#FFCBA8; --peach-2:#FFB280;
+  --cocoa:#4B2A1A; --cocoa-soft:rgba(75,42,26,.72); --rule:rgba(75,42,26,.16);
+  --warn:#C84A1F; --ok:#2E7D52;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:"DM Sans",system-ui,sans-serif; background:var(--cream); color:var(--cocoa); line-height:1.5; -webkit-font-smoothing:antialiased}
+.serif{font-family:"DM Serif Display",serif}
+img{display:block; max-width:100%}
+.hidden{display:none !important}
+
+/* LOGIN */
+.login-wrap{min-height:100vh; display:flex; align-items:center; justify-content:center; padding:24px; background:radial-gradient(ellipse at top right, var(--peach) 0%, var(--cream) 65%)}
+.login-card{background:var(--cream); padding:40px 36px; border-radius:24px; max-width:420px; width:100%; box-shadow:0 30px 80px -30px rgba(75,42,26,.3)}
+.login-card .brand{font-family:"DM Serif Display",serif; font-size:32px; margin:0 0 6px; display:flex; align-items:center; gap:10px}
+.login-card .brand .dot{width:12px; height:12px; background:var(--peach-2); border-radius:999px}
+.login-card .sub{font-size:14px; opacity:.65; margin:0 0 28px}
+.login-card label{display:block; font-size:12px; font-weight:600; letter-spacing:.06em; text-transform:uppercase; opacity:.65; margin:14px 0 6px}
+.login-card input{width:100%; padding:14px 16px; border:1px solid var(--rule); background:var(--cream-2); font:inherit; font-size:15px; border-radius:12px; color:var(--cocoa)}
+.login-card input:focus{outline:none; border-color:var(--peach-2); background:var(--cream)}
+.login-card .btn{width:100%; padding:14px; margin-top:24px; background:var(--cocoa); color:var(--cream); border:none; border-radius:999px; font:inherit; font-weight:700; font-size:15px; cursor:pointer}
+.login-card .btn:hover{background:var(--peach-2); color:var(--cocoa)}
+.login-card .btn:disabled{opacity:.5; cursor:wait}
+.login-card .err{margin-top:14px; padding:10px 14px; background:color-mix(in oklab, var(--warn) 14%, var(--cream)); border:1px solid color-mix(in oklab, var(--warn) 30%, transparent); border-radius:10px; color:var(--warn); font-size:13px}
+
+/* DASHBOARD */
+.app-nav{background:var(--cocoa); color:var(--cream); padding:14px 28px; display:flex; justify-content:space-between; align-items:center; position:sticky; top:0; z-index:50}
+.app-nav .brand{font-family:"DM Serif Display",serif; font-size:22px; display:flex; align-items:center; gap:8px}
+.app-nav .brand .dot{width:9px; height:9px; background:var(--peach-2); border-radius:999px}
+.app-nav .who{font-size:13px; opacity:.7; margin-right:14px}
+.app-nav .right{display:flex; gap:12px; align-items:center}
+.app-nav button{background:transparent; color:var(--cream); border:1px solid rgba(255,255,255,.2); padding:8px 16px; font:inherit; font-size:13px; border-radius:999px; cursor:pointer}
+.app-nav button:hover{background:rgba(255,255,255,.1)}
+.app-nav .view-site{background:var(--peach-2); color:var(--cocoa); border:none; font-weight:600}
+
+.app{padding:32px clamp(20px,4vw,48px); max-width:1280px; margin:0 auto}
+.tabs{display:flex; gap:6px; margin-bottom:32px; border-bottom:1px solid var(--rule)}
+.tabs button{background:none; border:none; padding:14px 20px; font:inherit; font-size:15px; font-weight:500; cursor:pointer; color:var(--cocoa-soft); border-bottom:2px solid transparent; margin-bottom:-1px}
+.tabs button.active{color:var(--cocoa); border-bottom-color:var(--peach-2)}
+.tabs button:hover:not(.active){color:var(--cocoa)}
+
+.tab-panel{display:none}
+.tab-panel.active{display:block}
+
+.section-head{display:flex; justify-content:space-between; align-items:center; margin-bottom:20px}
+.section-head h2{font-family:"DM Serif Display",serif; font-weight:400; font-size:32px; margin:0; letter-spacing:-.01em}
+.section-head .add-btn{background:var(--cocoa); color:var(--cream); border:none; padding:12px 22px; border-radius:999px; font:inherit; font-weight:600; cursor:pointer; font-size:14px}
+.section-head .add-btn:hover{background:var(--peach-2); color:var(--cocoa)}
+
+.list{display:flex; flex-direction:column; gap:12px}
+.row{background:var(--cream-2); border-radius:18px; padding:16px; display:grid; grid-template-columns:84px 1fr auto; gap:18px; align-items:center}
+.row .thumb{width:84px; height:84px; border-radius:12px; object-fit:cover; background:var(--cream)}
+.row .thumb.placeholder{display:flex; align-items:center; justify-content:center; font-family:"DM Serif Display",serif; font-style:italic; font-size:30px; color:var(--peach-2)}
+.row .meta h3{font-family:"DM Serif Display",serif; font-weight:400; font-size:22px; margin:0 0 4px; line-height:1.1}
+.row .meta .specs{font-size:13px; opacity:.7; line-height:1.5}
+.row .meta .pricetag{font-weight:700; margin-top:4px}
+.row .meta .status-tag{display:inline-block; padding:3px 10px; border-radius:999px; font-size:11px; font-weight:600; letter-spacing:.05em; text-transform:uppercase; margin-left:8px; vertical-align:middle}
+.row .meta .status-tag.available{background:#cff7e0; color:var(--ok)}
+.row .meta .status-tag.on_hold{background:#ffe1c2; color:#a05014}
+.row .meta .status-tag.sold{background:#e8e3d8; color:#6e6357}
+.row .actions{display:flex; gap:8px}
+.row .actions button{background:var(--cream); border:1px solid var(--rule); padding:8px 14px; font:inherit; font-size:13px; border-radius:999px; cursor:pointer; color:var(--cocoa)}
+.row .actions button:hover{background:var(--cocoa); color:var(--cream); border-color:var(--cocoa)}
+.row .actions .delete:hover{background:var(--warn); border-color:var(--warn); color:#fff}
+
+/* MODAL EDITOR */
+.modal-bg{position:fixed; inset:0; background:rgba(75,42,26,.55); display:none; z-index:200; backdrop-filter:blur(6px); align-items:flex-start; justify-content:center; padding:60px 20px; overflow-y:auto}
+.modal-bg.open{display:flex}
+.modal{background:var(--cream); border-radius:24px; padding:36px; max-width:640px; width:100%}
+.modal h3{font-family:"DM Serif Display",serif; font-weight:400; font-size:28px; margin:0 0 6px}
+.modal .sub{font-size:13px; opacity:.6; margin:0 0 24px}
+.modal .grid2{display:grid; grid-template-columns:1fr 1fr; gap:14px}
+@media (max-width:560px){.modal .grid2{grid-template-columns:1fr}}
+.modal label{display:block; font-size:12px; font-weight:600; letter-spacing:.06em; text-transform:uppercase; opacity:.65; margin:14px 0 6px}
+.modal input, .modal textarea, .modal select{width:100%; padding:12px 14px; border:1px solid var(--rule); background:var(--cream-2); font:inherit; font-size:14px; border-radius:10px; color:var(--cocoa)}
+.modal textarea{min-height:90px; resize:vertical; font-family:inherit}
+.modal input:focus, .modal textarea:focus, .modal select:focus{outline:none; border-color:var(--peach-2); background:var(--cream)}
+.photo-zone{margin-top:6px; border:2px dashed var(--rule); border-radius:14px; padding:24px; text-align:center; cursor:pointer; transition:border-color .2s ease, background .2s ease}
+.photo-zone:hover, .photo-zone.dragover{border-color:var(--peach-2); background:var(--cream-2)}
+.photo-zone p{margin:0; font-size:13px; opacity:.65}
+.photo-zone img{max-height:140px; margin:0 auto 12px; border-radius:10px}
+.photo-zone .filename{font-size:12px; opacity:.5; margin-top:8px; word-break:break-all}
+.modal-footer{display:flex; gap:10px; justify-content:flex-end; margin-top:28px; padding-top:20px; border-top:1px solid var(--rule)}
+.modal-footer button{padding:12px 22px; border-radius:999px; font:inherit; font-weight:600; cursor:pointer; font-size:14px; border:none}
+.modal-footer .cancel{background:transparent; color:var(--cocoa); border:1px solid var(--rule)}
+.modal-footer .cancel:hover{background:var(--cream-2)}
+.modal-footer .save{background:var(--cocoa); color:var(--cream)}
+.modal-footer .save:hover{background:var(--peach-2); color:var(--cocoa)}
+.modal-footer .save:disabled{opacity:.5; cursor:wait}
+
+/* TOAST */
+.toast{position:fixed; bottom:24px; right:24px; background:var(--cocoa); color:var(--cream); padding:14px 22px; border-radius:14px; font-size:14px; box-shadow:0 16px 40px -10px rgba(0,0,0,.3); z-index:300; transform:translateY(120%); transition:transform .3s ease}
+.toast.show{transform:translateY(0)}
+.toast.error{background:var(--warn)}
+.toast.ok{background:var(--ok); color:#fff}
+
+/* HELPERS */
+.empty{text-align:center; padding:48px 0; opacity:.55; font-style:italic}
+.spinner{display:inline-block; width:14px; height:14px; border:2px solid currentColor; border-right-color:transparent; border-radius:999px; animation:spin .7s linear infinite; vertical-align:-2px; margin-right:6px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.note{margin-top:14px; padding:10px 14px; background:#cff7e0; border-radius:10px; color:var(--ok); font-size:13px}
+</style>
+</head>
+<body>
+
+<!-- LOGIN VIEW -->
+<div id="loginView" class="login-wrap">
+  <div class="login-card">
+    <h1 class="brand"><span class="dot"></span>Shihtzu Factory</h1>
+    <p class="sub">Admin sign in</p>
+    <form id="loginForm">
+      <label>Email</label>
+      <input type="email" id="loginEmail" required autocomplete="username" placeholder="you@email.com">
+      <label>Password</label>
+      <input type="password" id="loginPassword" required autocomplete="current-password">
+      <button type="submit" class="btn" id="loginBtn">Sign in</button>
+      <div id="loginErr" class="err hidden"></div>
+    </form>
+  </div>
+</div>
+
+<!-- DASHBOARD VIEW -->
+<div id="appView" class="hidden">
+  <nav class="app-nav">
+    <div class="brand"><span class="dot"></span>Shihtzu Factory <span style="font-size:13px; opacity:.6; margin-left:6px">· Admin</span></div>
+    <div class="right">
+      <span class="who" id="whoami"></span>
+      <a class="view-site" href="/" target="_blank" style="text-decoration:none; padding:8px 16px; border-radius:999px; font-size:13px; font-weight:600">View site →</a>
+      <button id="logoutBtn">Sign out</button>
+    </div>
+  </nav>
+
+  <div class="app">
+    <div class="tabs">
+      <button class="active" data-tab="puppies">Puppies</button>
+      <button data-tab="accessories">Welcome shelf</button>
+    </div>
+
+    <section id="tab-puppies" class="tab-panel active">
+      <div class="section-head"><h2>Available puppies</h2><button class="add-btn" onclick="openPuppyEditor()">+ Add a puppy</button></div>
+      <div class="list" id="puppyList"><div class="empty"><span class="spinner"></span> Loading…</div></div>
+    </section>
+
+    <section id="tab-accessories" class="tab-panel">
+      <div class="section-head"><h2>Welcome shelf</h2><button class="add-btn" onclick="openAccessoryEditor()">+ Add an item</button></div>
+      <div class="list" id="accessoryList"><div class="empty"><span class="spinner"></span> Loading…</div></div>
+    </section>
+  </div>
+</div>
+
+<!-- PUPPY EDITOR MODAL -->
+<div class="modal-bg" id="puppyModal" onclick="if(event.target===this)closePuppy()">
+  <div class="modal">
+    <h3 id="puppyModalTitle">Edit puppy</h3>
+    <p class="sub">Changes save to GitHub immediately. The site rebuilds in ~30 seconds.</p>
+    <div class="grid2">
+      <div><label>Name</label><input id="p_name" placeholder="e.g. Mercedes"></div>
+      <div><label>Sex</label><select id="p_sex"><option value="male">male</option><option value="female">female</option></select></div>
+      <div><label>Coat</label><input id="p_coat" placeholder="e.g. Dark chocolate"></div>
+      <div><label>Projected weight</label><input id="p_weight" placeholder="e.g. 6–7 lb projected"></div>
+      <div><label>Registration</label><input id="p_registration" placeholder="e.g. AKC full"></div>
+      <div><label>Status</label><select id="p_status"><option value="available">Available</option><option value="on_hold">On hold</option><option value="sold">Sold</option></select></div>
+      <div><label>Price (USD)</label><input id="p_price" type="number" min="0" placeholder="2500"></div>
+      <div><label>CKC price (optional)</label><input id="p_ckc_price" type="number" min="0" placeholder="leave empty if same as AKC"></div>
+      <div><label>Deposit (USD)</label><input id="p_deposit" type="number" min="0" value="500"></div>
+      <div><label>Stripe Payment Link (optional)</label><input id="p_payment_link" placeholder="https://buy.stripe.com/..."></div>
+    </div>
+    <label>Description</label>
+    <textarea id="p_description" placeholder="Tell us about this puppy — voice should sound like the breeder, not a sales pitch."></textarea>
+    <label>Photo</label>
+    <div class="photo-zone" id="p_photoZone">
+      <img id="p_photoPreview" class="hidden" alt="">
+      <p id="p_photoMsg">Drag a photo here or click to choose</p>
+      <p class="filename" id="p_photoFilename"></p>
+    </div>
+    <input type="file" id="p_photoFile" accept="image/*" class="hidden">
+    <div class="modal-footer">
+      <button class="cancel" onclick="closePuppy()">Cancel</button>
+      <button class="save" id="p_saveBtn" onclick="savePuppy()">Save puppy</button>
+    </div>
+  </div>
+</div>
+
+<!-- ACCESSORY EDITOR MODAL -->
+<div class="modal-bg" id="accessoryModal" onclick="if(event.target===this)closeAccessory()">
+  <div class="modal">
+    <h3 id="accessoryModalTitle">Edit accessory</h3>
+    <p class="sub">Welcome-shelf items appear on the public site under "For the first day home."</p>
+    <div class="grid2">
+      <div><label>Name</label><input id="a_name" placeholder="e.g. Hand-loomed mini collar"></div>
+      <div><label>Price (USD)</label><input id="a_price" type="number" min="0" placeholder="48"></div>
+      <div><label>Icon (single character)</label><input id="a_icon" maxlength="2" placeholder="⌒"></div>
+      <div><label>Active</label><select id="a_active"><option value="true">Yes — show on site</option><option value="false">No — hide</option></select></div>
+    </div>
+    <label>Stripe Payment Link (optional)</label>
+    <input id="a_payment_link" placeholder="https://buy.stripe.com/...">
+    <div class="modal-footer">
+      <button class="cancel" onclick="closeAccessory()">Cancel</button>
+      <button class="save" id="a_saveBtn" onclick="saveAccessory()">Save item</button>
+    </div>
+  </div>
+</div>
+
+<div id="toast" class="toast"></div>
+
+<script>
+// ====== CONFIG ======
+const API_BASE = 'https://api.shihtzufactory.com';
+const TOKEN_KEY = 'stf-admin-token';
+const EMAIL_KEY = 'stf-admin-email';
+
+// ====== STATE ======
+let session = null;
+let catalog = { puppies: [], accessories: [] };
+let editingPuppyIdx = -1;
+let editingAccessoryIdx = -1;
+let pendingPhoto = null; // {dataUrl, filename}
+
+// ====== UTIL ======
+const $ = id => document.getElementById(id);
+const fmt$ = n => '$' + Number(n||0).toLocaleString();
+function toast(msg, kind = '') {
+  const t = $('toast');
+  t.className = 'toast show ' + kind;
+  t.textContent = msg;
+  clearTimeout(toast._t);
+  toast._t = setTimeout(() => t.className = 'toast', 3500);
+}
+async function api(path, opts = {}) {
+  const headers = Object.assign({'Content-Type': 'application/json'}, opts.headers || {});
+  if (session?.token) headers['Authorization'] = 'Bearer ' + session.token;
+  const res = await fetch(API_BASE + path, Object.assign({}, opts, { headers }));
+  if (res.status === 401) { logout(); throw new Error('Session expired — please sign in again.'); }
+  const data = await res.json().catch(() => ({}));
+  if (!res.ok) throw new Error(data.error || ('HTTP ' + res.status));
+  return data;
+}
+
+// ====== AUTH ======
+async function login(email, password) {
+  const data = await fetch(API_BASE + '/api/login', {
+    method: 'POST', headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({ email, password })
+  }).then(r => r.json());
+  if (!data.token) throw new Error(data.error || 'Login failed');
+  session = { token: data.token, email };
+  localStorage.setItem(TOKEN_KEY, data.token);
+  localStorage.setItem(EMAIL_KEY, email);
+  showApp();
+}
+function logout() {
+  session = null;
+  localStorage.removeItem(TOKEN_KEY);
+  localStorage.removeItem(EMAIL_KEY);
+  $('loginView').classList.remove('hidden');
+  $('appView').classList.add('hidden');
+}
+function tryResume() {
+  const token = localStorage.getItem(TOKEN_KEY);
+  const email = localStorage.getItem(EMAIL_KEY);
+  if (token && email) {
+    session = { token, email };
+    showApp();
+  }
+}
+async function showApp() {
+  $('loginView').classList.add('hidden');
+  $('appView').classList.remove('hidden');
+  $('whoami').textContent = session.email;
+  await loadCatalog();
+}
+$('loginForm').addEventListener('submit', async e => {
+  e.preventDefault();
+  const btn = $('loginBtn'); const err = $('loginErr');
+  err.classList.add('hidden');
+  btn.disabled = true; btn.textContent = 'Signing in…';
+  try {
+    await login($('loginEmail').value.trim().toLowerCase(), $('loginPassword').value);
+  } catch (e) {
+    err.textContent = e.message;
+    err.classList.remove('hidden');
+  } finally {
+    btn.disabled = false; btn.textContent = 'Sign in';
+  }
+});
+$('logoutBtn').addEventListener('click', logout);
+
+// ====== CATALOG ======
+async function loadCatalog() {
+  try {
+    const data = await api('/api/catalog');
+    catalog = data;
+    renderPuppies();
+    renderAccessories();
+  } catch (e) {
+    toast(e.message, 'error');
+  }
+}
+
+// ====== TABS ======
+document.querySelectorAll('.tabs button').forEach(b => {
+  b.addEventListener('click', () => {
+    document.querySelectorAll('.tabs button').forEach(x => x.classList.remove('active'));
+    document.querySelectorAll('.tab-panel').forEach(x => x.classList.remove('active'));
+    b.classList.add('active');
+    $('tab-' + b.dataset.tab).classList.add('active');
+  });
+});
+
+// ====== PUPPIES ======
+function renderPuppies() {
+  const list = $('puppyList');
+  if (!catalog.puppies.length) {
+    list.innerHTML = '<div class="empty">No puppies yet. Click "Add a puppy" to add the first one.</div>';
+    return;
+  }
+  list.innerHTML = catalog.puppies.map((p, i) => {
+    const thumb = p.photo
+      ? `<img class="thumb" src="../${p.photo}?v=${Date.now()}" alt="">`
+      : `<div class="thumb placeholder">${escapeHtml(p.name?.[0]||'?')}</div>`;
+    const status = p.status || 'available';
+    return `<div class="row">
+      ${thumb}
+      <div class="meta">
+        <h3>${escapeHtml(p.name)} <span class="status-tag ${status}">${status.replace('_',' ')}</span></h3>
+        <div class="specs">${[p.sex, p.coat, p.weight, p.registration].filter(Boolean).map(escapeHtml).join(' · ')}</div>
+        <div class="pricetag">${fmt$(p.price)}${p.ckc_price ? ' AKC · ' + fmt$(p.ckc_price) + ' CKC' : ''}</div>
+      </div>
+      <div class="actions">
+        <button onclick="openPuppyEditor(${i})">Edit</button>
+        <button class="delete" onclick="deletePuppy(${i})">Delete</button>
+      </div>
+    </div>`;
+  }).join('');
+}
+function escapeHtml(s){ return String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+function slug(s){ return String(s).toLowerCase().trim().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,''); }
+
+function openPuppyEditor(idx = -1) {
+  editingPuppyIdx = idx;
+  pendingPhoto = null;
+  const p = idx >= 0 ? catalog.puppies[idx] : { name:'', sex:'female', coat:'', weight:'', registration:'AKC', status:'available', price:'', ckc_price:'', deposit:500, description:'', photo:null, payment_link:'' };
+  $('puppyModalTitle').textContent = idx >= 0 ? 'Edit ' + p.name : 'Add a puppy';
+  ['name','sex','coat','weight','registration','status'].forEach(k => $('p_' + k).value = p[k] ?? '');
+  $('p_price').value = p.price ?? '';
+  $('p_ckc_price').value = p.ckc_price ?? '';
+  $('p_deposit').value = p.deposit ?? 500;
+  $('p_description').value = p.description ?? '';
+  $('p_payment_link').value = p.payment_link ?? '';
+  const prev = $('p_photoPreview');
+  if (p.photo) {
+    prev.src = '../' + p.photo;
+    prev.classList.remove('hidden');
+    $('p_photoMsg').textContent = 'Click to replace';
+    $('p_photoFilename').textContent = p.photo;
+  } else {
+    prev.classList.add('hidden');
+    $('p_photoMsg').textContent = 'Drag a photo here or click to choose';
+    $('p_photoFilename').textContent = '';
+  }
+  $('puppyModal').classList.add('open');
+}
+function closePuppy(){ $('puppyModal').classList.remove('open'); pendingPhoto = null; }
+
+async function savePuppy() {
+  const btn = $('p_saveBtn'); btn.disabled = true; btn.innerHTML = '<span class="spinner"></span>Saving…';
+  try {
+    const name = $('p_name').value.trim();
+    if (!name) throw new Error('Name is required');
+    const id = editingPuppyIdx >= 0 ? catalog.puppies[editingPuppyIdx].id : slug(name) + '-' + Date.now().toString(36).slice(-4);
+    let photoPath = editingPuppyIdx >= 0 ? catalog.puppies[editingPuppyIdx].photo : null;
+    if (pendingPhoto) {
+      const upload = await api('/api/photo', { method:'POST', body: JSON.stringify({ filename: pendingPhoto.filename, dataUrl: pendingPhoto.dataUrl }) });
+      photoPath = upload.path;
+    }
+    const puppy = {
+      id, name, sex: $('p_sex').value, coat: $('p_coat').value.trim(), weight: $('p_weight').value.trim(),
+      registration: $('p_registration').value.trim(), status: $('p_status').value,
+      price: parseInt($('p_price').value, 10) || 0,
+      ckc_price: $('p_ckc_price').value ? parseInt($('p_ckc_price').value, 10) : undefined,
+      deposit: parseInt($('p_deposit').value, 10) || 500,
+      description: $('p_description').value.trim(),
+      photo: photoPath,
+      payment_link: $('p_payment_link').value.trim() || null,
+    };
+    Object.keys(puppy).forEach(k => puppy[k] === undefined && delete puppy[k]);
+    if (editingPuppyIdx >= 0) catalog.puppies[editingPuppyIdx] = puppy;
+    else catalog.puppies.push(puppy);
+    await api('/api/puppies', { method:'PUT', body: JSON.stringify(catalog.puppies) });
+    toast('Saved — site rebuilds in ~30 seconds', 'ok');
+    closePuppy();
+    renderPuppies();
+  } catch (e) {
+    toast(e.message, 'error');
+  } finally {
+    btn.disabled = false; btn.textContent = 'Save puppy';
+  }
+}
+async function deletePuppy(idx) {
+  const p = catalog.puppies[idx];
+  if (!confirm(`Remove ${p.name} from the site?`)) return;
+  catalog.puppies.splice(idx, 1);
+  try {
+    await api('/api/puppies', { method:'PUT', body: JSON.stringify(catalog.puppies) });
+    toast('Deleted', 'ok');
+    renderPuppies();
+  } catch (e) { toast(e.message, 'error'); loadCatalog(); }
+}
+
+// ====== ACCESSORIES ======
+function renderAccessories() {
+  const list = $('accessoryList');
+  if (!catalog.accessories.length) {
+    list.innerHTML = '<div class="empty">No accessories yet.</div>';
+    return;
+  }
+  list.innerHTML = catalog.accessories.map((a, i) => `<div class="row">
+    <div class="thumb placeholder">${escapeHtml(a.icon || '◍')}</div>
+    <div class="meta">
+      <h3>${escapeHtml(a.name)} ${a.active === false ? '<span class="status-tag sold">hidden</span>' : ''}</h3>
+      <div class="pricetag">${fmt$(a.price)}</div>
+    </div>
+    <div class="actions">
+      <button onclick="openAccessoryEditor(${i})">Edit</button>
+      <button class="delete" onclick="deleteAccessory(${i})">Delete</button>
+    </div>
+  </div>`).join('');
+}
+function openAccessoryEditor(idx = -1) {
+  editingAccessoryIdx = idx;
+  const a = idx >= 0 ? catalog.accessories[idx] : { name:'', price:'', icon:'◍', active:true, payment_link:'' };
+  $('accessoryModalTitle').textContent = idx >= 0 ? 'Edit ' + a.name : 'Add an item';
+  $('a_name').value = a.name ?? '';
+  $('a_price').value = a.price ?? '';
+  $('a_icon').value = a.icon ?? '◍';
+  $('a_active').value = a.active === false ? 'false' : 'true';
+  $('a_payment_link').value = a.payment_link ?? '';
+  $('accessoryModal').classList.add('open');
+}
+function closeAccessory(){ $('accessoryModal').classList.remove('open'); }
+async function saveAccessory() {
+  const btn = $('a_saveBtn'); btn.disabled = true; btn.innerHTML = '<span class="spinner"></span>Saving…';
+  try {
+    const name = $('a_name').value.trim();
+    if (!name) throw new Error('Name is required');
+    const id = editingAccessoryIdx >= 0 ? catalog.accessories[editingAccessoryIdx].id : slug(name);
+    const item = {
+      id, name,
+      price: parseInt($('a_price').value, 10) || 0,
+      icon: $('a_icon').value || '◍',
+      active: $('a_active').value === 'true',
+      payment_link: $('a_payment_link').value.trim() || null,
+    };
+    if (editingAccessoryIdx >= 0) catalog.accessories[editingAccessoryIdx] = item;
+    else catalog.accessories.push(item);
+    await api('/api/accessories', { method:'PUT', body: JSON.stringify(catalog.accessories) });
+    toast('Saved — site rebuilds in ~30 seconds', 'ok');
+    closeAccessory();
+    renderAccessories();
+  } catch (e) {
+    toast(e.message, 'error');
+  } finally {
+    btn.disabled = false; btn.textContent = 'Save item';
+  }
+}
+async function deleteAccessory(idx) {
+  const a = catalog.accessories[idx];
+  if (!confirm(`Remove ${a.name}?`)) return;
+  catalog.accessories.splice(idx, 1);
+  try {
+    await api('/api/accessories', { method:'PUT', body: JSON.stringify(catalog.accessories) });
+    toast('Deleted', 'ok');
+    renderAccessories();
+  } catch (e) { toast(e.message, 'error'); loadCatalog(); }
+}
+
+// ====== PHOTO UPLOAD ======
+const photoZone = $('p_photoZone');
+const photoFile = $('p_photoFile');
+photoZone.addEventListener('click', () => photoFile.click());
+['dragover','dragenter'].forEach(ev => photoZone.addEventListener(ev, e => { e.preventDefault(); photoZone.classList.add('dragover'); }));
+['dragleave','drop'].forEach(ev => photoZone.addEventListener(ev, e => { e.preventDefault(); photoZone.classList.remove('dragover'); }));
+photoZone.addEventListener('drop', e => { e.preventDefault(); if (e.dataTransfer.files[0]) handlePhoto(e.dataTransfer.files[0]); });
+photoFile.addEventListener('change', e => { if (e.target.files[0]) handlePhoto(e.target.files[0]); });
+
+async function handlePhoto(file) {
+  if (!file.type.startsWith('image/')) { toast('Please choose an image file', 'error'); return; }
+  // Resize to max 1600px wide on the longest side using canvas
+  const img = new Image();
+  const reader = new FileReader();
+  reader.onload = () => { img.src = reader.result; };
+  img.onload = () => {
+    const maxDim = 1600;
+    const ratio = Math.min(1, maxDim / Math.max(img.width, img.height));
+    const w = Math.round(img.width * ratio);
+    const h = Math.round(img.height * ratio);
+    const canvas = document.createElement('canvas');
+    canvas.width = w; canvas.height = h;
+    canvas.getContext('2d').drawImage(img, 0, 0, w, h);
+    const dataUrl = canvas.toDataURL('image/jpeg', 0.86);
+    pendingPhoto = { dataUrl, filename: sanitizeFilename(file.name) };
+    $('p_photoPreview').src = dataUrl;
+    $('p_photoPreview').classList.remove('hidden');
+    $('p_photoMsg').textContent = 'Photo ready — will upload on save';
+    $('p_photoFilename').textContent = pendingPhoto.filename + ' (' + Math.round(dataUrl.length * 0.75 / 1024) + ' KB)';
+  };
+  reader.readAsDataURL(file);
+}
+function sanitizeFilename(name) {
+  const dot = name.lastIndexOf('.');
+  const base = (dot > 0 ? name.slice(0, dot) : name).toLowerCase().replace(/[^a-z0-9]+/g,'_').replace(/^_+|_+$/g,'') || 'photo';
+  const ext = (dot > 0 ? name.slice(dot+1) : 'jpg').toLowerCase().replace(/[^a-z0-9]/g,'') || 'jpg';
+  return base.slice(0,40) + '_' + Date.now().toString(36).slice(-5) + '.' + ext;
+}
+
+// ====== BOOT ======
+tryResume();
+</script>
+</body>
+</html>
