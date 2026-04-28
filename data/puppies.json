@@ -4,15 +4,15 @@
     "name": "Chevy",
     "sex": "male",
     "coat": "Dark chocolate",
-    "weight": "7–8 lb projected",
+    "weight": "8 lb projected",
     "registration": "AKC or CKC",
+    "status": "on_hold",
     "price": 2500,
     "ckc_price": 2000,
     "deposit": 500,
-    "status": "on_hold",
+    "description": "Small dark-chocolate male with lots of sass. Charting to be 7â8 pounds full grown.",
     "photo": "photos/chevy_star_022.JPG",
-    "payment_link": null,
-    "description": "Small dark-chocolate male with lots of sass. Charting to be 7–8 pounds full grown."
+    "payment_link": null
   },
   {
     "id": "gucci",
@@ -27,29 +27,29 @@
     "badge": "new",
     "photo": "photos/gucci_star_188.JPG",
     "payment_link": null,
-    "description": "Dark chocolate from very tiny parents (mom and dad never got over 4 lb). Gorgeous hair, tiny flat face, brown button nose. Outgoing — could go to a breeder home or a family home."
+    "description": "Dark chocolate from very tiny parents (mom and dad never got over 4 lb). Gorgeous hair, tiny flat face, brown button nose. Outgoing â could go to a breeder home or a family home."
   },
   {
     "id": "parsley",
     "name": "Parsley",
     "sex": "male",
     "coat": "Solid chocolate",
-    "weight": "4–5 lb projected",
-    "registration": "CKC · AKC option",
+    "weight": "4â5 lb projected",
+    "registration": "CKC Â· AKC option",
     "price": 3500,
     "deposit": 500,
     "status": "available",
     "photo": "photos/parsley_close_up_440.JPG",
     "payment_link": null,
-    "description": "The smallest of his litter — 2 pounds at 12 weeks. Solid dark chocolate, thick gorgeous hair, flat smooshie face, big expressive green eyes. Quiet, loving, sweet little guy."
+    "description": "The smallest of his litter â 2 pounds at 12 weeks. Solid dark chocolate, thick gorgeous hair, flat smooshie face, big expressive green eyes. Quiet, loving, sweet little guy."
   },
   {
     "id": "tyra",
     "name": "Tyra",
     "sex": "female",
     "coat": "Dark chocolate",
-    "weight": "7–8 lb projected",
-    "registration": "CKC base · +$500 AKC",
+    "weight": "7â8 lb projected",
+    "registration": "CKC base Â· +$500 AKC",
     "price": 3500,
     "deposit": 500,
     "status": "available",
