@@ -245,7 +245,7 @@ img{display:block; max-width:100%}
       <div><label>Price (USD)</label><input id="p_price" type="number" min="0" placeholder="2500"></div>
       <div><label>CKC price (optional)</label><input id="p_ckc_price" type="number" min="0" placeholder="leave empty if same as AKC"></div>
       <div><label>Deposit (USD)</label><input id="p_deposit" type="number" min="0" value="500"></div>
-      <div><label>Stripe Payment Link (optional)</label><input id="p_payment_link" placeholder="https://buy.stripe.com/..."></div>
+      <div><label>PayPal/Venmo Payment Link (optional)</label><input id="p_payment_link" placeholder="https://www.paypal.com/ncp/payment/..."></div>
     </div>
     <label>Description</label>
     <textarea id="p_description" placeholder="Tell us about this puppy — voice should sound like the breeder, not a sales pitch."></textarea>
@@ -274,8 +274,8 @@ img{display:block; max-width:100%}
       <div><label>Icon (single character)</label><input id="a_icon" maxlength="2" placeholder="⌒"></div>
       <div><label>Active</label><select id="a_active"><option value="true">Yes — show on site</option><option value="false">No — hide</option></select></div>
     </div>
-    <label>Stripe Payment Link (optional)</label>
-    <input id="a_payment_link" placeholder="https://buy.stripe.com/...">
+    <label>PayPal/Venmo Payment Link (optional)</label>
+    <input id="a_payment_link" placeholder="https://www.paypal.com/ncp/payment/...">
     <div class="modal-footer">
       <button class="cancel" onclick="closeAccessory()">Cancel</button>
       <button class="save" id="a_saveBtn" onclick="saveAccessory()">Save item</button>

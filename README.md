@@ -8,7 +8,7 @@ Static site for [www.shihtzufactory.com](https://www.shihtzufactory.com) — a s
 - Hosted on **GitHub Pages** from `main` branch root
 - Custom domain via `CNAME` file
 - DNS via **Cloudflare** (already on Cloudflare nameservers)
-- Commerce via **Stripe Payment Links** (no server required)
+- Commerce via **PayPal Hosted Payment Buttons** (Venmo included as a payment option inside PayPal Checkout — no server required)
 
 ## Local preview
 
@@ -17,22 +17,22 @@ python3 -m http.server 4200
 # open http://localhost:4200
 ```
 
-## Wiring real Stripe Checkout
+## Wiring real PayPal/Venmo checkout
 
-The reserve buttons currently point at placeholder URLs. To make them live:
+The reserve buttons currently fall back to placeholder URLs when no payment link is set. To make them live:
 
-1. Go to https://dashboard.stripe.com/payment-links → **Create payment link**
-2. Create one Payment Link per puppy / accessory:
-   - **Gucci deposit** — one-time $500
-   - **Parsley deposit** — one-time $500
-   - **Tyra deposit** — one-time $500
-   - **Mini collar** — one-time $48
-   - **Top-knot bow set** — one-time $24
-   - **Brush & comb** — one-time $62
-   - **Welcome-home bundle** — one-time $145
-3. For each link, copy the URL Stripe gives you (looks like `https://buy.stripe.com/abc123...`)
-4. In `index.html`, search for `PLACEHOLDER_GUCCI`, `PLACEHOLDER_PARSLEY` etc. and replace with the real URL
-5. Commit + push — GitHub Pages redeploys automatically
+1. Sign in at https://www.paypal.com/business → **Pay & Get Paid** → **PayPal Buttons** (or **Hosted Payment Buttons**)
+2. Create one button per puppy / accessory. For puppies use a $500 deposit (the remaining balance is collected in person at pickup):
+   - **Gucci deposit** — fixed $500
+   - **Parsley deposit** — fixed $500
+   - **Tyra deposit** — fixed $500
+   - **Mini collar** — fixed $48
+   - **Top-knot bow set** — fixed $24
+   - **Brush & comb** — fixed $62
+   - **Welcome-home bundle** — fixed $145
+3. For each button, copy the **payment link URL** PayPal gives you (looks like `https://www.paypal.com/ncp/payment/XXXXXXX`)
+4. Sign in at https://www.shihtzufactory.com/admin, click each puppy/item, paste the URL into the **PayPal/Venmo Payment Link** field, save
+5. **Venmo is included automatically** — PayPal Checkout shows a "Pay with Venmo" button alongside PayPal at checkout, so customers can pick either
 
 ## Wiring the contact form
 

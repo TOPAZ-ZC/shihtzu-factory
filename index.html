@@ -438,11 +438,11 @@ footer ul a:hover{opacity:1; color:var(--peach-2)}
       <div style="text-align:right"><span id="modalBalance">Balance due at pickup</span></div>
     </div>
     <div class="actions">
-      <a class="btn" id="modalGo" href="#" target="_blank">Continue to Stripe Checkout →</a>
+      <a class="btn" id="modalGo" href="#" target="_blank">Continue to checkout →</a>
       <button class="close" onclick="closeModal()">Cancel</button>
     </div>
     <div class="unverified-flag" id="unverifiedFlag">
-      <b>Stripe Payment Link not yet wired.</b> Create a Stripe Payment Link in the dashboard for this puppy/product, then replace the placeholder URL in <code>index.html</code> (search for <code>PLACEHOLDER_</code>).
+      <b>Payment link not yet wired.</b> Create a PayPal Hosted Payment Button (or Venmo/PayPal.me link) in the PayPal dashboard for this puppy/product, then paste the URL into the <code>/admin</code> editor for this item.
     </div>
   </div>
 </div>
@@ -479,13 +479,13 @@ footer ul a:hover{opacity:1; color:var(--peach-2)}
     const specs = [p.coat, p.weight, p.registration].filter(Boolean).map(s => `<span>${esc(s)}</span>`).join('');
     const btn = sold ? `<button class="add" disabled>Sold</button>`
               : reserved ? `<button class="add" disabled>Reserved</button>`
-              : `<button class="add" data-name="${esc(p.name)}${p.sex?' — '+esc(p.sex):''}" data-deposit="${p.deposit||500}" data-full="${p.price}" data-link="${esc(p.payment_link || ('https://buy.stripe.com/PLACEHOLDER_'+p.id.toUpperCase()))}">Reserve · ${fmt$(p.deposit||500)} deposit</button>`;
+              : `<button class="add" data-name="${esc(p.name)}${p.sex?' — '+esc(p.sex):''}" data-deposit="${p.deposit||500}" data-full="${p.price}" data-link="${esc(p.payment_link || ('#PLACEHOLDER_'+p.id.toUpperCase()))}">Reserve · ${fmt$(p.deposit||500)} deposit</button>`;
     return `<article class="card">${phHtml}<div class="body"><div class="top"><h3>${esc(p.name)}${sexEm}</h3><span class="price">${priceLine}</span></div><p class="desc">${esc(p.description||'')}</p><div class="specs">${specs}</div>${btn}</div></article>`;
   }
 
   function accessoryCard(a) {
     if (a.active === false) return '';
-    return `<article class="acc"><div class="ico">${esc(a.icon||'◍')}</div><h4>${esc(a.name)}</h4><span class="px">${fmt$(a.price)}</span><button class="add" data-name="${esc(a.name)}" data-deposit="${a.price}" data-full="${a.price}" data-link="${esc(a.payment_link || ('https://buy.stripe.com/PLACEHOLDER_'+a.id.toUpperCase()))}">Add — ${fmt$(a.price)}</button></article>`;
+    return `<article class="acc"><div class="ico">${esc(a.icon||'◍')}</div><h4>${esc(a.name)}</h4><span class="px">${fmt$(a.price)}</span><button class="add" data-name="${esc(a.name)}" data-deposit="${a.price}" data-full="${a.price}" data-link="${esc(a.payment_link || ('#PLACEHOLDER_'+a.id.toUpperCase()))}">Add — ${fmt$(a.price)}</button></article>`;
   }
 
   function bindReserveButtons(){
@@ -509,7 +509,7 @@ footer ul a:hover{opacity:1; color:var(--peach-2)}
         const go = document.getElementById('modalGo');
         const isPlaceholder = link.includes('PLACEHOLDER_');
         go.href = link;
-        go.textContent = isPlaceholder ? 'Stripe link not yet configured' : 'Continue to Stripe Checkout →';
+        go.textContent = isPlaceholder ? 'Payment link not yet configured' : 'Continue to checkout →';
         go.style.opacity = isPlaceholder ? '.55' : '1';
         go.style.pointerEvents = isPlaceholder ? 'none' : 'auto';
         document.getElementById('unverifiedFlag').style.display = isPlaceholder ? 'block' : 'none';
