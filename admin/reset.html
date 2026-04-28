@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Reset password · Shihtzu Factory</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#FFF6EE; --cream-2:#FBE9D6; --peach:#FFCBA8; --peach-2:#FFB280;
+  --cocoa:#4B2A1A; --rule:rgba(75,42,26,.16); --warn:#C84A1F; --ok:#2E7D52;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:"DM Sans",system-ui,sans-serif; background:var(--cream); color:var(--cocoa); line-height:1.5; -webkit-font-smoothing:antialiased}
+.hidden{display:none !important}
+.wrap{min-height:100vh; display:flex; align-items:center; justify-content:center; padding:24px; background:radial-gradient(ellipse at top right, var(--peach) 0%, var(--cream) 65%)}
+.card{background:var(--cream); padding:40px 36px; border-radius:24px; max-width:440px; width:100%; box-shadow:0 30px 80px -30px rgba(75,42,26,.3)}
+.card .brand{font-family:"DM Serif Display",serif; font-size:32px; margin:0 0 6px; display:flex; align-items:center; gap:10px}
+.card .brand .dot{width:12px; height:12px; background:var(--peach-2); border-radius:999px}
+.card .sub{font-size:14px; opacity:.65; margin:0 0 28px}
+.card h2{font-family:"DM Serif Display",serif; font-weight:400; font-size:24px; margin:0 0 8px}
+.card p{font-size:14px; line-height:1.55; opacity:.78; margin:0 0 18px}
+.card label{display:block; font-size:12px; font-weight:600; letter-spacing:.06em; text-transform:uppercase; opacity:.65; margin:14px 0 6px}
+.card input{width:100%; padding:14px 16px; border:1px solid var(--rule); background:var(--cream-2); font:inherit; font-size:15px; border-radius:12px; color:var(--cocoa)}
+.card input:focus{outline:none; border-color:var(--peach-2); background:var(--cream)}
+.card .btn{width:100%; padding:14px; margin-top:24px; background:var(--cocoa); color:var(--cream); border:none; border-radius:999px; font:inherit; font-weight:700; font-size:15px; cursor:pointer}
+.card .btn:hover{background:var(--peach-2); color:var(--cocoa)}
+.card .btn:disabled{opacity:.5; cursor:wait}
+.err{margin-top:14px; padding:10px 14px; background:color-mix(in oklab, var(--warn) 14%, var(--cream)); border:1px solid color-mix(in oklab, var(--warn) 30%, transparent); border-radius:10px; color:var(--warn); font-size:13px}
+.ok{margin-top:14px; padding:10px 14px; background:#cff7e0; border-radius:10px; color:var(--ok); font-size:13px}
+.spinner{display:inline-block; width:14px; height:14px; border:2px solid currentColor; border-right-color:transparent; border-radius:999px; animation:spin .7s linear infinite; vertical-align:-2px; margin-right:6px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.center{text-align:center}
+.account{font-family:"DM Sans"; font-weight:600; opacity:.85; padding:8px 14px; background:var(--cream-2); border-radius:8px; display:inline-block; font-size:13px; margin:0 0 14px}
+.match-warn{font-size:12px; opacity:.6; margin:6px 0 0}
+.back{display:block; margin-top:20px; text-align:center; font-size:13px}
+.back a{color:var(--cocoa); opacity:.65; text-decoration:underline}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <div class="card">
+    <h1 class="brand"><span class="dot"></span>Shihtzu Factory</h1>
+    <p class="sub">Reset your password</p>
+
+    <!-- LOADING (initial state while we verify the token) -->
+    <div id="loadingView">
+      <p class="center"><span class="spinner"></span>Checking your reset link…</p>
+    </div>
+
+    <!-- INVALID TOKEN -->
+    <div id="invalidView" class="hidden">
+      <h2>This link no longer works</h2>
+      <p>Reset links expire after 1 hour, or after you use them once. Request a new one if you still need to reset your password.</p>
+      <a class="btn" href="/admin/" style="display:block; text-align:center; text-decoration:none">Back to sign in</a>
+    </div>
+
+    <!-- SET-NEW-PASSWORD FORM -->
+    <form id="resetForm" class="hidden">
+      <div class="account" id="accountLabel"></div>
+      <p>Choose a new password — at least 8 characters. You'll be signed in after.</p>
+      <label>New password</label>
+      <input type="password" id="newPassword" required minlength="8" autocomplete="new-password">
+      <label>Confirm new password</label>
+      <input type="password" id="confirmPassword" required minlength="8" autocomplete="new-password">
+      <div class="match-warn" id="matchWarn"></div>
+      <button type="submit" class="btn" id="saveBtn">Set new password</button>
+      <div id="resetErr" class="err hidden"></div>
+      <div id="resetOk" class="ok hidden"></div>
+    </form>
+
+    <!-- DONE -->
+    <div id="doneView" class="hidden">
+      <h2>Password updated</h2>
+      <p>You're all set. Sign in with your new password.</p>
+      <a class="btn" href="/admin/" style="display:block; text-align:center; text-decoration:none">Go to sign in →</a>
+    </div>
+  </div>
+</div>
+
+<script>
+const API_BASE = 'https://api.shihtzufactory.com';
+const $ = id => document.getElementById(id);
+const params = new URLSearchParams(location.search);
+const token = params.get('token');
+
+function show(name) {
+  ['loadingView','invalidView','resetForm','doneView'].forEach(v => $(v).classList.add('hidden'));
+  $(name).classList.remove('hidden');
+}
+
+async function checkToken() {
+  if (!token) return show('invalidView');
+  try {
+    const res = await fetch(API_BASE + '/api/check-reset', {
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({ token })
+    }).then(r => r.json());
+    if (res.valid) {
+      $('accountLabel').textContent = 'Resetting password for ' + res.email;
+      show('resetForm');
+      $('newPassword').focus();
+    } else {
+      show('invalidView');
+    }
+  } catch {
+    show('invalidView');
+  }
+}
+
+$('confirmPassword').addEventListener('input', () => {
+  const a = $('newPassword').value, b = $('confirmPassword').value;
+  $('matchWarn').textContent = (b && a !== b) ? "Passwords don't match yet." : '';
+  $('matchWarn').style.color = (b && a !== b) ? 'var(--warn)' : '';
+});
+
+$('resetForm').addEventListener('submit', async e => {
+  e.preventDefault();
+  const pw = $('newPassword').value;
+  const confirm = $('confirmPassword').value;
+  const err = $('resetErr'); const ok = $('resetOk'); const btn = $('saveBtn');
+  err.classList.add('hidden'); ok.classList.add('hidden');
+  if (pw.length < 8) { err.textContent = 'Password must be at least 8 characters.'; err.classList.remove('hidden'); return; }
+  if (pw !== confirm) { err.textContent = "Passwords don't match."; err.classList.remove('hidden'); return; }
+  btn.disabled = true; btn.innerHTML = '<span class="spinner"></span>Saving…';
+  try {
+    const res = await fetch(API_BASE + '/api/reset-password', {
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({ token, password: pw })
+    }).then(r => r.json());
+    if (res.error) throw new Error(res.error);
+    ok.textContent = 'Password updated.';
+    ok.classList.remove('hidden');
+    setTimeout(() => show('doneView'), 700);
+  } catch (e) {
+    err.textContent = e.message;
+    err.classList.remove('hidden');
+    btn.disabled = false; btn.textContent = 'Set new password';
+  }
+});
+
+checkToken();
+</script>
+</body>
+</html>
