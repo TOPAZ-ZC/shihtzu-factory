@@ -43,8 +43,16 @@
     "price": 3500,
     "deposit": 500,
     "description": "The smallest of his litter â 2 pounds at 12 weeks. Solid dark chocolate, thick gorgeous hair, flat smooshie face, big expressive green eyes. Quiet, loving, sweet little guy.",
-    "photo": "photos/parsley_close_up_440.JPG",
-    "payment_link": null
+    "photos": [
+      "photos/parsley_close_up_440.JPG",
+      "photos/img_7905_5blt7x28.jpeg",
+      "photos/img_7901_5bm08s35.jpeg",
+      "photos/img_7896_5bm52y18.jpeg",
+      "photos/img_7893_5bmaonr2.jpeg",
+      "photos/img_7884_5bmfa1vl.jpeg"
+    ],
+    "payment_link": null,
+    "photo": "photos/parsley_close_up_440.JPG"
   },
   {
     "id": "tyra",
