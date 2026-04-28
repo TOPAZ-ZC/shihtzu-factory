@@ -111,6 +111,61 @@ img{display:block; max-width:100%}
 .spinner{display:inline-block; width:14px; height:14px; border:2px solid currentColor; border-right-color:transparent; border-radius:999px; animation:spin .7s linear infinite; vertical-align:-2px; margin-right:6px}
 @keyframes spin{to{transform:rotate(360deg)}}
 .note{margin-top:14px; padding:10px 14px; background:#cff7e0; border-radius:10px; color:var(--ok); font-size:13px}
+
+/* ===== MOBILE ===== */
+@media (max-width:640px){
+  /* Login card sized for phones */
+  .login-wrap{padding:16px}
+  .login-card{padding:28px 22px; border-radius:18px}
+  .login-card .brand{font-size:26px}
+
+  /* Nav: brand on top, controls below; wrap cleanly */
+  .app-nav{padding:12px 14px; flex-wrap:wrap; gap:10px}
+  .app-nav .brand{font-size:18px}
+  .app-nav .who{display:none}
+  .app-nav .right{gap:8px}
+  .app-nav .right > *{font-size:12px; padding:8px 12px; min-height:44px; display:inline-flex; align-items:center}
+  .app-nav .view-site{padding:8px 12px}
+
+  /* Body padding */
+  .app{padding:18px 14px}
+  .tabs{gap:0; overflow-x:auto; margin-bottom:18px}
+  .tabs button{padding:12px 14px; font-size:14px; flex-shrink:0; min-height:44px}
+  .section-head{flex-direction:column; align-items:flex-start; gap:12px; margin-bottom:14px}
+  .section-head h2{font-size:24px}
+  .section-head .add-btn{width:100%; padding:14px; font-size:15px; min-height:44px}
+
+  /* Rows: stack thumb+meta at top, actions full width below */
+  .row{grid-template-columns:64px 1fr; gap:14px; padding:14px; border-radius:14px}
+  .row .thumb{width:64px; height:64px; border-radius:10px}
+  .row .thumb.placeholder{font-size:24px}
+  .row .meta h3{font-size:18px}
+  .row .meta .specs{font-size:12px}
+  .row .meta .pricetag{font-size:14px}
+  .row .actions{grid-column:1 / -1; gap:8px}
+  .row .actions button{flex:1; min-height:44px; font-size:14px; padding:12px}
+
+  /* Modal: full-screen feel on phones */
+  .modal-bg{padding:0; align-items:stretch}
+  .modal{border-radius:0; max-width:100%; padding:24px 20px 32px; min-height:100vh}
+  .modal h3{font-size:24px}
+  .modal .grid2{grid-template-columns:1fr; gap:0}
+  .modal label{margin:14px 0 6px}
+  .modal input, .modal textarea, .modal select{padding:14px 14px; font-size:16px; min-height:44px}
+  .modal textarea{min-height:110px}
+  .modal-footer{flex-direction:column-reverse; gap:8px}
+  .modal-footer button{width:100%; padding:14px; min-height:44px}
+  .photo-zone{padding:18px}
+
+  /* Toast: full-width banner from bottom */
+  .toast{left:14px; right:14px; bottom:14px; padding:14px 18px; text-align:center; border-radius:12px}
+}
+
+/* ===== Tablet sweet spot ===== */
+@media (min-width:641px) and (max-width:900px){
+  .app{padding:24px 24px}
+  .modal{max-width:560px}
+}
 </style>
 </head>
 <body>
