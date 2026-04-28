@@ -49,12 +49,12 @@
     "sex": "female",
     "coat": "Dark chocolate",
     "weight": "7â8 lb projected",
-    "registration": "CKC base Â· +$500 AKC",
+    "registration": "CKC base +$500 AKC",
+    "status": "available",
     "price": 3500,
     "deposit": 500,
-    "status": "available",
+    "description": "Dark chocolate, gorgeous thick fluff hair, big green expressive eyes, tiny button brown nose. Short, cobby, adorable. We were holding her for showing but her nose is slightly pinched and we aren't sure she'll grow out of it.",
     "photo": null,
-    "payment_link": null,
-    "description": "Dark chocolate, gorgeous thick fluff hair, big green expressive eyes, tiny button brown nose. Short, cobby, adorable. We were holding her for showing but her nose is slightly pinched and we aren't sure she'll grow out of it."
+    "payment_link": null
   }
 ]
