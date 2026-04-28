@@ -16,19 +16,20 @@
 }
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}
-body{font-family:"DM Sans",system-ui,sans-serif; background:var(--cream); color:var(--cocoa); line-height:1.5; -webkit-font-smoothing:antialiased}
+/* Bump base font ~14% across the admin */
+body{font-family:"DM Sans",system-ui,sans-serif; background:var(--cream); color:var(--cocoa); line-height:1.55; -webkit-font-smoothing:antialiased; font-size:16px}
 .serif{font-family:"DM Serif Display",serif}
 img{display:block; max-width:100%}
 .hidden{display:none !important}
 
 /* LOGIN */
 .login-wrap{min-height:100vh; display:flex; align-items:center; justify-content:center; padding:24px; background:radial-gradient(ellipse at top right, var(--peach) 0%, var(--cream) 65%)}
-.login-card{background:var(--cream); padding:40px 36px; border-radius:24px; max-width:420px; width:100%; box-shadow:0 30px 80px -30px rgba(75,42,26,.3)}
-.login-card .brand{font-family:"DM Serif Display",serif; font-size:32px; margin:0 0 6px; display:flex; align-items:center; gap:10px}
+.login-card{background:var(--cream); padding:40px 36px; border-radius:24px; max-width:440px; width:100%; box-shadow:0 30px 80px -30px rgba(75,42,26,.3)}
+.login-card .brand{font-family:"DM Serif Display",serif; font-size:34px; margin:0 0 6px; display:flex; align-items:center; gap:10px}
 .login-card .brand .dot{width:12px; height:12px; background:var(--peach-2); border-radius:999px}
-.login-card .sub{font-size:14px; opacity:.65; margin:0 0 28px}
-.login-card label{display:block; font-size:12px; font-weight:600; letter-spacing:.06em; text-transform:uppercase; opacity:.65; margin:14px 0 6px}
-.login-card input{width:100%; padding:14px 16px; border:1px solid var(--rule); background:var(--cream-2); font:inherit; font-size:15px; border-radius:12px; color:var(--cocoa)}
+.login-card .sub{font-size:15px; opacity:.65; margin:0 0 28px}
+.login-card label{display:block; font-size:13px; font-weight:600; letter-spacing:.06em; text-transform:uppercase; opacity:.7; margin:14px 0 6px}
+.login-card input{width:100%; padding:14px 16px; border:1px solid var(--rule); background:var(--cream-2); font:inherit; font-size:16px; border-radius:12px; color:var(--cocoa)}
 .login-card input:focus{outline:none; border-color:var(--peach-2); background:var(--cream)}
 .login-card .btn{width:100%; padding:14px; margin-top:24px; background:var(--cocoa); color:var(--cream); border:none; border-radius:999px; font:inherit; font-weight:700; font-size:15px; cursor:pointer}
 .login-card .btn:hover{background:var(--peach-2); color:var(--cocoa)}
@@ -37,17 +38,17 @@ img{display:block; max-width:100%}
 
 /* DASHBOARD */
 .app-nav{background:var(--cocoa); color:var(--cream); padding:14px 28px; display:flex; justify-content:space-between; align-items:center; position:sticky; top:0; z-index:50}
-.app-nav .brand{font-family:"DM Serif Display",serif; font-size:22px; display:flex; align-items:center; gap:8px}
+.app-nav .brand{font-family:"DM Serif Display",serif; font-size:24px; display:flex; align-items:center; gap:8px}
 .app-nav .brand .dot{width:9px; height:9px; background:var(--peach-2); border-radius:999px}
-.app-nav .who{font-size:13px; opacity:.7; margin-right:14px}
+.app-nav .who{font-size:14px; opacity:.7; margin-right:14px}
 .app-nav .right{display:flex; gap:12px; align-items:center}
-.app-nav button{background:transparent; color:var(--cream); border:1px solid rgba(255,255,255,.2); padding:8px 16px; font:inherit; font-size:13px; border-radius:999px; cursor:pointer}
+.app-nav button{background:transparent; color:var(--cream); border:1px solid rgba(255,255,255,.2); padding:9px 18px; font:inherit; font-size:14px; border-radius:999px; cursor:pointer}
 .app-nav button:hover{background:rgba(255,255,255,.1)}
 .app-nav .view-site{background:var(--peach-2); color:var(--cocoa); border:none; font-weight:600}
 
 .app{padding:32px clamp(20px,4vw,48px); max-width:1280px; margin:0 auto}
 .tabs{display:flex; gap:6px; margin-bottom:32px; border-bottom:1px solid var(--rule)}
-.tabs button{background:none; border:none; padding:14px 20px; font:inherit; font-size:15px; font-weight:500; cursor:pointer; color:var(--cocoa-soft); border-bottom:2px solid transparent; margin-bottom:-1px}
+.tabs button{background:none; border:none; padding:14px 22px; font:inherit; font-size:16px; font-weight:500; cursor:pointer; color:var(--cocoa-soft); border-bottom:2px solid transparent; margin-bottom:-1px}
 .tabs button.active{color:var(--cocoa); border-bottom-color:var(--peach-2)}
 .tabs button:hover:not(.active){color:var(--cocoa)}
 
@@ -55,45 +56,56 @@ img{display:block; max-width:100%}
 .tab-panel.active{display:block}
 
 .section-head{display:flex; justify-content:space-between; align-items:center; margin-bottom:20px}
-.section-head h2{font-family:"DM Serif Display",serif; font-weight:400; font-size:32px; margin:0; letter-spacing:-.01em}
-.section-head .add-btn{background:var(--cocoa); color:var(--cream); border:none; padding:12px 22px; border-radius:999px; font:inherit; font-weight:600; cursor:pointer; font-size:14px}
+.section-head h2{font-family:"DM Serif Display",serif; font-weight:400; font-size:34px; margin:0; letter-spacing:-.01em}
+.section-head .add-btn{background:var(--cocoa); color:var(--cream); border:none; padding:13px 24px; border-radius:999px; font:inherit; font-weight:600; cursor:pointer; font-size:15px}
 .section-head .add-btn:hover{background:var(--peach-2); color:var(--cocoa)}
 
 .list{display:flex; flex-direction:column; gap:12px}
-.row{background:var(--cream-2); border-radius:18px; padding:16px; display:grid; grid-template-columns:84px 1fr auto; gap:18px; align-items:center}
+.row{background:var(--cream-2); border-radius:18px; padding:18px; display:grid; grid-template-columns:84px 1fr auto; gap:18px; align-items:center}
 .row .thumb{width:84px; height:84px; border-radius:12px; object-fit:cover; background:var(--cream)}
 .row .thumb.placeholder{display:flex; align-items:center; justify-content:center; font-family:"DM Serif Display",serif; font-style:italic; font-size:30px; color:var(--peach-2)}
-.row .meta h3{font-family:"DM Serif Display",serif; font-weight:400; font-size:22px; margin:0 0 4px; line-height:1.1}
-.row .meta .specs{font-size:13px; opacity:.7; line-height:1.5}
-.row .meta .pricetag{font-weight:700; margin-top:4px}
+.row .meta h3{font-family:"DM Serif Display",serif; font-weight:400; font-size:23px; margin:0 0 4px; line-height:1.1}
+.row .meta .specs{font-size:14px; opacity:.72; line-height:1.5}
+.row .meta .pricetag{font-weight:700; font-size:15px; margin-top:4px}
 .row .meta .status-tag{display:inline-block; padding:3px 10px; border-radius:999px; font-size:11px; font-weight:600; letter-spacing:.05em; text-transform:uppercase; margin-left:8px; vertical-align:middle}
 .row .meta .status-tag.available{background:#cff7e0; color:var(--ok)}
 .row .meta .status-tag.on_hold{background:#ffe1c2; color:#a05014}
 .row .meta .status-tag.sold{background:#e8e3d8; color:#6e6357}
 .row .actions{display:flex; gap:8px}
-.row .actions button{background:var(--cream); border:1px solid var(--rule); padding:8px 14px; font:inherit; font-size:13px; border-radius:999px; cursor:pointer; color:var(--cocoa)}
+.row .actions button{background:var(--cream); border:1px solid var(--rule); padding:9px 16px; font:inherit; font-size:14px; border-radius:999px; cursor:pointer; color:var(--cocoa)}
 .row .actions button:hover{background:var(--cocoa); color:var(--cream); border-color:var(--cocoa)}
 .row .actions .delete:hover{background:var(--warn); border-color:var(--warn); color:#fff}
 
 /* MODAL EDITOR */
-.modal-bg{position:fixed; inset:0; background:rgba(75,42,26,.55); display:none; z-index:200; backdrop-filter:blur(6px); align-items:flex-start; justify-content:center; padding:60px 20px; overflow-y:auto}
+.modal-bg{position:fixed; inset:0; background:rgba(38,21,12,.78); display:none; z-index:200; backdrop-filter:blur(8px); align-items:flex-start; justify-content:center; padding:60px 20px; overflow-y:auto}
 .modal-bg.open{display:flex}
-.modal{background:var(--cream); border-radius:24px; padding:36px; max-width:640px; width:100%}
-.modal h3{font-family:"DM Serif Display",serif; font-weight:400; font-size:28px; margin:0 0 6px}
-.modal .sub{font-size:13px; opacity:.6; margin:0 0 24px}
+.modal{background:var(--cream); border-radius:24px; padding:36px; max-width:680px; width:100%}
+.modal h3{font-family:"DM Serif Display",serif; font-weight:400; font-size:30px; margin:0 0 6px}
+.modal .sub{font-size:14px; opacity:.65; margin:0 0 24px}
 .modal .grid2{display:grid; grid-template-columns:1fr 1fr; gap:14px}
 @media (max-width:560px){.modal .grid2{grid-template-columns:1fr}}
-.modal label{display:block; font-size:12px; font-weight:600; letter-spacing:.06em; text-transform:uppercase; opacity:.65; margin:14px 0 6px}
-.modal input, .modal textarea, .modal select{width:100%; padding:12px 14px; border:1px solid var(--rule); background:var(--cream-2); font:inherit; font-size:14px; border-radius:10px; color:var(--cocoa)}
-.modal textarea{min-height:90px; resize:vertical; font-family:inherit}
+.modal label{display:block; font-size:13px; font-weight:600; letter-spacing:.06em; text-transform:uppercase; opacity:.7; margin:14px 0 6px}
+.modal input, .modal textarea, .modal select{width:100%; padding:13px 15px; border:1px solid var(--rule); background:var(--cream-2); font:inherit; font-size:15px; border-radius:10px; color:var(--cocoa)}
+.modal textarea{min-height:100px; resize:vertical; font-family:inherit}
 .modal input:focus, .modal textarea:focus, .modal select:focus{outline:none; border-color:var(--peach-2); background:var(--cream)}
-.photo-zone{margin-top:6px; border:2px dashed var(--rule); border-radius:14px; padding:24px; text-align:center; cursor:pointer; transition:border-color .2s ease, background .2s ease}
-.photo-zone:hover, .photo-zone.dragover{border-color:var(--peach-2); background:var(--cream-2)}
-.photo-zone p{margin:0; font-size:13px; opacity:.65}
-.photo-zone img{max-height:140px; margin:0 auto 12px; border-radius:10px}
-.photo-zone .filename{font-size:12px; opacity:.5; margin-top:8px; word-break:break-all}
+
+/* MEDIA GRID — multi-photo manager */
+.media-grid{display:grid; grid-template-columns:repeat(auto-fill, minmax(110px, 1fr)); gap:10px; margin-top:8px}
+.media-tile{position:relative; aspect-ratio:1; border-radius:14px; overflow:hidden; background:var(--cream-2); border:1px solid var(--rule)}
+.media-tile img{width:100%; height:100%; object-fit:cover; display:block}
+.media-tile .rm{position:absolute; top:6px; right:6px; width:28px; height:28px; border:none; border-radius:999px; background:rgba(75,42,26,.85); color:var(--cream); cursor:pointer; font-size:14px; line-height:1; display:flex; align-items:center; justify-content:center; padding:0; box-shadow:0 4px 12px -2px rgba(0,0,0,.3)}
+.media-tile .rm:hover{background:var(--warn)}
+.media-tile .primary-tag{position:absolute; bottom:6px; left:6px; padding:3px 8px; border-radius:999px; background:var(--peach-2); color:var(--cocoa); font-size:10px; font-weight:700; letter-spacing:.06em; text-transform:uppercase}
+.media-tile.pending{border-style:dashed; border-color:var(--peach-2)}
+.media-tile.pending::after{content:"NEW"; position:absolute; bottom:6px; left:6px; padding:3px 8px; border-radius:999px; background:var(--cocoa); color:var(--cream); font-size:10px; font-weight:700; letter-spacing:.06em}
+.media-add{aspect-ratio:1; border:2px dashed var(--peach-2); border-radius:14px; background:var(--cream-2); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:6px; cursor:pointer; transition:border-color .2s ease, background .2s ease, transform .15s ease; padding:10px; text-align:center}
+.media-add:hover, .media-add.dragover{background:var(--peach); border-color:var(--cocoa); transform:scale(1.02)}
+.media-add .icon{font-size:32px; line-height:1; color:var(--cocoa)}
+.media-add .label{font-size:13px; font-weight:700; color:var(--cocoa); letter-spacing:.02em}
+.media-add .hint{font-size:11px; opacity:.6; line-height:1.3}
+
 .modal-footer{display:flex; gap:10px; justify-content:flex-end; margin-top:28px; padding-top:20px; border-top:1px solid var(--rule)}
-.modal-footer button{padding:12px 22px; border-radius:999px; font:inherit; font-weight:600; cursor:pointer; font-size:14px; border:none}
+.modal-footer button{padding:13px 24px; border-radius:999px; font:inherit; font-weight:600; cursor:pointer; font-size:15px; border:none}
 .modal-footer .cancel{background:transparent; color:var(--cocoa); border:1px solid var(--rule)}
 .modal-footer .cancel:hover{background:var(--cream-2)}
 .modal-footer .save{background:var(--cocoa); color:var(--cream)}
@@ -117,48 +129,58 @@ img{display:block; max-width:100%}
   /* Login card sized for phones */
   .login-wrap{padding:16px}
   .login-card{padding:28px 22px; border-radius:18px}
-  .login-card .brand{font-size:26px}
+  .login-card .brand{font-size:28px}
+  .login-card input{font-size:16px; min-height:48px}
+  .login-card .btn{font-size:16px; min-height:48px}
 
   /* Nav: brand on top, controls below; wrap cleanly */
   .app-nav{padding:12px 14px; flex-wrap:wrap; gap:10px}
-  .app-nav .brand{font-size:18px}
+  .app-nav .brand{font-size:19px}
   .app-nav .who{display:none}
   .app-nav .right{gap:8px}
-  .app-nav .right > *{font-size:12px; padding:8px 12px; min-height:44px; display:inline-flex; align-items:center}
-  .app-nav .view-site{padding:8px 12px}
+  .app-nav .right > *{font-size:13px; padding:9px 14px; min-height:44px; display:inline-flex; align-items:center}
+  .app-nav .view-site{padding:9px 14px}
 
   /* Body padding */
   .app{padding:18px 14px}
   .tabs{gap:0; overflow-x:auto; margin-bottom:18px}
-  .tabs button{padding:12px 14px; font-size:14px; flex-shrink:0; min-height:44px}
+  .tabs button{padding:12px 16px; font-size:15px; flex-shrink:0; min-height:44px}
   .section-head{flex-direction:column; align-items:flex-start; gap:12px; margin-bottom:14px}
-  .section-head h2{font-size:24px}
-  .section-head .add-btn{width:100%; padding:14px; font-size:15px; min-height:44px}
+  .section-head h2{font-size:26px}
+  .section-head .add-btn{width:100%; padding:15px; font-size:16px; min-height:48px}
 
   /* Rows: stack thumb+meta at top, actions full width below */
-  .row{grid-template-columns:64px 1fr; gap:14px; padding:14px; border-radius:14px}
-  .row .thumb{width:64px; height:64px; border-radius:10px}
+  .row{grid-template-columns:68px 1fr; gap:14px; padding:14px; border-radius:14px}
+  .row .thumb{width:68px; height:68px; border-radius:10px}
   .row .thumb.placeholder{font-size:24px}
-  .row .meta h3{font-size:18px}
-  .row .meta .specs{font-size:12px}
-  .row .meta .pricetag{font-size:14px}
+  .row .meta h3{font-size:19px}
+  .row .meta .specs{font-size:13px}
+  .row .meta .pricetag{font-size:15px}
   .row .actions{grid-column:1 / -1; gap:8px}
-  .row .actions button{flex:1; min-height:44px; font-size:14px; padding:12px}
+  .row .actions button{flex:1; min-height:48px; font-size:15px; padding:12px}
 
-  /* Modal: full-screen feel on phones */
-  .modal-bg{padding:0; align-items:stretch}
-  .modal{border-radius:0; max-width:100%; padding:24px 20px 32px; min-height:100vh}
-  .modal h3{font-size:24px}
+  /* Modal: full-screen feel on phones — fully opaque so the dim doesn't bleed through any gap */
+  .modal-bg{padding:0; align-items:stretch; background:rgba(38,21,12,.96); backdrop-filter:blur(12px)}
+  .modal{border-radius:0; max-width:100%; padding:24px 20px 40px; min-height:100vh; min-height:100dvh}
+  .modal h3{font-size:26px}
+  .modal .sub{font-size:14px}
   .modal .grid2{grid-template-columns:1fr; gap:0}
-  .modal label{margin:14px 0 6px}
-  .modal input, .modal textarea, .modal select{padding:14px 14px; font-size:16px; min-height:44px}
-  .modal textarea{min-height:110px}
-  .modal-footer{flex-direction:column-reverse; gap:8px}
-  .modal-footer button{width:100%; padding:14px; min-height:44px}
-  .photo-zone{padding:18px}
+  .modal label{margin:16px 0 6px; font-size:13px}
+  .modal input, .modal textarea, .modal select{padding:15px 15px; font-size:16px; min-height:48px; border-radius:12px}
+  .modal textarea{min-height:120px}
+  .modal-footer{flex-direction:column-reverse; gap:10px}
+  .modal-footer button{width:100%; padding:16px; min-height:52px; font-size:16px}
+
+  /* Media grid: bigger tiles + mega-prominent "Add photo" CTA on phone */
+  .media-grid{grid-template-columns:repeat(auto-fill, minmax(100px, 1fr)); gap:10px}
+  .media-add{padding:18px 12px; border-width:3px; box-shadow:0 6px 20px -8px rgba(255,178,128,.45)}
+  .media-add .icon{font-size:38px}
+  .media-add .label{font-size:15px}
+  .media-add .hint{font-size:12px}
+  .media-tile .rm{width:34px; height:34px; font-size:16px; top:8px; right:8px}
 
   /* Toast: full-width banner from bottom */
-  .toast{left:14px; right:14px; bottom:14px; padding:14px 18px; text-align:center; border-radius:12px}
+  .toast{left:14px; right:14px; bottom:14px; padding:14px 18px; text-align:center; border-radius:12px; font-size:15px}
 }
 
 /* ===== Tablet sweet spot ===== */
@@ -249,13 +271,9 @@ img{display:block; max-width:100%}
     </div>
     <label>Description</label>
     <textarea id="p_description" placeholder="Tell us about this puppy — voice should sound like the breeder, not a sales pitch."></textarea>
-    <label>Photo</label>
-    <div class="photo-zone" id="p_photoZone">
-      <img id="p_photoPreview" class="hidden" alt="">
-      <p id="p_photoMsg">Drag a photo here or click to choose</p>
-      <p class="filename" id="p_photoFilename"></p>
-    </div>
-    <input type="file" id="p_photoFile" accept="image/*" class="hidden">
+    <label>Photos <span style="font-weight:400; text-transform:none; letter-spacing:0; opacity:.5; font-size:12px">— first one shows on the site</span></label>
+    <div class="media-grid" id="p_mediaGrid"></div>
+    <input type="file" id="p_photoFile" accept="image/*" multiple class="hidden">
     <div class="modal-footer">
       <button class="cancel" onclick="closePuppy()">Cancel</button>
       <button class="save" id="p_saveBtn" onclick="savePuppy()">Save puppy</button>
@@ -296,7 +314,14 @@ let session = null;
 let catalog = { puppies: [], accessories: [] };
 let editingPuppyIdx = -1;
 let editingAccessoryIdx = -1;
-let pendingPhoto = null; // {dataUrl, filename}
+// Photo manager state for the puppy editor:
+//   existingPhotos: paths kept from the server (in display order)
+//   pendingPhotos:  new uploads not yet committed [{tempId, filename, dataUrl}]
+//   removedPhotos:  paths the user removed during this edit (sent for orphan cleanup)
+let existingPhotos = [];
+let pendingPhotos = [];
+let removedPhotos = [];
+let _photoTempCounter = 0;
 
 // ====== UTIL ======
 const $ = id => document.getElementById(id);
@@ -434,15 +459,19 @@ function renderPuppies() {
     return;
   }
   list.innerHTML = catalog.puppies.map((p, i) => {
-    const thumb = p.photo
-      ? `<img class="thumb" src="../${p.photo}?v=${Date.now()}" alt="">`
+    // Show photos[0] if present, else fall back to legacy `photo` field
+    const primary = (Array.isArray(p.photos) && p.photos.length) ? p.photos[0] : p.photo;
+    const photoCount = Array.isArray(p.photos) ? p.photos.length : (p.photo ? 1 : 0);
+    const thumb = primary
+      ? `<img class="thumb" src="../${primary}?v=${Date.now()}" alt="">`
       : `<div class="thumb placeholder">${escapeHtml(p.name?.[0]||'?')}</div>`;
     const status = p.status || 'available';
+    const countTag = photoCount > 1 ? ` · ${photoCount} photos` : '';
     return `<div class="row">
       ${thumb}
       <div class="meta">
         <h3>${escapeHtml(p.name)} <span class="status-tag ${status}">${status.replace('_',' ')}</span></h3>
-        <div class="specs">${[p.sex, p.coat, p.weight, p.registration].filter(Boolean).map(escapeHtml).join(' · ')}</div>
+        <div class="specs">${[p.sex, p.coat, p.weight, p.registration].filter(Boolean).map(escapeHtml).join(' · ')}${countTag}</div>
         <div class="pricetag">${fmt$(p.price)}${p.ckc_price ? ' AKC · ' + fmt$(p.ckc_price) + ' CKC' : ''}</div>
       </div>
       <div class="actions">
@@ -457,8 +486,11 @@ function slug(s){ return String(s).toLowerCase().trim().replace(/[^a-z0-9]+/g,'-
 
 function openPuppyEditor(idx = -1) {
   editingPuppyIdx = idx;
-  pendingPhoto = null;
-  const p = idx >= 0 ? catalog.puppies[idx] : { name:'', sex:'female', coat:'', weight:'', registration:'AKC', status:'available', price:'', ckc_price:'', deposit:500, description:'', photo:null, payment_link:'' };
+  pendingPhotos = [];
+  removedPhotos = [];
+  const p = idx >= 0 ? catalog.puppies[idx] : { name:'', sex:'female', coat:'', weight:'', registration:'AKC', status:'available', price:'', ckc_price:'', deposit:500, description:'', photos:[], payment_link:'' };
+  // Resolve existing photos: prefer `photos` array, fall back to legacy `photo` singular
+  existingPhotos = Array.isArray(p.photos) && p.photos.length ? p.photos.slice() : (p.photo ? [p.photo] : []);
   $('puppyModalTitle').textContent = idx >= 0 ? 'Edit ' + p.name : 'Add a puppy';
   ['name','sex','coat','weight','registration','status'].forEach(k => $('p_' + k).value = p[k] ?? '');
   $('p_price').value = p.price ?? '';
@@ -466,49 +498,100 @@ function openPuppyEditor(idx = -1) {
   $('p_deposit').value = p.deposit ?? 500;
   $('p_description').value = p.description ?? '';
   $('p_payment_link').value = p.payment_link ?? '';
-  const prev = $('p_photoPreview');
-  if (p.photo) {
-    prev.src = '../' + p.photo;
-    prev.classList.remove('hidden');
-    $('p_photoMsg').textContent = 'Click to replace';
-    $('p_photoFilename').textContent = p.photo;
-  } else {
-    prev.classList.add('hidden');
-    $('p_photoMsg').textContent = 'Drag a photo here or click to choose';
-    $('p_photoFilename').textContent = '';
-  }
+  renderMediaGrid();
   $('puppyModal').classList.add('open');
 }
-function closePuppy(){ $('puppyModal').classList.remove('open'); pendingPhoto = null; }
+function closePuppy(){
+  $('puppyModal').classList.remove('open');
+  pendingPhotos = [];
+  removedPhotos = [];
+  existingPhotos = [];
+}
+
+// ====== MEDIA MANAGER ======
+function renderMediaGrid() {
+  const grid = $('p_mediaGrid');
+  if (!grid) return;
+  const tiles = [];
+  // Existing photos (already on the server)
+  existingPhotos.forEach((path, i) => {
+    const isPrimary = i === 0;
+    tiles.push(`<div class="media-tile" data-kind="existing" data-path="${escapeHtml(path)}">
+      <img src="../${escapeHtml(path)}?v=${Date.now()}" alt="">
+      ${isPrimary ? '<span class="primary-tag">Primary</span>' : ''}
+      <button class="rm" type="button" title="Remove" onclick="removeExistingPhoto('${escapeHtml(path)}')">✕</button>
+    </div>`);
+  });
+  // Pending uploads (not yet committed)
+  pendingPhotos.forEach((pp) => {
+    const showPrimary = existingPhotos.length === 0 && pendingPhotos[0]?.tempId === pp.tempId;
+    tiles.push(`<div class="media-tile pending" data-kind="pending" data-id="${pp.tempId}">
+      <img src="${pp.dataUrl}" alt="">
+      ${showPrimary ? '<span class="primary-tag">Primary</span>' : ''}
+      <button class="rm" type="button" title="Remove" onclick="removePendingPhoto('${pp.tempId}')">✕</button>
+    </div>`);
+  });
+  // Add tile
+  tiles.push(`<button class="media-add" type="button" id="p_addPhotoBtn" onclick="document.getElementById('p_photoFile').click()">
+    <span class="icon">＋</span>
+    <span class="label">Add photo</span>
+    <span class="hint">Tap or drop image</span>
+  </button>`);
+  grid.innerHTML = tiles.join('');
+}
+function removeExistingPhoto(path) {
+  const idx = existingPhotos.indexOf(path);
+  if (idx >= 0) {
+    existingPhotos.splice(idx, 1);
+    // Only flag for cleanup if the path was actually persisted on the original puppy record
+    if (!removedPhotos.includes(path)) removedPhotos.push(path);
+    renderMediaGrid();
+  }
+}
+function removePendingPhoto(tempId) {
+  const idx = pendingPhotos.findIndex(p => p.tempId === tempId);
+  if (idx >= 0) {
+    pendingPhotos.splice(idx, 1);
+    renderMediaGrid();
+  }
+}
 
 async function savePuppy() {
   const btn = $('p_saveBtn'); btn.disabled = true; btn.innerHTML = '<span class="spinner"></span>Saving…';
   try {
     const name = $('p_name').value.trim();
     if (!name) throw new Error('Name is required');
-    const id = editingPuppyIdx >= 0 ? catalog.puppies[editingPuppyIdx].id : slug(name) + '-' + Date.now().toString(36).slice(-4);
-    let photoPath = editingPuppyIdx >= 0 ? catalog.puppies[editingPuppyIdx].photo : null;
-    if (pendingPhoto) {
-      const upload = await api('/api/photo', { method:'POST', body: JSON.stringify({ filename: pendingPhoto.filename, dataUrl: pendingPhoto.dataUrl }) });
-      photoPath = upload.path;
-    }
+    const existing = editingPuppyIdx >= 0 ? catalog.puppies[editingPuppyIdx] : null;
+    const id = existing?.id || (slug(name) + '-' + Date.now().toString(36).slice(-4));
     const puppy = {
-      id, name, sex: $('p_sex').value, coat: $('p_coat').value.trim(), weight: $('p_weight').value.trim(),
-      registration: $('p_registration').value.trim(), status: $('p_status').value,
+      id, name,
+      sex: $('p_sex').value,
+      coat: $('p_coat').value.trim(),
+      weight: $('p_weight').value.trim(),
+      registration: $('p_registration').value.trim(),
+      status: $('p_status').value,
       price: parseInt($('p_price').value, 10) || 0,
       ckc_price: $('p_ckc_price').value ? parseInt($('p_ckc_price').value, 10) : undefined,
       deposit: parseInt($('p_deposit').value, 10) || 500,
       description: $('p_description').value.trim(),
-      photo: photoPath,
+      photos: existingPhotos.slice(),  // kept paths in display order; worker appends newly uploaded
       payment_link: $('p_payment_link').value.trim() || null,
     };
+    if (existing?.badge) puppy.badge = existing.badge;
     Object.keys(puppy).forEach(k => puppy[k] === undefined && delete puppy[k]);
-    if (editingPuppyIdx >= 0) catalog.puppies[editingPuppyIdx] = puppy;
-    else catalog.puppies.push(puppy);
-    await api('/api/puppies', { method:'PUT', body: JSON.stringify(catalog.puppies) });
+    // Single transactional call — worker uploads photos, writes catalog, rolls back on any failure
+    const res = await api('/api/puppy-save', {
+      method: 'POST',
+      body: JSON.stringify({
+        puppy,
+        newPhotos: pendingPhotos.map(p => ({ filename: p.filename, dataUrl: p.dataUrl })),
+        removePhotos: removedPhotos,
+      })
+    });
     toast('Saved — site rebuilds in ~30 seconds', 'ok');
     closePuppy();
-    renderPuppies();
+    // Reload canonical state so the row reflects what actually shipped to the repo
+    await loadCatalog();
   } catch (e) {
     toast(e.message, 'error');
   } finally {
@@ -594,42 +677,73 @@ async function deleteAccessory(idx) {
 }
 
 // ====== PHOTO UPLOAD ======
-const photoZone = $('p_photoZone');
 const photoFile = $('p_photoFile');
-photoZone.addEventListener('click', () => photoFile.click());
-['dragover','dragenter'].forEach(ev => photoZone.addEventListener(ev, e => { e.preventDefault(); photoZone.classList.add('dragover'); }));
-['dragleave','drop'].forEach(ev => photoZone.addEventListener(ev, e => { e.preventDefault(); photoZone.classList.remove('dragover'); }));
-photoZone.addEventListener('drop', e => { e.preventDefault(); if (e.dataTransfer.files[0]) handlePhoto(e.dataTransfer.files[0]); });
-photoFile.addEventListener('change', e => { if (e.target.files[0]) handlePhoto(e.target.files[0]); });
+photoFile.addEventListener('change', e => {
+  if (!e.target.files || !e.target.files.length) return;
+  handlePhotoFiles(Array.from(e.target.files));
+  e.target.value = '';  // allow re-selecting the same file
+});
 
-async function handlePhoto(file) {
-  if (!file.type.startsWith('image/')) { toast('Please choose an image file', 'error'); return; }
-  // Resize to max 1600px wide on the longest side using canvas
-  const img = new Image();
-  const reader = new FileReader();
-  reader.onload = () => { img.src = reader.result; };
-  img.onload = () => {
-    const maxDim = 1600;
-    const ratio = Math.min(1, maxDim / Math.max(img.width, img.height));
-    const w = Math.round(img.width * ratio);
-    const h = Math.round(img.height * ratio);
-    const canvas = document.createElement('canvas');
-    canvas.width = w; canvas.height = h;
-    canvas.getContext('2d').drawImage(img, 0, 0, w, h);
-    const dataUrl = canvas.toDataURL('image/jpeg', 0.86);
-    pendingPhoto = { dataUrl, filename: sanitizeFilename(file.name) };
-    $('p_photoPreview').src = dataUrl;
-    $('p_photoPreview').classList.remove('hidden');
-    $('p_photoMsg').textContent = 'Photo ready — will upload on save';
-    $('p_photoFilename').textContent = pendingPhoto.filename + ' (' + Math.round(dataUrl.length * 0.75 / 1024) + ' KB)';
-  };
-  reader.readAsDataURL(file);
+// Drag-drop on the media grid (delegate so it survives re-renders)
+const mediaGrid = $('p_mediaGrid');
+['dragover','dragenter'].forEach(ev => mediaGrid.addEventListener(ev, e => {
+  e.preventDefault();
+  const addBtn = mediaGrid.querySelector('.media-add');
+  if (addBtn) addBtn.classList.add('dragover');
+}));
+['dragleave','drop'].forEach(ev => mediaGrid.addEventListener(ev, e => {
+  e.preventDefault();
+  const addBtn = mediaGrid.querySelector('.media-add');
+  if (addBtn) addBtn.classList.remove('dragover');
+}));
+mediaGrid.addEventListener('drop', e => {
+  e.preventDefault();
+  if (e.dataTransfer?.files?.length) handlePhotoFiles(Array.from(e.dataTransfer.files));
+});
+
+async function handlePhotoFiles(files) {
+  const images = files.filter(f => f.type.startsWith('image/'));
+  if (!images.length) { toast('Please choose image files', 'error'); return; }
+  if (images.length < files.length) toast('Skipped non-image files', '');
+  for (const f of images) {
+    try { await ingestOnePhoto(f); }
+    catch (e) { toast(`Failed to read ${f.name}: ${e.message}`, 'error'); }
+  }
+  renderMediaGrid();
 }
+
+function ingestOnePhoto(file) {
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    const reader = new FileReader();
+    reader.onload = () => { img.src = reader.result; };
+    reader.onerror = () => reject(new Error('Read error'));
+    img.onerror = () => reject(new Error('Decode error'));
+    img.onload = () => {
+      const maxDim = 1600;
+      const ratio = Math.min(1, maxDim / Math.max(img.width, img.height));
+      const w = Math.round(img.width * ratio);
+      const h = Math.round(img.height * ratio);
+      const canvas = document.createElement('canvas');
+      canvas.width = w; canvas.height = h;
+      canvas.getContext('2d').drawImage(img, 0, 0, w, h);
+      const dataUrl = canvas.toDataURL('image/jpeg', 0.86);
+      pendingPhotos.push({
+        tempId: 'pp_' + (++_photoTempCounter),
+        dataUrl,
+        filename: sanitizeFilename(file.name),
+      });
+      resolve();
+    };
+    reader.readAsDataURL(file);
+  });
+}
+
 function sanitizeFilename(name) {
   const dot = name.lastIndexOf('.');
   const base = (dot > 0 ? name.slice(0, dot) : name).toLowerCase().replace(/[^a-z0-9]+/g,'_').replace(/^_+|_+$/g,'') || 'photo';
   const ext = (dot > 0 ? name.slice(dot+1) : 'jpg').toLowerCase().replace(/[^a-z0-9]/g,'') || 'jpg';
-  return base.slice(0,40) + '_' + Date.now().toString(36).slice(-5) + '.' + ext;
+  return base.slice(0,40) + '_' + Date.now().toString(36).slice(-5) + Math.random().toString(36).slice(-3) + '.' + ext;
 }
 
 // ====== BOOT ======

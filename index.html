@@ -220,6 +220,23 @@ footer ul a:hover{opacity:1; color:var(--peach-2)}
 .modal .close:hover{opacity:1}
 .unverified-flag{font-size:12px; padding:12px 14px; background:color-mix(in oklab, var(--warn) 14%, var(--cream)); border:1px solid color-mix(in oklab, var(--warn) 30%, transparent); border-radius:12px; color:var(--warn); margin-top:14px; line-height:1.5}
 .unverified-flag b{font-weight:700}
+
+/* SCROLL CUE — bottom-center of hero, hides once user starts scrolling */
+.scroll-cue{position:absolute; left:50%; bottom:24px; transform:translateX(-50%); display:flex; flex-direction:column; align-items:center; gap:6px; color:var(--cocoa); text-decoration:none; font-size:11px; font-weight:600; letter-spacing:.18em; text-transform:uppercase; opacity:.7; transition:opacity .35s ease, transform .35s ease; z-index:5}
+.scroll-cue:hover{opacity:1}
+.scroll-cue .arrow{width:38px; height:38px; border-radius:999px; background:var(--cocoa); color:var(--cream); display:flex; align-items:center; justify-content:center; font-size:20px; line-height:1; box-shadow:0 8px 24px -8px rgba(75,42,26,.35); animation:scroll-bob 1.8s ease-in-out infinite}
+.scroll-cue.hidden{opacity:0; transform:translate(-50%, 16px); pointer-events:none}
+@keyframes scroll-bob{
+  0%, 100%{ transform:translateY(0) }
+  50%{ transform:translateY(7px) }
+}
+@media (max-width:600px){
+  .scroll-cue{bottom:14px; font-size:10px}
+  .scroll-cue .arrow{width:34px; height:34px; font-size:18px}
+}
+@media (prefers-reduced-motion: reduce){
+  .scroll-cue .arrow{animation:none}
+}
 </style>
 </head>
 <body>
@@ -263,6 +280,10 @@ footer ul a:hover{opacity:1; color:var(--peach-2)}
       </div>
     </div>
   </div>
+  <a href="#litter" class="scroll-cue" id="scrollCue" aria-label="Scroll to available puppies">
+    <span>See the litter</span>
+    <span class="arrow" aria-hidden="true">↓</span>
+  </a>
 </section>
 
 <div class="trust">
@@ -469,8 +490,10 @@ footer ul a:hover{opacity:1; color:var(--peach-2)}
                 : p.status === 'on_hold' ? '<span class="badge held">On Hold</span>'
                 : p.badge === 'new' ? '<span class="badge new">New</span>'
                 : '';
-    const phHtml = p.photo
-      ? `<div class="ph">${badge}<img src="${esc(p.photo)}" alt="${esc(p.name)}"></div>`
+    // Multi-photo support: prefer photos[0], fall back to legacy `photo` singular
+    const primaryPhoto = (Array.isArray(p.photos) && p.photos.length) ? p.photos[0] : p.photo;
+    const phHtml = primaryPhoto
+      ? `<div class="ph">${badge}<img src="${esc(primaryPhoto)}" alt="${esc(p.name)}"></div>`
       : `<div class="ph placeholder">${esc(p.name)}<small>Photo on request — text us</small></div>`;
     const sexEm = p.sex ? ` <em>· ${esc(p.sex)}</em>` : '';
     const priceLine = p.ckc_price
@@ -548,6 +571,18 @@ footer ul a:hover{opacity:1; color:var(--peach-2)}
     document.body.style.overflow = '';
   }
   document.addEventListener('keydown', e => { if(e.key === 'Escape') closeModal(); });
+
+  // Hide the hero scroll cue once the user has scrolled past ~25% of the viewport
+  (function(){
+    const cue = document.getElementById('scrollCue');
+    if (!cue) return;
+    const onScroll = () => {
+      if (window.scrollY > Math.max(160, window.innerHeight * 0.25)) cue.classList.add('hidden');
+      else cue.classList.remove('hidden');
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  })();
 </script>
 </body>
 </html>
