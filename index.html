@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Shihtzu Factory — Tiny Shih Tzu raised inside, in West Texas</title>
-<meta name="description" content="A small, family-run Shih Tzu house in Abilene, Texas. Cobby, flat-faced, tiny — five to nine pounds full grown. Raised inside, paper-trained, AKC.">
+<meta name="description" content="A small, family-run Shih Tzu house in Abilene, Texas. Cobby, flat-faced, tiny — five to nine pounds full grown. Raised inside, pad-trained, AKC.">
 <meta property="og:title" content="Shihtzu Factory — Tiny Shih Tzu of Abilene, Texas">
 <meta property="og:description" content="Hobby breeders since 1998. Tiny, cobby, dark-chocolate Shih Tzu raised inside the home and placed by waitlist.">
 <meta property="og:image" content="photos/a_perfect_mercedes_096.jpg">
@@ -95,10 +95,30 @@ section.litter{padding:clamp(60px,8vw,120px) clamp(20px,5vw,64px)}
 .card:hover{transform:translateY(-6px); box-shadow:0 30px 60px -25px rgba(75,42,26,.22)}
 .card .ph{aspect-ratio:4/3; overflow:hidden; position:relative; background:var(--cream); display:flex; align-items:center; justify-content:center}
 .card .ph img{width:100%; height:100%; object-fit:cover; transition:transform .5s ease}
-.card:hover .ph img{transform:scale(1.04)}
+.card:hover .ph > img{transform:scale(1.04)}
 .card .ph.placeholder{font-family:"DM Serif Display",serif; font-style:italic; color:var(--peach-2); font-size:64px; padding:24px; text-align:center}
 .card .ph.placeholder small{display:block; font-family:"DM Sans"; font-style:normal; font-size:13px; color:var(--cocoa-soft); font-weight:400; margin-top:14px}
-.card .badge{position:absolute; top:14px; left:14px; padding:6px 12px; background:var(--cream); border-radius:999px; font-size:11px; font-weight:700; letter-spacing:.04em; z-index:2}
+.card .badge{position:absolute; top:14px; left:14px; padding:6px 12px; background:var(--cream); border-radius:999px; font-size:11px; font-weight:700; letter-spacing:.04em; z-index:3}
+
+/* Multi-photo carousel inside .card .ph */
+.ph-track{display:flex; width:100%; height:100%; overflow-x:auto; overflow-y:hidden; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch; scrollbar-width:none}
+.ph-track::-webkit-scrollbar{display:none}
+.ph-track img{flex:0 0 100%; min-width:100%; width:100%; height:100%; object-fit:cover; scroll-snap-align:center; scroll-snap-stop:always}
+.ph-arrow{position:absolute; top:50%; transform:translateY(-50%); width:34px; height:34px; border-radius:999px; background:rgba(255,246,238,.92); color:var(--cocoa); border:none; cursor:pointer; font-size:22px; font-weight:600; line-height:1; display:flex; align-items:center; justify-content:center; padding:0 0 3px; box-shadow:0 4px 12px -3px rgba(0,0,0,.25); opacity:0; transition:opacity .2s ease, background .2s ease; z-index:2}
+.ph-arrow:hover{background:var(--cream)}
+.card:hover .ph-arrow{opacity:1}
+.ph-prev{left:10px}
+.ph-next{right:10px}
+.ph-dots{position:absolute; bottom:12px; left:50%; transform:translateX(-50%); display:flex; gap:6px; z-index:2; pointer-events:none; padding:6px 10px; background:rgba(75,42,26,.28); border-radius:999px; backdrop-filter:blur(6px)}
+.ph-dots span{width:6px; height:6px; border-radius:999px; background:rgba(255,255,255,.55); transition:background .25s ease, transform .25s ease}
+.ph-dots span.active{background:#fff; transform:scale(1.35)}
+@media (hover: none){
+  /* Touch devices: keep arrows visible since there's no hover */
+  .ph-arrow{opacity:.85}
+}
+@media (max-width:480px){
+  .ph-arrow{width:32px; height:32px; font-size:20px}
+}
 .card .badge.held{background:var(--cocoa); color:var(--cream); opacity:.8}
 .card .badge.new{background:var(--peach-2); color:var(--cocoa)}
 .card .body{padding:28px 26px 28px; display:flex; flex-direction:column; gap:14px; flex:1}
@@ -289,7 +309,7 @@ footer ul a:hover{opacity:1; color:var(--peach-2)}
 <div class="trust">
   <div class="trust-row">
     <span>Raised inside</span>
-    <span>Paper-trained</span>
+    <span>Pad-trained</span>
     <span>AKC papers</span>
     <span>Health guarantee</span>
     <span>Hand-placed</span>
@@ -315,7 +335,7 @@ footer ul a:hover{opacity:1; color:var(--peach-2)}
     <div class="copy">
       <span class="pill">About us</span>
       <h3>A small, family-run house in <em>Abilene, Texas</em>.</h3>
-      <p>We've been raising tiny Shih Tzu for over twenty years. Every puppy is born inside the home, raised inside the home, paper-trained on schedule, and current on every vaccine and worming round before they leave us.</p>
+      <p>We've been raising tiny Shih Tzu for over twenty years. Every puppy is born inside the home, raised inside the home, pad-trained on schedule, and current on every vaccine and worming round before they leave us.</p>
       <p>We breed for the cobby, flat-faced, smaller side of the Shih Tzu standard — most of our adults are below the 9-pound show minimum, which is exactly the pocket-sized type we're after. We have a particular love for the rarer chocolate and liver coats: dark chocolate, light chocolate, white chocolate, the whole range.</p>
       <p>We are hobby breeders. We show with the AKC for the love of the breed, not for championships. The dogs that don't quite make show conformation are placed as pets — honestly, with full disclosure of why they wouldn't have showed.</p>
       <div class="story-stats">
@@ -490,11 +510,23 @@ footer ul a:hover{opacity:1; color:var(--peach-2)}
                 : p.status === 'on_hold' ? '<span class="badge held">On Hold</span>'
                 : p.badge === 'new' ? '<span class="badge new">New</span>'
                 : '';
-    // Multi-photo support: prefer photos[0], fall back to legacy `photo` singular
-    const primaryPhoto = (Array.isArray(p.photos) && p.photos.length) ? p.photos[0] : p.photo;
-    const phHtml = primaryPhoto
-      ? `<div class="ph">${badge}<img src="${esc(primaryPhoto)}" alt="${esc(p.name)}"></div>`
-      : `<div class="ph placeholder">${esc(p.name)}<small>Photo on request — text us</small></div>`;
+    // Multi-photo: photos array preferred, legacy `photo` singular fallback
+    const photos = (Array.isArray(p.photos) && p.photos.length) ? p.photos : (p.photo ? [p.photo] : []);
+    let phHtml;
+    if (photos.length > 1) {
+      const slides = photos.map(src => `<img src="${esc(src)}" alt="${esc(p.name)}" loading="lazy">`).join('');
+      const dots = photos.map((_, i) => `<span${i === 0 ? ' class="active"' : ''}></span>`).join('');
+      phHtml = `<div class="ph">${badge}
+        <div class="ph-track">${slides}</div>
+        <button class="ph-arrow ph-prev" type="button" aria-label="Previous photo">‹</button>
+        <button class="ph-arrow ph-next" type="button" aria-label="Next photo">›</button>
+        <div class="ph-dots">${dots}</div>
+      </div>`;
+    } else if (photos.length === 1) {
+      phHtml = `<div class="ph">${badge}<img src="${esc(photos[0])}" alt="${esc(p.name)}"></div>`;
+    } else {
+      phHtml = `<div class="ph placeholder">${esc(p.name)}<small>Photo on request — text us</small></div>`;
+    }
     const sexEm = p.sex ? ` <em>· ${esc(p.sex)}</em>` : '';
     const priceLine = p.ckc_price
       ? `${fmt$(p.price)} <small>AKC · ${fmt$(p.ckc_price)} CKC</small>`
@@ -509,6 +541,27 @@ footer ul a:hover{opacity:1; color:var(--peach-2)}
   function accessoryCard(a) {
     if (a.active === false) return '';
     return `<article class="acc"><div class="ico">${esc(a.icon||'◍')}</div><h4>${esc(a.name)}</h4><span class="px">${fmt$(a.price)}</span><button class="add" data-name="${esc(a.name)}" data-deposit="${a.price}" data-full="${a.price}" data-link="${esc(a.payment_link || ('#PLACEHOLDER_'+a.id.toUpperCase()))}">Add — ${fmt$(a.price)}</button></article>`;
+  }
+
+  function bindCarousels(){
+    document.querySelectorAll('.ph-track').forEach(track => {
+      if (track.dataset.bound) return;
+      track.dataset.bound = '1';
+      const wrap = track.parentElement;
+      const dots = wrap.querySelector('.ph-dots');
+      const prev = wrap.querySelector('.ph-prev');
+      const next = wrap.querySelector('.ph-next');
+      const updateDots = () => {
+        if (!dots) return;
+        const idx = Math.round(track.scrollLeft / Math.max(1, track.clientWidth));
+        dots.querySelectorAll('span').forEach((s, i) => s.classList.toggle('active', i === idx));
+      };
+      track.addEventListener('scroll', updateDots, { passive: true });
+      updateDots();
+      const step = dir => () => track.scrollBy({ left: dir * track.clientWidth, behavior: 'smooth' });
+      if (prev) prev.addEventListener('click', e => { e.preventDefault(); step(-1)(); });
+      if (next) next.addEventListener('click', e => { e.preventDefault(); step(1)(); });
+    });
   }
 
   function bindReserveButtons(){
@@ -559,6 +612,7 @@ footer ul a:hover{opacity:1; color:var(--peach-2)}
       if (shelf) {
         shelf.innerHTML = accessories.map(accessoryCard).filter(Boolean).join('');
       }
+      bindCarousels();
       bindReserveButtons();
     } catch (e) {
       console.error('Catalog load failed:', e);

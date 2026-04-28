@@ -267,8 +267,14 @@ img{display:block; max-width:100%}
       <div><label>Price (USD)</label><input id="p_price" type="number" min="0" placeholder="2500"></div>
       <div><label>CKC price (optional)</label><input id="p_ckc_price" type="number" min="0" placeholder="leave empty if same as AKC"></div>
       <div><label>Deposit (USD)</label><input id="p_deposit" type="number" min="0" value="500"></div>
-      <div><label>PayPal/Venmo Payment Link (optional)</label><input id="p_payment_link" placeholder="https://www.paypal.com/ncp/payment/..."></div>
     </div>
+    <label>PayPal Link</label>
+    <select id="p_payment_preset" onchange="onPaymentPresetChange()">
+      <option value="nancy">Nancy McCullough's PayPal (default)</option>
+      <option value="custom">Custom URL…</option>
+      <option value="none">None — disable reserve button</option>
+    </select>
+    <input id="p_payment_link" placeholder="https://..." style="margin-top:10px; display:none">
     <label>Description</label>
     <textarea id="p_description" placeholder="Tell us about this puppy — voice should sound like the breeder, not a sales pitch."></textarea>
     <label>Photos <span style="font-weight:400; text-transform:none; letter-spacing:0; opacity:.5; font-size:12px">— first one shows on the site</span></label>
@@ -308,6 +314,7 @@ img{display:block; max-width:100%}
 const API_BASE = 'https://api.shihtzufactory.com';
 const TOKEN_KEY = 'stf-admin-token';
 const EMAIL_KEY = 'stf-admin-email';
+const NANCY_PAYPAL = 'https://paypal.me/NancyMcCullough?locale.x=en_US&country.x=US';
 
 // ====== STATE ======
 let session = null;
@@ -484,6 +491,44 @@ function renderPuppies() {
 function escapeHtml(s){ return String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
 function slug(s){ return String(s).toLowerCase().trim().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,''); }
 
+// ====== PAYMENT-LINK PRESET ======
+function setPaymentPreset(value) {
+  // value: existing payment_link string from a puppy record (or '' / null for unset)
+  const select = $('p_payment_preset');
+  const input = $('p_payment_link');
+  if (!value) {
+    // Unset → default to Nancy
+    select.value = 'nancy';
+    input.style.display = 'none';
+    input.value = '';
+  } else if (value === NANCY_PAYPAL) {
+    select.value = 'nancy';
+    input.style.display = 'none';
+    input.value = '';
+  } else {
+    select.value = 'custom';
+    input.style.display = '';
+    input.value = value;
+  }
+}
+function onPaymentPresetChange() {
+  const select = $('p_payment_preset');
+  const input = $('p_payment_link');
+  if (select.value === 'custom') {
+    input.style.display = '';
+    if (!input.value) input.focus();
+  } else {
+    input.style.display = 'none';
+  }
+}
+function resolvePaymentLink() {
+  const select = $('p_payment_preset');
+  if (select.value === 'nancy') return NANCY_PAYPAL;
+  if (select.value === 'none') return null;
+  // custom
+  return $('p_payment_link').value.trim() || null;
+}
+
 function openPuppyEditor(idx = -1) {
   editingPuppyIdx = idx;
   pendingPhotos = [];
@@ -497,7 +542,7 @@ function openPuppyEditor(idx = -1) {
   $('p_ckc_price').value = p.ckc_price ?? '';
   $('p_deposit').value = p.deposit ?? 500;
   $('p_description').value = p.description ?? '';
-  $('p_payment_link').value = p.payment_link ?? '';
+  setPaymentPreset(p.payment_link);
   renderMediaGrid();
   $('puppyModal').classList.add('open');
 }
@@ -575,7 +620,7 @@ async function savePuppy() {
       deposit: parseInt($('p_deposit').value, 10) || 500,
       description: $('p_description').value.trim(),
       photos: existingPhotos.slice(),  // kept paths in display order; worker appends newly uploaded
-      payment_link: $('p_payment_link').value.trim() || null,
+      payment_link: resolvePaymentLink(),
     };
     if (existing?.badge) puppy.badge = existing.badge;
     Object.keys(puppy).forEach(k => puppy[k] === undefined && delete puppy[k]);
