@@ -210,9 +210,9 @@ section.contact{padding:clamp(60px,8vw,120px) clamp(20px,5vw,64px)}
 .cgrid form input, .cgrid form textarea{width:100%; padding:14px 18px; border:1px solid var(--rule); background:var(--cream-2); font:inherit; font-size:15px; color:var(--cocoa); border-radius:14px; margin-bottom:12px}
 .cgrid form textarea{min-height:110px; resize:vertical}
 .cgrid form input:focus, .cgrid form textarea:focus{outline:none; border-color:var(--peach-2); background:var(--cream)}
-/* Bottom-align the form with the contact rows column so Send sits below the last row */
-.cgrid form{align-self:end}
-@media (max-width:800px){.cgrid form{align-self:start}}
+/* Push the form down so it visually starts below the first couple contact rows */
+.cgrid form{margin-top:clamp(40px, 6vw, 96px)}
+@media (max-width:800px){.cgrid form{margin-top:0}}
 
 /* FOOTER */
 footer{padding:48px clamp(20px,5vw,64px) 28px; background:var(--cocoa); color:var(--cream)}
@@ -408,7 +408,8 @@ footer ul a:hover{opacity:1; color:var(--peach-2)}
   </div>
 </section>
 
-<section class="shelf" id="shelf">
+<!-- Welcome shelf hidden for now — restore by removing the `hidden` attribute and the footer-link `hidden` -->
+<section class="shelf" id="shelf" hidden>
   <div class="shead">
     <span class="pill">Welcome shelf</span>
     <h2>For the <em>first day home</em>.</h2>
@@ -444,12 +445,15 @@ footer ul a:hover{opacity:1; color:var(--peach-2)}
       <div class="row"><span class="label">Where</span><span>Abilene, Texas</span></div>
       <div class="row"><span class="label">Hours</span><span>Closed Sabbath: sundown Fri — sundown Sat</span></div>
     </div>
-    <form action="https://formspree.io/f/PLACEHOLDER" method="POST" onsubmit="event.preventDefault(); alert('Form submission needs Formspree (or similar) endpoint configured. See README.');">
-      <input name="name" placeholder="Your name" required>
-      <input name="email" type="email" placeholder="Your email" required>
-      <input name="phone" placeholder="Phone (optional)">
-      <textarea name="message" placeholder="Tell us about your home, who's in it, and the kind of dog you're imagining." required></textarea>
-      <button class="btn" type="submit">Send →</button>
+    <form id="contactForm" novalidate>
+      <input name="name" placeholder="Your name" maxlength="80" required>
+      <input name="email" type="email" placeholder="Your email" maxlength="200" required>
+      <input name="phone" placeholder="Phone (optional)" maxlength="30">
+      <textarea name="message" placeholder="Tell us about your home, who's in it, and the kind of dog you're imagining." maxlength="5000" required></textarea>
+      <!-- Honeypot: bots fill every field; humans never see this -->
+      <input name="website" type="text" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;height:0;width:0;opacity:0;pointer-events:none">
+      <button class="btn" type="submit" id="contactSubmit">Send →</button>
+      <p id="contactStatus" hidden style="margin:14px 0 0;font-size:14px;line-height:1.5"></p>
     </form>
   </div>
 </section>
@@ -461,7 +465,7 @@ footer ul a:hover{opacity:1; color:var(--peach-2)}
       <p style="font-size:13px; opacity:.7; max-width:320px; line-height:1.55; margin:0">A small, family-run Shih Tzu house in Abilene, Texas. Tiny, cobby, hand-placed since the 1990s.</p>
     </div>
     <div><h4>Puppies</h4><ul><li><a href="#litter">Available now</a></li><li><a href="#graduates">Past graduates</a></li><li><a href="#shows">Show wins</a></li></ul></div>
-    <div><h4>House</h4><ul><li><a href="#story">About us</a></li><li><a href="#promise">Our promise</a></li><li><a href="#shelf">Welcome shelf</a></li></ul></div>
+    <div><h4>House</h4><ul><li><a href="#story">About us</a></li><li><a href="#promise">Our promise</a></li><li hidden><a href="#shelf">Welcome shelf</a></li></ul></div>
     <div><h4>Contact</h4><ul><li><a href="mailto:shihtzufactory@gmail.com">Email</a></li><li><a href="tel:13256760200">Call</a></li><li><a href="sms:13252607882">Text</a></li></ul></div>
   </div>
   <div class="fmeta">
@@ -637,6 +641,40 @@ footer ul a:hover{opacity:1; color:var(--peach-2)}
     };
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
+  })();
+
+  // Contact form → POST to api.shihtzufactory.com/api/contact (Resend → shihtzufactory@gmail.com)
+  (function(){
+    const form = document.getElementById('contactForm');
+    if (!form) return;
+    const status = document.getElementById('contactStatus');
+    const btn = document.getElementById('contactSubmit');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const original = btn.textContent;
+      btn.disabled = true; btn.textContent = 'Sending…';
+      status.hidden = true;
+      try {
+        const data = Object.fromEntries(new FormData(form).entries());
+        const r = await fetch('https://api.shihtzufactory.com/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data),
+        });
+        const j = await r.json().catch(() => ({}));
+        if (!r.ok) throw new Error(j.error || ('HTTP ' + r.status));
+        status.textContent = 'Thanks — we got your note and will write you back. (Closed Sabbath sundown Fri – sundown Sat.)';
+        status.style.color = 'var(--cocoa)';
+        status.hidden = false;
+        form.reset();
+      } catch (err) {
+        status.textContent = 'Something went wrong sending that. Please text us at (325) 260-7882 instead.';
+        status.style.color = 'var(--warn)';
+        status.hidden = false;
+      } finally {
+        btn.disabled = false; btn.textContent = original;
+      }
+    });
   })();
 </script>
 </body>
