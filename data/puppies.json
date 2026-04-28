@@ -10,9 +10,12 @@
     "price": 2500,
     "ckc_price": 2000,
     "deposit": 500,
-    "description": "Small dark-chocolate male with lots of sass. Charting to be 7â8 pounds full grown.",
-    "photo": "photos/chevy_star_022.JPG",
-    "payment_link": null
+    "description": "Small dark-chocolate male with lots of sass. Charting to 8 pounds full grown.",
+    "photos": [
+      "photos/chevy_star_022.JPG"
+    ],
+    "payment_link": null,
+    "photo": "photos/chevy_star_022.JPG"
   },
   {
     "id": "gucci",
