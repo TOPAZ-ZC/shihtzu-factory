@@ -54,7 +54,21 @@
     "price": 3500,
     "deposit": 500,
     "description": "Dark chocolate, gorgeous thick fluff hair, big green expressive eyes, tiny button brown nose. Short, cobby, adorable. We were holding her for showing but her nose is slightly pinched and we aren't sure she'll grow out of it.",
-    "photo": "photos/img_7646_4b5fn.jpeg",
+    "photo": null,
+    "payment_link": null
+  },
+  {
+    "id": "zorro-cvyv",
+    "name": "Zorro",
+    "sex": "female",
+    "coat": "",
+    "weight": "",
+    "registration": "Ckc/AKC",
+    "status": "available",
+    "price": 3500,
+    "deposit": 500,
+    "description": "",
+    "photo": "photos/img_7709_4cpau.jpeg",
     "payment_link": null
   }
 ]
