@@ -24,13 +24,16 @@
     "coat": "Dark chocolate",
     "weight": "~7 lb projected",
     "registration": "AKC available",
+    "status": "available",
     "price": 3500,
     "deposit": 500,
-    "status": "available",
-    "badge": "new",
-    "photo": "photos/gucci_star_188.JPG",
+    "description": "Dark chocolate from very tiny parents (mom and dad never got over 4 lb). Gorgeous hair, tiny flat face, brown button nose. Outgoing. Could go to a breeder home or a family home. Takes many poops everywhere.",
+    "photos": [
+      "photos/gucci_star_188.JPG"
+    ],
     "payment_link": null,
-    "description": "Dark chocolate from very tiny parents (mom and dad never got over 4 lb). Gorgeous hair, tiny flat face, brown button nose. Outgoing â could go to a breeder home or a family home."
+    "badge": "new",
+    "photo": "photos/gucci_star_188.JPG"
   },
   {
     "id": "parsley",
