@@ -1,13 +1,5 @@
 [
   {
-    "id": "collar",
-    "name": "Hand-loomed mini collar",
-    "price": 48,
-    "icon": "⌒",
-    "payment_link": null,
-    "active": true
-  },
-  {
     "id": "bows",
     "name": "Top-knot bow set, 3-pack",
     "price": 24,
