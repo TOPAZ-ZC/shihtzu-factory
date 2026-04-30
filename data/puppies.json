@@ -45,10 +45,11 @@
     "name": "Parsley",
     "sex": "male",
     "coat": "Solid chocolate",
-    "weight": "5 lb projected",
+    "weight": "4-5 lb projected",
     "registration": "CKC or AKC option",
     "status": "available",
     "price": 3500,
+    "ckc_price": 4500,
     "deposit": 500,
     "description": "The smallest of his litter — 2 pounds at 12 weeks. Solid dark chocolate, thick gorgeous hair, flat smooshie face, big expressive green eyes. Quiet, loving, sweet little guy.",
     "photos": [
