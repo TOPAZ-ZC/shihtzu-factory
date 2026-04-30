@@ -46,14 +46,25 @@
     "sex": "male",
     "coat": "Solid chocolate",
     "weight": "4-5 lb projected",
-    "registration": "CKC or AKC option",
+    "registration": "CKC",
     "status": "available",
-    "price": 4500,
-    "ckc_price": 3500,
+    "price": 3500,
     "deposit": 500,
-    "description": "The smallest of his litter — 2 pounds at 12 weeks. Solid dark chocolate, thick gorgeous hair, flat smooshie face, big expressive green eyes. Quiet, loving, sweet little guy.",
-    "photo": "photos/parsley_star_440_03rw5.jpg",
-    "payment_link": "https://paypal.me/NancyMcCullough?locale.x=en_US&country.x=US"
+    "description": "The smallest of his litter — 2 pounds at 12 weeks. Solid dark chocolate, thick gorgeous hair, flat smooshie face, big expressive green eyes. Quiet, loving, sweet little guy.  AKC  registration is available at an additional fee",
+    "photos": [
+      "photos/parsley_star_440_03rw5.jpg",
+      "photos/parsley_star_404_06zc2kso.jpg",
+      "photos/parsley_star_416_06zehmwg.jpg",
+      "photos/parsley_star_440_06zgthdh.jpg",
+      "photos/parsley_star_441_06zj17qb.jpg",
+      "photos/pasley_sweet_459_06zlc3jz.jpg",
+      "photos/parsley_star_326_0aus23cn.jpg",
+      "photos/parsley_star_349_0bm6hkfq.jpg",
+      "photos/parsley_star_326_0ch5fhua.jpg",
+      "photos/parsley_316_0djhdvrh.jpg"
+    ],
+    "payment_link": "https://paypal.me/NancyMcCullough?locale.x=en_US&country.x=US",
+    "photo": "photos/parsley_star_440_03rw5.jpg"
   },
   {
     "id": "tyra",
