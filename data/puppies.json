@@ -110,5 +110,25 @@
     ],
     "payment_link": "https://paypal.me/NancyMcCullough?locale.x=en_US&country.x=US",
     "photo": "photos/img_7690_5o38e0jk.jpeg"
+  },
+  {
+    "id": "little-petey-w7mk",
+    "name": "Little petey",
+    "sex": "male",
+    "coat": "Dark chocolate",
+    "weight": "6-7 pounds",
+    "registration": "CKC",
+    "status": "available",
+    "price": 2500,
+    "deposit": 500,
+    "description": "This little guy was born April 11th and these photos were his first time away from mom and it was frightening so better pictures coming when he matures a little he has the perfect little face with snub nose but he won’t look at camera right now but you can see his color",
+    "photos": [
+      "photos/img_8172_frwcjdmc.jpeg",
+      "photos/img_8171_frwes9jl.jpeg",
+      "photos/img_8182_frwhxpz3.jpeg",
+      "photos/img_8180_frwl43fa.jpeg"
+    ],
+    "payment_link": "https://paypal.me/NancyMcCullough?locale.x=en_US&country.x=US",
+    "photo": "photos/img_8172_frwcjdmc.jpeg"
   }
 ]
