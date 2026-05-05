@@ -6,13 +6,5 @@
     "icon": "∽",
     "payment_link": null,
     "active": true
-  },
-  {
-    "id": "bundle",
-    "name": "Welcome-home bundle",
-    "price": 145,
-    "icon": "◍",
-    "payment_link": null,
-    "active": true
   }
 ]
