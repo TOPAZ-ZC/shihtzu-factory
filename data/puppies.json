@@ -71,12 +71,12 @@
     "name": "Tyra",
     "sex": "female",
     "coat": "Dark chocolate",
-    "weight": "8 lb projected",
-    "registration": "CKC base +$500 AKC",
+    "weight": "7lb projected",
+    "registration": "AKC",
     "status": "available",
-    "price": 3500,
+    "price": 4500,
     "deposit": 500,
-    "description": "Dark chocolate, gorgeous thick fluff hair, big green expressive eyes, tiny button brown nose. Short, cobby, adorable. We were holding her for showing but her nose is slightly pinched.",
+    "description": "Dark chocolate, gorgeous thick fluff hair, big green expressive eyes, tiny button brown nose. Short, cobby, adorable. Sweet and loving little girl\nShe is barely old enough for her first show but she did great. Very outgoing and she had lots of fun.",
     "photos": [
       "photos/img_7646_4b5fn.jpeg",
       "photos/img_7647_5zlcidj9.jpeg",
@@ -85,7 +85,11 @@
       "photos/img_7644_5zlu9bto.jpeg",
       "photos/img_7643_5zlxy9mx.jpeg",
       "photos/img_7642_5zm1q2zf.jpeg",
-      "photos/img_7641_5zm56rdh.jpeg"
+      "photos/img_7641_5zm56rdh.jpeg",
+      "photos/img_8357_n0f4hh9e.jpeg",
+      "photos/img_8364_n3o570zo.jpeg",
+      "photos/img_8350_n3o7gb4h.jpeg",
+      "photos/img_8351_n3o9n33b.jpeg"
     ],
     "payment_link": "https://paypal.me/NancyMcCullough?locale.x=en_US&country.x=US",
     "photo": "photos/img_7646_4b5fn.jpeg"
