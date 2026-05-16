@@ -1,23 +1,5 @@
 [
   {
-    "id": "chevy",
-    "name": "Chevy",
-    "sex": "male",
-    "coat": "Dark chocolate",
-    "weight": "8 lb projected",
-    "registration": "AKC or CKC",
-    "status": "on_hold",
-    "price": 2500,
-    "ckc_price": 2000,
-    "deposit": 500,
-    "description": "Small dark-chocolate male with lots of sass. Charting to 8 pounds full grown.",
-    "photos": [
-      "photos/chevy_star_022.JPG"
-    ],
-    "payment_link": "https://paypal.me/NancyMcCullough?locale.x=en_US&country.x=US",
-    "photo": "photos/chevy_star_022.JPG"
-  },
-  {
     "id": "gucci",
     "name": "Gucci",
     "sex": "female",
