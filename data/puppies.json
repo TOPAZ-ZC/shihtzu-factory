@@ -116,5 +116,27 @@
     ],
     "payment_link": "https://paypal.me/NancyMcCullough?locale.x=en_US&country.x=US",
     "photo": "photos/img_8172_frwcjdmc.jpeg"
+  },
+  {
+    "id": "nico-is5d",
+    "name": "Nico",
+    "sex": "male",
+    "coat": "Solid chocolate",
+    "weight": "7",
+    "registration": "CKC or AKC option",
+    "status": "available",
+    "price": 3000,
+    "ckc_price": 2500,
+    "deposit": 500,
+    "description": "This little guy is solid chocolate, without any white on him.\nHe already has thick beautiful hair. A nice flat face and large expressive eyes.",
+    "photos": [
+      "photos/a_nico_star_0781_khmka4kg.jpg",
+      "photos/a_nico_777_khvvpn7f.jpg",
+      "photos/a_nico_780_khygtz0n.jpg",
+      "photos/a_nico_0786_ki0uwps6.jpg",
+      "photos/a_nico782_ki6qibju.jpg"
+    ],
+    "payment_link": "https://paypal.me/NancyMcCullough?locale.x=en_US&country.x=US",
+    "photo": "photos/a_nico_star_0781_khmka4kg.jpg"
   }
 ]
