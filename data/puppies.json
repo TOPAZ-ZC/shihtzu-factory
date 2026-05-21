@@ -162,5 +162,23 @@
     ],
     "payment_link": "https://paypal.me/NancyMcCullough?locale.x=en_US&country.x=US",
     "photo": "photos/lily_star_0835_r70y3dvo.jpg"
+  },
+  {
+    "id": "tippy-coachella-ruxs",
+    "name": "Tippy Coachella",
+    "sex": "female",
+    "coat": "Dark chocolate",
+    "weight": "7",
+    "registration": "CKC",
+    "status": "available",
+    "price": 3500,
+    "deposit": 500,
+    "description": "Tippy is adorable and one of my favorites- she already has an adorable personality \nShe has the short cobby body and short little legs- she has the extreme flat face with big expressive green eyes and tiny brown button nose \nThese are her first photos and she will be 6 weeks this coming weekend \nShe is ckc registered at this price but akc is available for an additional fee and can be added anytime the first year",
+    "photos": [
+      "photos/img_8572_rqcjgwk1.jpeg",
+      "photos/img_8568_rqcmteuw.jpeg"
+    ],
+    "payment_link": "https://paypal.me/NancyMcCullough?locale.x=en_US&country.x=US",
+    "photo": "photos/img_8572_rqcjgwk1.jpeg"
   }
 ]
