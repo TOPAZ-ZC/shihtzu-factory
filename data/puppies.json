@@ -133,31 +133,5 @@
     ],
     "payment_link": "https://paypal.me/NancyMcCullough?locale.x=en_US&country.x=US",
     "photo": "photos/img_8572_rqcjgwk1.jpeg"
-  },
-  {
-    "id": "chocolate-bunny-iig4",
-    "name": "Chocolate Bunny",
-    "sex": "female",
-    "coat": "Dark chocolate",
-    "weight": "7",
-    "registration": "CKC or AKC option",
-    "status": "sold",
-    "price": 3000,
-    "deposit": 500,
-    "description": "\"Bunny\" was on born Easter Sunday.  She is the sister of Lily and the smaller of the two. She is dark chocolate and charting to be 7 pounds grown. She has a tiny turned up button nose. AKC is available within the first year for an additional fee.",
-    "photos": [
-      "photos/bunny_star_0877_whhg5e2r.jpg",
-      "photos/bunny_0865_whnrs496.jpg",
-      "photos/bunny_0866_whnu3qny.jpg",
-      "photos/bunny_0871_whnwf9ui.jpg",
-      "photos/bunny_0875_whnyotp5.jpg",
-      "photos/bunny_0842_whupkqyj.jpg",
-      "photos/bunny_0844_whuru5tj.jpg",
-      "photos/bunny_0852_whuu3759.jpg",
-      "photos/bunny_0853_whuwaolx.jpg",
-      "photos/bunny_0857_whuyjzp8.jpg"
-    ],
-    "payment_link": "https://paypal.me/NancyMcCullough?locale.x=en_US&country.x=US",
-    "photo": "photos/bunny_star_0877_whhg5e2r.jpg"
   }
 ]
