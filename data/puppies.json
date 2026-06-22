@@ -102,5 +102,28 @@
     ],
     "payment_link": "https://paypal.me/NancyMcCullough?locale.x=en_US&country.x=US",
     "photo": "photos/tippy_coachella_star_0916_h3siiv28.jpg"
+  },
+  {
+    "id": "kimchi-djfq",
+    "name": "Kimchi",
+    "sex": "male",
+    "coat": "Chocolate",
+    "weight": "6",
+    "registration": "CKC or AKC option",
+    "status": "available",
+    "price": 3000,
+    "deposit": 500,
+    "description": "This tiny little guy is Kimchi. He is solid chocolate with a white chest and a little white on his chin. He looks like a little baby seal.  He has a flat smooshie face, a tiny turned up button nose, and big round eyes. He is charting to be 6 pounds. Listed with CKC, but AKC is available for an additional fee.",
+    "photos": [
+      "photos/kimchi_star_1157_lbh3w7hp.jpg",
+      "photos/kimchi_1115_lc478f3m.jpg",
+      "photos/kimchi_1159_lc48piif.jpg",
+      "photos/kimchi_1173_lc4a5rfp.jpg",
+      "photos/kimchi_1179_lc4bmbid.jpg",
+      "photos/kimchi_1180_lc4d12kq.jpg",
+      "photos/kimchi_1110_lcegikbu.jpg"
+    ],
+    "payment_link": "https://paypal.me/NancyMcCullough?locale.x=en_US&country.x=US",
+    "photo": "photos/kimchi_star_1157_lbh3w7hp.jpg"
   }
 ]
