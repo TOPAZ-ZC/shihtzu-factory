@@ -78,31 +78,6 @@
     "photo": "photos/a_nico_777_khvvpn7f.jpg"
   },
   {
-    "id": "easter-lily-7zjl",
-    "name": "Easter Lily",
-    "sex": "female",
-    "coat": "Caramel Chocolate",
-    "weight": "8",
-    "registration": "CKC or AKC option",
-    "status": "on_hold",
-    "price": 3000,
-    "deposit": 500,
-    "description": "This little girl was born on Easter Sunday. She is a beautiful caramel color with liver nose and pigment. She is charting to be about 8 pounds grown. She has an excellent flat face and thick double coat. AKC papers can be added within the first year for an additional fee.",
-    "photos": [
-      "photos/lily_star_0835_r70y3dvo.jpg",
-      "photos/lily_0813_r7etsevr.jpg",
-      "photos/lily_0820_r7ew8a4l.jpg",
-      "photos/lily_0827_r7eyibq9.jpg",
-      "photos/lily_stand_0809_r7f0oapa.jpg",
-      "photos/lily_star_0833_r7f2wwmx.jpg",
-      "photos/lily_0795_r7nto6m1.jpg",
-      "photos/lily_0797_r7wenu0l.jpg",
-      "photos/lily_0802_r7wgpf9j.jpg"
-    ],
-    "payment_link": "https://paypal.me/NancyMcCullough?locale.x=en_US&country.x=US",
-    "photo": "photos/lily_star_0835_r70y3dvo.jpg"
-  },
-  {
     "id": "tippy-coachella-ruxs",
     "name": "Tippy Coachella",
     "sex": "female",
