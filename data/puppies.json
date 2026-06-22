@@ -59,7 +59,7 @@
     "name": "Nico",
     "sex": "male",
     "coat": "Solid chocolate",
-    "weight": "7",
+    "weight": "7-8lb projected",
     "registration": "CKC or AKC option",
     "status": "available",
     "price": 2500,
@@ -72,7 +72,9 @@
       "photos/lil_petey_1032_hddytp35.jpg",
       "photos/lil_petey1012_hdw8e0gi.jpg",
       "photos/lil_petey1040_hdwaeg5g.jpg",
-      "photos/little_petey_1011_hea4yial.jpg"
+      "photos/little_petey_1011_hea4yial.jpg",
+      "photos/lil_petey1040_hdwaeg5g_hj85vir6.jpg",
+      "photos/lil_petey1040_hdwaeg5g_hjankeiw.jpg"
     ],
     "payment_link": "https://paypal.me/NancyMcCullough?locale.x=en_US&country.x=US",
     "photo": "photos/a_nico_777_khvvpn7f.jpg"
