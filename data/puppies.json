@@ -27,32 +27,6 @@
     "photo": "photos/img_8364_n3o570zo.jpeg"
   },
   {
-    "id": "little-petey-w7mk",
-    "name": "Little petey",
-    "sex": "male",
-    "coat": "Dark chocolate",
-    "weight": "8 pounds",
-    "registration": "CKC",
-    "status": "on_hold",
-    "price": 2500,
-    "deposit": 500,
-    "description": "This little guy was born April 11th. Thick silky chocolate hair. With a calm, gentle personality. This little guy is a cuddly teddy bear. \nAkc is available for an additional fee and can be added anytime the first year",
-    "photos": [
-      "photos/nico_star_0967_hoh98hwe.jpg",
-      "photos/nico_0961_hosqpma4.jpg",
-      "photos/nico_0971_host5rrd.jpg",
-      "photos/nico_0982_hosvbd9e.jpg",
-      "photos/nico_0941_hp5gritk.jpg",
-      "photos/nico_0942_hp5j2a7o.jpg",
-      "photos/nico_0945_hp5lfb4k.jpg",
-      "photos/nico_0948_hp5nnsva.jpg",
-      "photos/nico_0952_hp5pth8g.jpg",
-      "photos/nico_0955_hp5rtbea.jpg"
-    ],
-    "payment_link": "https://paypal.me/NancyMcCullough?locale.x=en_US&country.x=US",
-    "photo": "photos/nico_star_0967_hoh98hwe.jpg"
-  },
-  {
     "id": "nico-is5d",
     "name": "Nico",
     "sex": "male",
