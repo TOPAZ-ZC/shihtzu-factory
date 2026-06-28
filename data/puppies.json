@@ -96,5 +96,24 @@
     ],
     "payment_link": "https://paypal.me/NancyMcCullough?locale.x=en_US&country.x=US",
     "photo": "photos/kimchi_star_1157_lbh3w7hp.jpg"
+  },
+  {
+    "id": "westley-c4n3",
+    "name": "Westley",
+    "sex": "male",
+    "coat": "Dark chocolate & white",
+    "weight": "7-8",
+    "registration": "CKC",
+    "status": "available",
+    "price": 3500,
+    "deposit": 500,
+    "description": "This handsome little boy is Westley; he is from our International Champion Susie.\nHe was born May 25, on Memorial Day. He is dark chocolate and white, with awesome double coat, beautiful flat face, perfect dome head, and great tail set. This little guy is definitely a showstopper.  He is offered with CKC registration, but AKC registration is available for an additional fee anytime within the first year.",
+    "photos": [
+      "photos/westley_1263_2b4b2yzp.jpg",
+      "photos/westley_1258_2bft77eq.jpg",
+      "photos/westley_1299_2bfxsb54.jpg"
+    ],
+    "payment_link": "https://paypal.me/NancyMcCullough?locale.x=en_US&country.x=US",
+    "photo": "photos/westley_1263_2b4b2yzp.jpg"
   }
 ]
