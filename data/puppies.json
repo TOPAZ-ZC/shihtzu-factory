@@ -94,5 +94,41 @@
     ],
     "payment_link": "https://paypal.me/NancyMcCullough?locale.x=en_US&country.x=US",
     "photo": "photos/westley_1263_2b4b2yzp.jpg"
+  },
+  {
+    "id": "rosie-25a9",
+    "name": "Rosie",
+    "sex": "female",
+    "coat": "Solid chocolate",
+    "weight": "8 pounds",
+    "registration": "CKC",
+    "status": "available",
+    "price": 2500,
+    "deposit": 500,
+    "description": "Rosie is 2 years old and very sweet. She solid chocolate with a little white on her chest and one foot. She currently has a pink tail and ears from creative grooming but that should wash out with a few more baths. She's calm but loves playing with toys. You can usually find her in the toy box. We are only letting her go because we don't have a male for her as we don't like to line breed. She is listed with CKC registration at this price, but AKC is available for an additional fee and can be added anytime within one year.",
+    "photos": [
+      "photos/rosie_star_1538_aswtw097.jpg",
+      "photos/rosie_1443_at0gldsd.jpg",
+      "photos/rosie_1473_at9jtulu.jpg",
+      "photos/rosie_1483_at9lro97.jpg",
+      "photos/rosie_1489_at9np6kd.jpg",
+      "photos/rosie_1493_at9pmuqc.jpg",
+      "photos/rosie_1496_at9rkho3.jpg",
+      "photos/rosie_1512_at9tq8lz.jpg",
+      "photos/rosie_1513_at9vtpxb.jpg",
+      "photos/rosie_1448_atflr67i.jpg",
+      "photos/rosie_1451_atfns9ru.jpg",
+      "photos/rosie_1456_atfpq41g.jpg",
+      "photos/rosie_1465_atfrttwq.jpg",
+      "photos/rosie_1516_auqdenmr.jpg",
+      "photos/rosie_1519_auqfkoy8.jpg",
+      "photos/rosie_1524_auqhlj7v.jpg",
+      "photos/rosie_1527_auqjocgn.jpg",
+      "photos/rosie_1528_auqlquar.jpg",
+      "photos/rosie_1533_auqnuuko.jpg",
+      "photos/rosie_1543_auqpy5r4.jpg"
+    ],
+    "payment_link": "https://paypal.me/NancyMcCullough?locale.x=en_US&country.x=US",
+    "photo": "photos/rosie_star_1538_aswtw097.jpg"
   }
 ]
