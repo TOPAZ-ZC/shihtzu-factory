@@ -1,32 +1,5 @@
 [
   {
-    "id": "tyra",
-    "name": "Tyra",
-    "sex": "female",
-    "coat": "Dark chocolate",
-    "weight": "7-8lb projected",
-    "registration": "AKC",
-    "status": "available",
-    "price": 4500,
-    "deposit": 500,
-    "description": "Dark chocolate, gorgeous thick fluffy hair, big green expressive eyes, turned up liver nose, and a straight topline. Short, cobby body. Sweet and loving little girl\nShe is barely old enough for her first show, but she won 1st in the Toy group!\nVery outgoing and she had lots of fun. She's already leash trained and rides in the car like a champ. She is listed with full AKC registration.",
-    "photos": [
-      "photos/img_8364_n3o570zo.jpeg",
-      "photos/img_8357_n0f4hh9e_kup4r0h3.jpg",
-      "photos/tyra_0551_kvb61gik.jpg",
-      "photos/tyra_0552_kvhg35en.jpg",
-      "photos/tyra_0560_kvp7jptx.jpg",
-      "photos/tyra_0479_kw97h4g8.jpg",
-      "photos/tyra_0485_kwf9ttwr.jpg",
-      "photos/tyra_0655_kwlhviks.jpg",
-      "photos/tyra_0659_kwul5go4.jpg",
-      "photos/tyra_0677_kxdg9az8.jpg",
-      "photos/shih_tzu_6_fri_bpup_g1_judge_ron_horn_wp_kjrxxj86.jpg"
-    ],
-    "payment_link": "https://paypal.me/NancyMcCullough?locale.x=en_US&country.x=US",
-    "photo": "photos/img_8364_n3o570zo.jpeg"
-  },
-  {
     "id": "tippy-coachella-ruxs",
     "name": "Tippy Coachella",
     "sex": "female",
