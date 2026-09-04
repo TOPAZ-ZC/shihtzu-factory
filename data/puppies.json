@@ -51,35 +51,5 @@
     ],
     "payment_link": "https://paypal.me/NancyMcCullough?locale.x=en_US&country.x=US",
     "photo": "photos/kimchi_star_1651_r36yfy58.jpg"
-  },
-  {
-    "id": "hershey-h13z",
-    "name": "Hershey",
-    "sex": "female",
-    "coat": "Dark chocolate",
-    "weight": "7-8",
-    "registration": "CKC or AKC option",
-    "status": "on_hold",
-    "price": 3000,
-    "deposit": 500,
-    "description": "Hershey is a dark chocolate with white chest and tips on her front feet. She is from our International Champion dam \"Susie\" and our little 6-pound chocolate sire. She is very friendly and outgoing. This little charmer is as sweet as they come.  She is listed with CKC registration, but AKC can be added anytime within the first year for an additional fee.",
-    "photos": [
-      "photos/hershey_star1782_ug62gs3v.jpg",
-      "photos/hershey_1784_ugh5fq1m.jpg",
-      "photos/hershey_1787_ugh7fmdd.jpg",
-      "photos/hershey_1790_ugh9d50m.jpg",
-      "photos/hershey_1791_ugowrlme.jpg",
-      "photos/hershey_1793_ugoytg0v.jpg",
-      "photos/hershey_1796_ugp0s72b.jpg",
-      "photos/hershey_1798_ugp2o3b2.jpg",
-      "photos/hershey_1803_ugp4mgdg.jpg",
-      "photos/hershey_1804_ugp6l7k7.jpg",
-      "photos/hershey_1811_ugp8lwhi.jpg",
-      "photos/hershey_1814_ugyym92r.jpg",
-      "photos/hershey_1829_ugz0lygz.jpg",
-      "photos/hershey_1863_ugz2igek.jpg"
-    ],
-    "payment_link": "https://paypal.me/NancyMcCullough?locale.x=en_US&country.x=US",
-    "photo": "photos/hershey_star1782_ug62gs3v.jpg"
   }
 ]
