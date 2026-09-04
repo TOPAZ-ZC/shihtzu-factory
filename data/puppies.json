@@ -51,5 +51,26 @@
     ],
     "payment_link": "https://paypal.me/NancyMcCullough?locale.x=en_US&country.x=US",
     "photo": "photos/kimchi_star_1651_r36yfy58.jpg"
+  },
+  {
+    "id": "gucci-f28m",
+    "name": "Gucci",
+    "sex": "female",
+    "coat": "Chocolate",
+    "weight": "7",
+    "registration": "Ckc",
+    "status": "available",
+    "price": 3500,
+    "deposit": 500,
+    "description": "This little girl is just a few weeks old. She’s just opened her eyes and started to walk. She is charting to be very small. She is from our smallest couple. She is listed with CKC registration at this price but Akc is available for an additional fee anytime within the first year.",
+    "photos": [
+      "photos/img_0480_9eudad0u.jpeg",
+      "photos/img_0479_9eunyszh.jpeg",
+      "photos/img_0461_9euv928c.jpeg",
+      "photos/img_0468_9ev0ln6o.jpeg",
+      "photos/img_0473_9ev5ek0y.jpeg"
+    ],
+    "payment_link": "https://paypal.me/NancyMcCullough?locale.x=en_US&country.x=US",
+    "photo": "photos/img_0480_9eudad0u.jpeg"
   }
 ]
