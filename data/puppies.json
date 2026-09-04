@@ -72,5 +72,27 @@
     ],
     "payment_link": "https://paypal.me/NancyMcCullough?locale.x=en_US&country.x=US",
     "photo": "photos/img_0480_9eudad0u.jpeg"
+  },
+  {
+    "id": "cricket-oxu4",
+    "name": "Cricket",
+    "sex": "male",
+    "coat": "Chocolate",
+    "weight": "5-7",
+    "registration": "Ckc",
+    "status": "available",
+    "price": 3500,
+    "deposit": 500,
+    "description": "This little guy just opened his eyes and started to walk. He is the smallest of the litter and from our smallest couple. He is listed with CKC registration, but Akc is available for an additional fee and can be added anytime within the first year. Last photo is of his sire.",
+    "photos": [
+      "photos/img_0483_9mmxcguk.jpeg",
+      "photos/img_0481_9mn59l6w.jpeg",
+      "photos/img_0490_9mnbld46.jpeg",
+      "photos/img_0468_9mnf3lqm.jpeg",
+      "photos/img_0465_9mnjxizn.jpeg",
+      "photos/1_reishi_star_6742_9nwjr8wd.jpeg"
+    ],
+    "payment_link": "https://paypal.me/NancyMcCullough?locale.x=en_US&country.x=US",
+    "photo": "photos/img_0483_9mmxcguk.jpeg"
   }
 ]
