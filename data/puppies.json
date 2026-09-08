@@ -27,32 +27,6 @@
     "photo": "photos/tippy_star_1333_2kyxs21a.jpg"
   },
   {
-    "id": "kimchi-djfq",
-    "name": "Kimchi",
-    "sex": "male",
-    "coat": "Chocolate",
-    "weight": "6",
-    "registration": "CKC or AKC option",
-    "status": "available",
-    "price": 2500,
-    "deposit": 500,
-    "description": "This tiny little guy is Kimchi. He is solid chocolate with a white chest and a little white on his chin. He looks like a little baby seal.  He has a flat smooshie face, a tiny turned up button nose, and big round eyes. He is charting to be 6 pounds. Listed with CKC, but AKC is available for an additional fee.",
-    "photos": [
-      "photos/kimchi_star_1651_r36yfy58.jpg",
-      "photos/kimchi_1602_r3xc2frq.jpg",
-      "photos/kimchi_1612_r3xe0qxa.jpg",
-      "photos/kimchi_1623_r3xfz5d3.jpg",
-      "photos/kimchi_1638_r3xi06em.jpg",
-      "photos/kimchi_1641_r3xjyijf.jpg",
-      "photos/kimchi_1683_r3xm0nvs.jpg",
-      "photos/kimchi_1699_r3xo4t8e.jpg",
-      "photos/kimchi_1702_r3xq7sgm.jpg",
-      "photos/kimchi_1749_r3xscfta.jpg"
-    ],
-    "payment_link": "https://paypal.me/NancyMcCullough?locale.x=en_US&country.x=US",
-    "photo": "photos/kimchi_star_1651_r36yfy58.jpg"
-  },
-  {
     "id": "gucci-f28m",
     "name": "Gucci",
     "sex": "female",
