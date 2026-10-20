@@ -32,20 +32,24 @@
     "sex": "female",
     "coat": "Chocolate",
     "weight": "7",
-    "registration": "Ckc",
+    "registration": "CKC or AKC option",
     "status": "available",
     "price": 3500,
+    "ckc_price": 2500,
     "deposit": 500,
-    "description": "This little girl is just a few weeks old. She’s just opened her eyes and started to walk. She is charting to be very small. She is from our smallest couple. She is listed with CKC registration at this price but Akc is available for an additional fee anytime within the first year.",
+    "description": "Gucci has tiny button nose and large expressive eyes. She is a very sweet girl just like her mother. She is charting to be very small. She is from our smallest couple. She is listed with CKC registration at 2500, but Akc is available for an additional fee anytime within the first year.",
     "photos": [
-      "photos/img_0480_9eudad0u.jpeg",
-      "photos/img_0479_9eunyszh.jpeg",
-      "photos/img_0461_9euv928c.jpeg",
-      "photos/img_0468_9ev0ln6o.jpeg",
-      "photos/img_0473_9ev5ek0y.jpeg"
+      "photos/gucci_2145_xyntykti.jpg",
+      "photos/gucci_2157_xynwit5d.jpg",
+      "photos/gucci_2120_xyvs5zsg.jpg",
+      "photos/gucci_2125_xyvuf57d.jpg",
+      "photos/gucci_2142_xyvwsvpp.jpg",
+      "photos/gucci_2144_xyvz3y9l.jpg",
+      "photos/download_xyyw8m97.jpg",
+      "photos/download_xz4jyhha.jpg"
     ],
     "payment_link": "https://paypal.me/NancyMcCullough?locale.x=en_US&country.x=US",
-    "photo": "photos/img_0480_9eudad0u.jpeg"
+    "photo": "photos/gucci_2145_xyntykti.jpg"
   },
   {
     "id": "cricket-oxu4",
