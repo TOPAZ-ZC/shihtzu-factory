@@ -72,5 +72,37 @@
     ],
     "payment_link": "https://paypal.me/NancyMcCullough?locale.x=en_US&country.x=US",
     "photo": "photos/img_0483_9mmxcguk.jpeg"
+  },
+  {
+    "id": "peter-wjff",
+    "name": "Peter",
+    "sex": "male",
+    "coat": "Chocolate",
+    "weight": "5-6",
+    "registration": "CKC",
+    "status": "available",
+    "price": 2500,
+    "ckc_price": 2500,
+    "deposit": 500,
+    "description": "This little guy is almost ready. He is very small, and charting to be just a little over 5 pounds fully grown. He is dark chocolate (liver).  He has an outgoing personality but loves to cuddle. He is listed with CKC registration, but AKC is available for an additional fee and can be added anytime within the first year.",
+    "photos": [
+      "photos/peter_2164_6p9vieku.jpg",
+      "photos/peter_2166_6p9xkxnt.jpg",
+      "photos/peter_2168_6psy1ux8.jpg",
+      "photos/peter_2170_6pt00dxg.jpg",
+      "photos/peter_2175_6pt1ziph.jpg",
+      "photos/peter_2178_6pt40fz8.jpg",
+      "photos/peter_2181_6pt5xcif.jpg",
+      "photos/peter_2184_6pt86fit.jpg",
+      "photos/peter_2187_6ptafwfr.jpg",
+      "photos/peter_2194_6ptcoo62.jpg",
+      "photos/peter_2205_6ptg1aac.jpg",
+      "photos/peter_2208_6pti93ez.jpg",
+      "photos/peter_2215_6ptkco3f.jpg",
+      "photos/peter_2221_6ptmkkvj.jpg",
+      "photos/peter_2232_6ptos9oy.jpg"
+    ],
+    "payment_link": "https://paypal.me/NancyMcCullough?locale.x=en_US&country.x=US",
+    "photo": "photos/peter_2164_6p9vieku.jpg"
   }
 ]
